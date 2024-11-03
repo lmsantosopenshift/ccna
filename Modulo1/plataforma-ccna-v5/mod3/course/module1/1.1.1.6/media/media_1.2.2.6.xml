@@ -1,0 +1,148 @@
+<textcomponents>
+
+	<component id="ID_s1_title">
+		<text><![CDATA[<b>Activity – Identify Cisco Enterprise Architecture Modules</b><br/><br/>Drag the number next to each of the Cisco Enterprise Architecture module names to its correct location in the graphic provided.]]></text>
+	</component>
+	
+	<component id="ID_s1_txt01">
+	<text><![CDATA[<b>Enterprise Campus</b>]]></text>
+	</component>
+
+	<component id="ID_s1_txt05">
+	<text><![CDATA[Campus Infrastructure Module]]></text>
+	</component>
+
+	<component id="ID_s1_txt07">
+	<text><![CDATA[Network<br/>Management]]></text>
+	</component>
+
+	<component id="ID_s1_txt08">
+	<text><![CDATA[Edge Distribution]]></text>
+	</component>
+
+	<component id="ID_s1_txt09">
+	<text><![CDATA[<b>Enterprise Edge</b>]]></text>
+	</component>
+
+	<component id="ID_s1_txt14">
+	<text><![CDATA[<b>Service Provider Edge</b>]]></text>
+	</component>
+
+	<component id="ID_s1_txt15">
+	<text><![CDATA[ISP A]]></text>
+	</component>
+
+	<component id="ID_s1_txt16">
+	<text><![CDATA[ISP B]]></text>
+	</component>
+
+	<component id="ID_s1_txt17">
+	<text><![CDATA[PSTN]]></text>
+	</component>
+
+	<component id="ID_s1_txt18">
+	<text><![CDATA[Frame Relay, ATM, MAN, ...]]></text>
+	</component>
+	
+	<component id="ID_s1_txt19">
+	<text><![CDATA[<b>Remote</b>]]></text>
+	</component>
+	
+	<component id="ID_s1_txt20">
+	<text><![CDATA[Enterprise Branch]]></text>
+	</component>
+	
+	<component id="ID_s1_txt21a">
+	<text><![CDATA[Enterprise Teleworker]]></text>
+	</component>
+	
+	<component id="ID_s1_txt22a">
+	<text><![CDATA[Enterprise Data Center]]></text>
+	</component>
+
+
+	
+	<component id="ID_s1_txt21">
+	<text><![CDATA[Building Access]]></text>
+	</component>
+
+	<component id="ID_s1_txt22">
+	<text><![CDATA[Building Distribution]]></text>
+	</component>
+
+	<component id="ID_s1_txt23">
+	<text><![CDATA[Campus Core]]></text>
+	</component>
+
+	<component id="ID_s1_txt24">
+	<text><![CDATA[Server Farm & Datacenter]]></text>
+	</component>
+
+	<component id="ID_s1_txt25">
+	<text><![CDATA[E-Commerce]]></text>
+	</component>
+
+	<component id="ID_s1_txt26">
+	<text><![CDATA[Internet Connectivity]]></text>
+	</component>
+
+	<component id="ID_s1_txt27">
+	<text><![CDATA[Remote Access & VPN]]></text>
+	</component>
+
+	<component id="ID_s1_txt28">
+	<text><![CDATA[WAN Site-to-site]]></text>
+	</component>
+	
+	
+	<component id="ID_s1_btn01">
+	<text><![CDATA[<b>1</b>]]></text>
+	</component>
+	<component id="ID_s1_btn02">
+	<text><![CDATA[<b>2</b>]]></text>
+	</component>
+	<component id="ID_s1_btn03">
+	<text><![CDATA[<b>3</b>]]></text>
+	</component>
+	<component id="ID_s1_btn04">
+	<text><![CDATA[<b>4</b>]]></text>
+	</component>
+	<component id="ID_s1_btn05">
+	<text><![CDATA[<b>5</b>]]></text>
+	</component>
+	<component id="ID_s1_btn06">
+	<text><![CDATA[<b>6</b>]]></text>
+	</component>
+	<component id="ID_s1_btn07">
+	<text><![CDATA[<b>7</b>]]></text>
+	</component>
+	<component id="ID_s1_btn08">
+	<text><![CDATA[<b>8</b>]]></text>
+	</component>
+	
+	
+	<component id='ID_s1_CORRECT_TITLE'>
+		<text><![CDATA[<b>Correct</b>]]></text>
+	</component>
+
+	<component id='ID_s1_CORRECT_BODY'>
+		<text><![CDATA[You have successfully identified the location of each Cisco Enterprise Architecture module.]]></text>
+	</component>
+
+
+	<component id='ID_s1_INCORRECT_TITLE'>
+		<text><![CDATA[<b>Incorrect</b>]]></text>
+	</component>
+
+	<component id='ID_s1_INCORRECT_BODY'>
+		<text><![CDATA[You have not successfully identified the location of each Cisco Enterprise Architecture module. Please click Reset to try again.]]></text>
+	</component>
+
+	<component id='ID_s1_CHECK'>
+		<text><![CDATA[<b>Check</b>]]></text>
+	</component>
+
+	<component id='ID_s1_RESET'>
+		<text><![CDATA[<b>Reset</b>]]></text>
+	</component>
+</textcomponents>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.1.1.4 Types of OSPF Routers</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.1.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Multiarea OSPF Operation</h1>
+        <h2>Why Multiarea OSPF?</h2>
+      </div>
+      <div id="content">
+          <p>OSPF routers of different types control the traffic that goes in and out of areas. The OSPF routers are categorized based on the function they perform in the routing domain.</p>
+          <p></p>
+          <p>There are four different types of OSPF routers: </p>
+          <p>
+            <ul>
+              <li>
+                <b>Internal router </b>– This is a router that has all of its interfaces in the same area. All internal routers in an area have identical LSDBs. (Figure 1)</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Backbone router </b>– This is a router in the backbone area. Generally, the backbone area is set to area 0. (Figure 2)</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Area Border Router</b>
+                <b>(ABR) </b>– This is a router that has interfaces attached to multiple areas. It must maintain separate LSDBs for each area it is connected to, and can route between areas. ABRs are exit points for the area, which means that routing information destined for another area can get there only via the ABR of the local area. ABRs can be configured to summarize the routing information from the LSDBs of their attached areas. ABRs distribute the routing information into the backbone. The backbone routers then forward the information to the other ABRs. In a multiarea network, an area can have one or more ABRs. (Figure 3)</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Autonomous System Boundary Router (ASBR) </b>– This is a router that has at least one interface attached to an external internetwork (another autonomous system), such as a non-OSPF network. An ASBR can import non-OSPF network information to the OSPF network, and vice versa, using a process called route redistribution. (Figure 4)</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>Redistribution in multiarea OSPF occurs when an ASBR connects different routing domains (e.g., EIGRP and OSPF) and configures them to exchange and advertise routing information between those routing domains. </p>
+          <p></p>
+          <p>A router can be classified as more than one router type. For example, if a router connects to area 0 and area 1, and in addition, maintains routing information for another, non-OSPF network, it falls under three different classifications: a backbone router, an ABR, and an ASBR.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

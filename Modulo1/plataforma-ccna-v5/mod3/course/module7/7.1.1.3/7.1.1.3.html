@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.1.1.3 Reliable Transport Protocol</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.1.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Characteristics of EIGRP</h1>
+        <h2>Basic Features of EIGRP</h2>
+      </div>
+      <div id="content">
+          <p>EIGRP uses Reliable Transport Protocol (RTP) for the delivery and reception of EIGRP packets. EIGRP was designed as a network layer independent routing protocol; because of this design EIGRP cannot use the services of UDP or TCP. This allows EIGRP to be used for protocols other than those from the TCP/IP protocol suite, such as IPX and AppleTalk. The figure conceptually shows how RTP operates.</p>
+          <p></p>
+          <p>Although “reliable” is part of its name, RTP includes both reliable delivery and unreliable delivery of EIGRP packets, similar to TCP and UDP, respectively. Reliable RTP requires an acknowledgment to be returned by the receiver to the sender. An unreliable RTP packet does not require an acknowledgment. For example, an EIGRP update packet is sent reliably over RTP and requires an acknowledgment. An EIGRP Hello packet is also sent over RTP, but unreliably. This means that EIGRP Hello packets do not require an acknowledgment. </p>
+          <p></p>
+          <p>RTP can send EIGRP packets as unicast or multicast. </p>
+          <p>
+            <ul>
+              <li>Multicast EIGRP packets for IPv4 use the reserved IPv4 multicast address 224.0.0.10.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Multicast EIGRP packets for IPv6 are sent to the reserved IPv6 multicast address FF02::A.</li>
+            </ul>
+          </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

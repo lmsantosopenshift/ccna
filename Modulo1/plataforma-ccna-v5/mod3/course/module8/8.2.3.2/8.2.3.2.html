@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.3.2 Missing Network Statement</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Troubleshoot EIGRP</h1>
+        <h2>Troubleshoot EIGRP Routing Table Issues</h2>
+      </div>
+      <div id="content">
+          <p>Figure 1 shows that R1’s GigabitEthernet 0/1 interface has now been configured with the 10.10.10.1/24 address and is active.</p>
+          <p></p>
+          <p>R1 and R3 still have their neighbor adjacency, but a ping test from the R3 router to a R1’s G0/1 interface of 10.10.10.1 is unsuccessful. Figure 2 shows a failed connectivity test from R3 to the destination network of 10.10.10.0/24.</p>
+          <p></p>
+          <p>In Figure 3, using the<span class="cmd"><b> show ip protocols </b></span>on the R1 router shows that the network 10.10.10.0/24 is not advertised to EIGRP neighbors. </p>
+          <p></p>
+          <p>As shown in Figure 4, R1’s EIGRP process is configured to include the advertisement of the 10.10.10.0/24 network.</p>
+          <p></p>
+          <p>Figure 5 shows that there is now a route in R3’s routing table for the 10.10.10.0/24 network and reachability is verified by pinging R1’s GigabitEthernet 0/1 interface.</p>
+          <p></p>
+          <p>
+            <b>EIGRP for IPv6</b>
+          </p>
+          <p></p>
+          <p>Similar commands and troubleshooting criteria also apply to EIGRP for IPv6.</p>
+          <p></p>
+          <p>The following are the equivalent commands used with EIGRP for IPv6:</p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">Router# </span>
+                <span class="cmd">
+                  <b>show ipv6 protocols </b>
+                </span>
+              </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">Router# </span>
+                <span class="cmd">
+                  <b>show ipv6 route</b>
+                </span>
+              </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">Router(config-rtr)# </span>
+                <span class="cmd">
+                  <b>network </b>
+                </span>
+                <span class="cmd">
+                  <i>ipv6-prefix/prefix-length</i>
+                </span>
+              </li>
+            </ul>
+          </p>
+          <p></p>
+          <p>
+            <b>Note</b>: Another form of missing route may result from the router filtering inbound or outbound routing updates. ACLs provide filtering for different protocols, and these ACLs may affect the exchange of the routing protocol messages that cause routes to be absent from the routing table. The<span class="cmd"><b> show ip protocols </b></span>command shows whether there are any ACLs that are applied to EIGRP. </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

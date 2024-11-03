@@ -1,0 +1,145 @@
+<textcomponents>
+
+	<component id="ID_s1_inst">
+		<text><![CDATA[<b>Activity - Part 1: Identify Channel Management Terminology</b><br/>Drag each channel management term to its appropriate definition. Click Button 2 to continue.]]></text>
+	</component>
+
+	<component id="ID_s1_txt01">
+		<text><![CDATA[An access point is configured to allow both 802.11b and 802.11g clients.]]></text>
+	</component>
+	<component id="ID_s1_txt02">
+		<text><![CDATA[The fundamental building block of the 802.11 Wireless LAN architecture.]]></text>
+	</component>
+	<component id="ID_s1_txt03">
+		<text><![CDATA[When a single BSS provides insufficient RF coverage, more can be joined together.]]></text>
+	</component>
+	<component id="ID_s1_txt04">
+		<text><![CDATA[The WLAN network uses these to advertise its presence to wireless clients.]]></text>
+	</component>
+	
+	
+	<component id="ID_s1_txt05">
+		<text><![CDATA[Beacons]]></text>
+	</component>
+	<component id="ID_s1_txt06">
+		<text><![CDATA[Probes]]></text>
+	</component>
+	<component id="ID_s1_txt07">
+		<text><![CDATA[Extended Service Set]]></text>
+	</component>
+	<component id="ID_s1_txt08">
+		<text><![CDATA[Basic Service Set]]></text>
+	</component>
+	<component id="ID_s1_txt09">
+		<text><![CDATA[Mixed Mode]]></text>
+	</component>
+	<component id="ID_s1_txt10">
+		<text><![CDATA[Access Point]]></text>
+	</component>
+
+
+
+	<component id='ID_s1_CORRECT_TITLE'>
+		<text><![CDATA[<b>Correct</b>]]></text>
+	</component>
+
+	<component id='ID_s1_CORRECT_BODY'>
+		<text><![CDATA[You have successfully matched each wireless technology term to its definition. Click Button 2 to continue.]]></text>
+	</component>
+
+
+	<component id='ID_s1_INCORRECT_TITLE'>
+		<text><![CDATA[<b>Incorrect</b>]]></text>
+	</component>
+
+	<component id='ID_s1_INCORRECT_BODY'>
+		<text><![CDATA[You have not successfully matched each wireless technology term to its definition. Please click Reset to try again.]]></text>
+	</component>
+
+	<component id='ID_s1_CHECK'>
+		<text><![CDATA[<b>Check</b>]]></text>
+	</component>
+
+	<component id='ID_s1_RESET'>
+		<text><![CDATA[<b>Reset</b>]]></text>
+	</component>
+
+
+
+
+	<component id="ID_s2_inst">
+		<text><![CDATA[<b>Activity - Part 2: Identify Channel Management Terminology</b><br/>Drag each channel number to the appropriate location.]]></text>
+	</component>
+	<component id="ID_s2_txt01">
+		<text><![CDATA[Europe and North America break down the 2.4 GHz band into this number of channels.]]></text>
+	</component>
+	<component id="ID_s2_txt02">
+		<text><![CDATA[According to the 802.11 standard, WLANs that require multiple access points should use these non-overlapping channels.]]></text>
+	</component>
+	
+	<component id="ID_s2_txt03">
+		<text><![CDATA[Europe]]></text>
+	</component>
+	<component id="ID_s2_txt04">
+		<text><![CDATA[North America]]></text>
+	</component>
+	
+	
+	<component id="ID_s2_txt05">
+		<text><![CDATA[1]]></text>
+	</component>
+	<component id="ID_s2_txt06">
+		<text><![CDATA[5]]></text>
+	</component>
+	<component id="ID_s2_txt07">
+		<text><![CDATA[6]]></text>
+	</component>
+	<component id="ID_s2_txt08">
+		<text><![CDATA[7]]></text>
+	</component>
+	<component id="ID_s2_txt09">
+		<text><![CDATA[10]]></text>
+	</component>
+	<component id="ID_s2_txt10">
+		<text><![CDATA[11]]></text>
+	</component>
+	<component id="ID_s2_txt11">
+		<text><![CDATA[12]]></text>
+	</component>
+	<component id="ID_s2_txt12">
+		<text><![CDATA[13]]></text>
+	</component>
+	<component id="ID_s2_txt13">
+		<text><![CDATA[14]]></text>
+	</component>
+	<component id="ID_s2_txt14">
+		<text><![CDATA[15]]></text>
+	</component>
+	
+
+	<component id='ID_s2_CORRECT_TITLE'>
+		<text><![CDATA[<b>Correct</b>]]></text>
+	</component>
+
+	<component id='ID_s2_CORRECT_BODY'>
+		<text><![CDATA[You have successfully matched each wireless technology term to its definition.]]></text>
+	</component>
+
+	<component id='ID_s2_INCORRECT_TITLE'>
+		<text><![CDATA[<b>Incorrect</b>]]></text>
+	</component>
+
+	<component id='ID_s2_INCORRECT_BODY'>
+		<text><![CDATA[You have not successfully matched each wireless technology term to its definition. Please click Reset to try again.]]></text>
+	</component>
+
+	<component id='ID_s2_CHECK'>
+		<text><![CDATA[<b>Check</b>]]></text>
+	</component>
+
+	<component id='ID_s2_RESET'>
+		<text><![CDATA[<b>Reset</b>]]></text>
+	</component>
+
+
+</textcomponents>

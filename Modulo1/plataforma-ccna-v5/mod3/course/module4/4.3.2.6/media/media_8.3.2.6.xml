@@ -1,0 +1,106 @@
+<textcomponents>
+	<component id='ID_inst'>
+	<text><![CDATA[<b>Activity - Identify the WLAN Authentication Characteristics</b><br/>Drag each WLAN security characteristic to the  appropriate Open or Shared Key authentication method field.]]></text>
+</component>
+
+
+<!--Drag and Drop-->
+<component id='ID_drag01'>
+	<text><![CDATA[RC4 Data Encryption]]></text>
+</component>
+
+<component id='ID_drag02'>
+	<text><![CDATA[No Password Authentication]]></text>
+</component>
+
+<component id='ID_drag03'>
+	<text><![CDATA[CCMP Authentication]]></text>
+</component>
+
+<component id='ID_drag04'>
+	<text><![CDATA[High Security Risk]]></text>
+</component>
+
+<component id='ID_drag05'>
+	<text><![CDATA[AES Data Encryption]]></text>
+</component>
+
+<component id='ID_drag06'>
+	<text><![CDATA[MIC Authentication]]></text>
+</component>
+
+<component id='ID_drag07'>
+	<text><![CDATA[Lowest Security Risk]]></text>
+</component>
+
+<component id='ID_drag08'>
+	<text><![CDATA[No Data Encryption]]></text>
+</component>
+
+<component id='ID_drag09'>
+	<text><![CDATA[TKIP Data Encryption]]></text>
+</component>
+
+<component id='ID_drag10'>
+	<text><![CDATA[Highest Security Risk]]></text>
+</component>
+
+<component id='ID_drag11'>
+	<text><![CDATA[<span style="margin-left:5px;">Shared Key Authentication Only</span>]]></text>
+</component>
+
+<component id='ID_drag12'>
+	<text><![CDATA[Medium Security Risk]]></text>
+</component>
+
+
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correct</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[You have successfully matched the WLAN security characteristics to their authentication methods.]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrect</b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[You have not successfully matched the WLAN security characteristics to their authentication methods. Click Reset to try again.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Check</b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Reset</b>]]></text>
+</component>
+
+
+<component id='ID_txt01'>
+	<text><![CDATA[Open Authentication Method]]></text>
+</component>
+
+<component id='ID_txt02'>
+	<text><![CDATA[Shared Key Authentication Method]]></text>
+</component>
+
+
+<component id='ID_txt03'>
+	<text><![CDATA[<b>WEP</b>]]></text>
+</component>
+
+
+<component id='ID_txt04'>
+	<text><![CDATA[<b>WPA</b>]]></text>
+</component>
+
+<component id='ID_txt05'>
+	<text><![CDATA[<b>802.11i/WPA2</b>]]></text>
+</component> 
+  
+</textcomponents>

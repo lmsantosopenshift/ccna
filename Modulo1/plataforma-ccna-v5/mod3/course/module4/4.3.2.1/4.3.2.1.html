@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.3.2.1 Wireless Security Overview </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.3.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless LAN Security</h1>
+        <h2>Securing WLANs</h2>
+      </div>
+      <div id="content">
+          <p>Security has always been a concern with Wi-Fi because the network boundary has moved. Wireless signals can travel through solid matter, such as ceilings, floors, walls, outside of the home, or office space. Without stringent security measures in place, installing a WLAN can be the equivalent of putting Ethernet ports everywhere, even outside.</p>
+          <p></p>
+          <p>To address the threats of keeping wireless intruders out and protecting data, two early security features were used:</p>
+          <p>
+            <ul>
+              <li>
+                <b>SSID cloaking </b>- APs and some wireless routers allow the SSID beacon frame to be disabled. Wireless clients must manually identify the SSID to connect to the network.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>MAC addresses filtering </b>- An administrator can manually allow or deny clients wireless access based on their physical MAC hardware address. </li>
+            </ul>
+          </p>
+          <p></p>
+          <p>Although these two features would deter most users, the reality is that neither SSID cloaking nor MAC address filtering would deter a crafty intruder. SSIDs are easily discovered even if APs do not broadcast them and MAC addresses can be spoofed. The best way to secure a wireless network is to use authentication and encryption systems, as shown in Figure 1.</p>
+          <p></p>
+          <p>Two types of authentication were introduced with the original 802.11 standard: </p>
+          <p>
+            <ul>
+              <li>
+                <b>Open system authentication </b>- Any wireless client should easily be able to connect, and should only be used in situations where security is of no concern, such as in locations providing free Internet access like cafes, hotels, and in remote areas. </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Shared key authentication </b>- Provides mechanisms, such as WEP, WPA, or WPA2 to authenticate and encrypt data between a wireless client and AP. However, the password must be pre-shared between both parties to connect.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>The chart in Figure 2 summarizes the various types of authentication.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

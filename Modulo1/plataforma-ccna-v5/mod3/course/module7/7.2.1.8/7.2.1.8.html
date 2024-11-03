@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.2.1.8 Passive Interface</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.2.1.8_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuring EIGRP for IPv4</h1>
+        <h2>Configuring EIGRP with IPv4</h2>
+      </div>
+      <div id="content">
+          <p>As soon as a new interface is enabled within the EIGRP network, EIGRP attempts to form a neighbor adjacency with any neighboring routers to send and receive EIGRP updates.  </p>
+          <p></p>
+          <p>At times it may be necessary, or advantageous, to include a directly connected network in the EIGRP routing update, but not allow any neighbor adjacencies off of that interface to form. The<span class="cmd"><b> passive-interface</b></span> command can be used to prevent the neighbor adjacencies. There are two primary reasons for enabling the<span class="cmd"><b> passive-interface </b></span>command:</p>
+          <p>
+            <ul>
+              <li>To suppress unnecessary update traffic, such as when an interface is a LAN interface, with no other routers connected</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>To increase security controls, such as preventing unknown rogue routing devices from receiving EIGRP updates</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>Figure 1 shows R1, R2, and R3 do not have neighbors on their GigabitEthernet 0/0 interfaces.</p>
+          <p></p>
+          <p>The<span class="cmd"><b> passive-interface </b></span>router configuration mode command disables the transmission and receipt of EIGRP Hello packets on these interfaces. </p>
+          <p></p>
+          <p>
+            <span class="cmd">Router(config)# </span>
+            <span class="cmd">
+              <b>router eigrp</b>
+            </span>
+            <span class="cmd"></span>
+            <span class="cmd">
+              <i>as-number</i>
+            </span>
+          </p>
+          <p>
+            <span class="cmd">Router(config-router)# </span>
+            <span class="cmd">
+              <b>passive-interface</b>
+            </span>
+            <span class="cmd"></span>
+            <span class="cmd">
+              <i>interface-type interface-number</i>
+            </span>
+          </p>
+          <p></p>
+          <p>Figure 2 shows the<span class="cmd"><b> passive-interface </b></span>command configured to suppress Hello packets on the LANs for R1 and R3. R2 is configured using the Syntax Checker.</p>
+          <p></p>
+          <p>Without a neighbor adjacency, EIGRP cannot exchange routes with a neighbor. Therefore, the<span class="cmd"><b> passive-interface </b></span>command prevents the exchange of routes on the interface. Although EIGRP does not send or receive routing updates on an interface configured with the<span class="cmd"><b> passive-interface </b></span>command, it still includes the address of the interface in routing updates sent out of other non-passive interfaces.</p>
+          <p></p>
+          <p>
+            <b>Note</b>: To configure all interfaces as passive, use the<span class="cmd"><b> passive-interface default </b></span>command. To disable an interface as passive, use the<span class="cmd"><b> no passive-interface </b></span><span class="cmd"><i>interface-type interface-number </i></span>command.</p>
+          <p></p>
+          <p>An example of using the passive interface to increase security controls is when a network must connect to a third-party organization, for which the local administrator has no control, such as when connecting to an ISP network. In this case, the local network administrator would need to advertise the interface link through their own network, but would not want the third-party organization to receive or send routing updates to the local routing device, as this is a security risk. </p>
+          <p></p>
+          <p>
+            <b>Verifying the Passive Interface</b>
+          </p>
+          <p></p>
+          <p>To verify whether any interface on a router is configured as passive, use the<span class="cmd"><b> show ip protocols </b></span>privileged EXEC mode command, as shown in Figure 3. Notice that although R3’s GigabitEthernet 0/0 interface is a passive interface, EIGRP still includes the interface’s network address of 192.168.1.0 network in its routing updates.</p>
+          <p></p>
+          <p>Use the Syntax Checker in Figure 4 to configure R2 to suppress EIGRP Hello packets on its GigabitEthernet 0/0 interface.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

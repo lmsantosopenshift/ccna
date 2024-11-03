@@ -1,0 +1,23 @@
+<textcomponents>
+<component id="ID_txt01">
+<text><![CDATA[<b>Step 1</b>]]></text>
+</component>
+<component id="ID_txt02">
+  <text><![CDATA[<b>Step 2</b>]]></text> 
+  </component>
+<component id="ID_txt03">
+  <text><![CDATA[Some Bits Are Different]]></text> 
+  </component>
+<component id="ID_txt04">
+  <text><![CDATA[<b>First 22 Bits Match</b>]]></text> 
+  </component>
+  <component id="ID_txt05">
+  <text><![CDATA[<b>Step 3</b>]]></text> 
+  </component>
+  <component id="ID_txt06">
+  <text><![CDATA[or]]></text> 
+  </component>
+<component id="ID_title">
+  <text><![CDATA[<b>Calculating the Summary Route</b>]]></text> 
+  </component>
+</textcomponents>

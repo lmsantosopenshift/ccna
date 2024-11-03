@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.2.2.1 Troubleshooting Neighbor Issues</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.2.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Troubleshooting Single-Area OSPF Implementations</h1>
+        <h2>Troubleshoot Single-Area OSPFv2 Routing Issues</h2>
+      </div>
+      <div id="content">
+          <p>This example will highlight how to troubleshoot neighbor problems. In the topology in Figure 1, all of the routers have been configured to support OSPF routing. </p>
+          <p></p>
+          <p>A quick look at the R1 routing table, as shown in Figure 2, reveals that it is not adding any OSPF routes. There are multiple reasons why this could be. However, a prerequisite for the neighbor relationship to form between two routers is OSI Layer 3 connectivity. </p>
+          <p></p>
+          <p>The output in Figure 3 confirms that the S0/0/0 interface is up and active. The successful ping also confirms that the R2 serial interface is active. A successful ping does not mean an adjacency will form because it is possible to have overlapping subnets. You still have to verify that interfaces on the connected devices share the same subnet. If the ping was not successful, check the cabling and verify that interfaces on connected devices are configured correctly and operational.</p>
+          <p></p>
+          <p>For an interface to be enabled for OSPF, a matching<span class="cmd"><b> network </b></span>command must be configured under the OSPF routing process. Active OSPF interfaces can be verified using the<span class="cmd"><b> show ip ospf interface </b></span>command. The output in Figure 4 verifies that the Serial 0/0/0 interface is enabled for OSPF. If connected interfaces on two routers are not enabled for OSPF, the neighbors will not form an adjacency.</p>
+          <p></p>
+          <p>Verify the OSPF settings using the<span class="cmd"><b> show ip protocols </b></span>command. The output displayed in Figure 5 verifies that OSPF is enabled and also lists the networks being advertised as enabled by the<span class="cmd"><b> network </b></span>command. If an IP address on an interface falls within a network that has been enabled for OSPF, the interface will be enabled for OSPF. </p>
+          <p></p>
+          <p>However, notice that the Serial 0/0/0 interface is listed as passive. Recall that the<span class="cmd"><b> passive-interface </b></span>command stops both outgoing and incoming routing updates because the effect of the command causes the router to stop sending and receiving Hello packets over an interface. For this reason, the routers will not become neighbors.</p>
+          <p></p>
+          <p>To disable the interface as passive, use the<span class="cmd"><b> no passive-interface </b></span>router configuration mode command as shown in Figure 6. After you disable the passive interface, the routers become adjacent as indicated by automatically generated information message.</p>
+          <p></p>
+          <p>A quick verification of the routing table as shown in Figure 7 confirms that OSPF is now exchanging routing information.</p>
+          <p></p>
+          <p>Another problem that may arise is when two neighboring routers have mismatched MTU sizes on their connecting interfaces. The MTU size is the largest network layer packet that the router will forward out each interface. Routers default to an MTU size of 1500 bytes. However, this value can be changed for IPv4 packets using the<span class="cmd"><b> ip mtu </b></span><span class="cmd"><i>size</i></span><span class="cmd"><b></b></span>interface configuration command or the<span class="cmd"><b> ipv6 mtu </b></span><span class="cmd"><i>size</i></span><span class="cmd"><b></b></span>interface command for IPv6 packets. If two connecting routers had mismatched MTU values, they would still attempt to form an adjacency but they would not exchange their LSDBs and the neighbor relationship would fail. </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

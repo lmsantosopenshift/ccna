@@ -1,0 +1,12 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[]]></text>
+</component>
+   
+<component id="ID_txt01">
+<text><![CDATA[<br/><b>After completing this chapter, you will be able to:</b><br/><br/><textformat blockindent='-14'><ul><li>Describe the features and operation of EIGRP.</li><li>Examine the different EIGRP packet formats.</li><li>Calculate the composite metric used by EIGRP.</li><li>Describe the concepts and operation of DUAL.</li><li>Examine the commands to configure and verify basic EIGRP operations for IPv4 and IPv6.</li></ul></textformat><br/>]]></text>
+</component>
+
+
+
+</textcomponents>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.2.6 Calculating the EIGRP Metric</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.2.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1> Operation of EIGRP</h1>
+        <h2>Metrics</h2>
+      </div>
+      <div id="content">
+          <p>Figure 1 displays the three router topology. This example illustrates how EIGRP determines the metric displayed in R2’s routing table for the 192.168.1.0/24 network. </p>
+          <p></p>
+          <p>
+            <b>Bandwidth</b>
+          </p>
+          <p></p>
+          <p>EIGRP uses the slowest bandwidth in its metric calculation. The slowest bandwidth can be determined by examining each interface between R2 and the destination network 192.168.1.0. The Serial 0/0/1 interface on R2 has a bandwidth of 1,024 kb/s. The GigabitEthernet 0/0 interface on R3 has a bandwidth of 1,000,000 kb/s. Therefore, the slowest bandwidth is 1,024 kb/s and is used in the calculation of the metric.</p>
+          <p></p>
+          <p>EIGRP divides a reference bandwidth value of 10,000,000 by the interface bandwidth value in kb/s. This results in higher bandwidth values receiving a lower metric and lower bandwidth values receiving a higher metric. 10,000,000 is divided by 1,024. If the result is not a whole number, then the value is rounded down. In this case, 10,000,000 divided by 1,024 equals 9,765.625. The .625 is dropped to yield 9,765 for the bandwidth portion of the composite metric, as shown in Figure 2.</p>
+          <p></p>
+          <p>
+            <b>Delay</b>
+          </p>
+          <p></p>
+          <p>The same outgoing interfaces are used to determine the delay value, as shown in Figure 3.</p>
+          <p></p>
+          <p>EIGRP uses the sum of all delays to the destination. The Serial 0/0/1 interface on R2 has a delay of 20,000 microseconds. The Gigabit 0/0 interface on R3 has a delay of 10 microseconds. The sum of these delays is divided by 10. In the example, (20,000+10)/10 results in a value of 2,001 for the delay portion of the composite metric.</p>
+          <p></p>
+          <p>
+            <b>Calculate Metric</b>
+          </p>
+          <p></p>
+          <p>Use the calculated values for bandwidth and delay in the metric formula. This results in a metric of 3,012,096, as shown in Figure 4. This value matches the value shown in the routing table for R2. </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

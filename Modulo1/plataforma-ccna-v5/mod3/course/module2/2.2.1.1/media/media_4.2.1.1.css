@@ -1,0 +1,21 @@
+
+/*   load the main media CSS file    */
+
+@import url('../../../common/styles/media2.css');
+
+html, body {
+	margin:0;
+	height:100%;
+
+}
+#flashContent {
+	width:98%;
+	height:98%;
+}
+span{padding-left:34px;float:left}
+
+li{line-height:13px}
+
+@media only screen and (device-width: 768px) {
+li{margin-left:1px ! important;}
+}

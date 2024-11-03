@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.5.1.1 Class Activity - Inside and Outside Control</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.5.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Summary</h1>
+        <h2>Summary</h2>
+      </div>
+      <div id="content">
+          <p>
+            <b>Inside and Outside Control</b>
+          </p>
+          <p></p>
+          <p>An assessment has been completed to validate the need for an upgrade to your small- to medium-sized wireless network. Approved for purchase are indoor and outdoor access points and one wireless controller. You must compare equipment models and their specifications before you purchase.</p>
+          <p></p>
+          <p>Therefore, you visit the “<a href="http://www.cisco.com/en/US/products/hw/wireless/products_category_buyers_guide.html" target="_blank">Wireless Compare Products and Services</a>“ web site and see a features chart for indoor and outdoor wireless access points and controller devices. After reviewing the chart, you note there is some terminology with which you are unfamiliar:</p>
+          <p>
+            <ul>
+              <li>Federal Information Processing Standard (FIPS)</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>MIMO</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Cisco CleanAir Technology</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Cisco FlexConnect</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Band Select</li>
+            </ul>
+          </p>
+          <p>Research the above terms. Prepare your own chart with your company’s most important requirements listed for purchasing the indoor and outdoor wireless access points and wireless controller. This chart will assist in validating your purchase order to your accounting manager and CEO.</p>
+          <p></p>
+          <p>
+            <a href="../../files/4.5.1.1%20Inside%20and%20Outside%20Control%20Instructions.pdf" target="_blank">Class Activity - Inside and Outside Control</a>
+          </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

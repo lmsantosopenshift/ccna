@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.3.5 Packet Tracer - Propagating a Default Route in OSPFv2</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.3.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Advanced Single-Area OSPF Configurations </h1>
+        <h2>Default Route Propagation</h2>
+      </div>
+      <div id="content">
+          <p>
+            <b>Background/Scenario</b>
+          </p>
+          <p></p>
+          <p>In this activity, you will configure an IPv4 default route to the Internet and propagate that default route to other OSPF routers. You will then verify the default route is in downstream routing tables and that hosts can now access a web server on the Internet.</p>
+          <p></p>
+          <p>
+            <a href="../../files/5.1.3.5%20Packet%20Tracer%20-%20Propagating%20a%20Default%20Route%20in%20OSPFv2%20Instructions.pdf" target="_blank">Packet Tracer - Propagating a Default Route in OSPFv2 Instructions</a>
+          </p>
+          <p></p>
+          <p>
+            <a href="../../files/5.1.3.5%20Packet%20Tracer%20-%20Propagating%20a%20Default%20Route%20in%20OSPFv2.pka" target="_blank">Packet Tracer - Propagating a Default Route in OSPFv2 - PKA</a>
+          </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

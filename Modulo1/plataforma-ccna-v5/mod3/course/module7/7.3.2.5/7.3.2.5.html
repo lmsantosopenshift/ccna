@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.2.5 How to Calculate the EIGRP Metric</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1> Operation of EIGRP</h1>
+        <h2>Metrics</h2>
+      </div>
+      <div id="content">
+          <p>Although EIGRP automatically calculates the routing table metric used to choose the best path, it is important that the network administrator understands how these metrics were determined.</p>
+          <p></p>
+          <p>The figure shows the composite metric used by EIGRP. Using the default values for K1 and K3, the calculation can be simplified to the slowest bandwidth (or minimum bandwidth), plus the sum of all of the delays. </p>
+          <p></p>
+          <p>In other words, by examining the bandwidth and delay values for all of the outgoing interfaces of the route, we can determine the EIGRP metric as follows: </p>
+          <p>
+            <b>Step 1.  </b>Determine the link with the slowest bandwidth. Use that value to calculate bandwidth (10,000,000/bandwidth).</p>
+          <p>
+            <b>Step 2.  </b>Determine the delay value for each outgoing interface on the way to the destination. Add the delay values and divide by 10 (sum of delay/10). </p>
+          <p>
+            <b>Step 3.  </b>Add the computed values for bandwidth and delay, and multiply the sum by 256 to obtain the EIGRP metric.</p>
+          <p></p>
+          <p>The routing table output for R2 shows that the route to 192.168.1.0/24 has an EIGRP metric of 3,012,096. </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

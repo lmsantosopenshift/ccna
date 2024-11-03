@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.1.2 Components </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Troubleshoot EIGRP</h1>
+        <h2>Components of Troubleshooting EIGRP</h2>
+      </div>
+      <div id="content">
+          <p>The figure shows a flowchart for diagnosing EIGRP connectivity issues.</p>
+          <p></p>
+          <p>After configuring EIGRP, the first step is to test connectivity to the remote network. If the ping fails, confirm the EIGRP neighbor adjacencies. Neighbor adjacency might not be formed for a number of reasons, including the following:</p>
+          <p>
+            <ul>
+              <li>The interface between the devices is down.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>The two routers have mismatching EIGRP autonomous system numbers (process IDs).</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Proper interfaces are not enabled for the EIGRP process.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>An interface is configured as passive.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>Aside from these issues, there are a number of other, more advanced issues that can cause neighbor adjacencies to not be formed. Two examples are misconfigured EIGRP authentication or mismatched K values, which EIGRP uses to calculate its metric.</p>
+          <p></p>
+          <p>If the EIGRP neighbor adjacency is formed between the two routers, but there is still a connection issue, there may be a routing problem. Some issues that may cause a connectivity problem for EIGRP include:</p>
+          <p>
+            <ul>
+              <li>Proper networks are not being advertised on remote routers.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>An incorrectly-configured passive interface, or an ACL, is blocking advertisements of remote networks.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Automatic summarization is causing inconsistent routing in a discontiguous network.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>If all of the required routes are in the routing table, but the path that traffic takes is not correct, verify the interface bandwidth values.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

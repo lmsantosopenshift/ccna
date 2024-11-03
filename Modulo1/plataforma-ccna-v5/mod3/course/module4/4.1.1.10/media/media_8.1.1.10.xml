@@ -1,0 +1,74 @@
+<textcomponents>
+<component id="ID_txt01">
+<text><![CDATA[<b>Activity - Compare WLAN and LAN Technologies</b><br/>Drag the WLAN or LAN technology to the statements that describe that technology.]]></text>
+</component>
+
+
+
+<!--Drag and Drop-->
+<component id='ID_drag01'>
+	<text><![CDATA[802.11 WLAN]]></text>
+</component>
+
+<component id='ID_drag02'>
+	<text><![CDATA[802.3 LAN]]></text>
+</component>
+
+
+<component id="ID_txt02">
+  <text><![CDATA[Radio frequency (RF) is used to interconnect devices.]]></text> 
+  </component>
+<component id="ID_txt03">
+  <text><![CDATA[Collision Avoidance (CSMA/CA)]]></text> 
+  </component>
+  
+<component id="ID_txt04">
+  <text><![CDATA[Cables are used to interconnect devices.]]></text> 
+  </component>
+<component id="ID_txt05">
+  <text><![CDATA[Provides for better security.]]></text> 
+  </component>
+  
+<component id="ID_txt06">
+  <text><![CDATA[Additional laws and regulations in local areas may apply.]]></text> 
+  </component>
+<component id="ID_txt07">
+  <text><![CDATA[Signal interference is normally not a problem.]]></text> 
+  </component>
+  
+<component id="ID_txt08">
+  <text><![CDATA[Collision Detection (CSMA/CD)]]></text> 
+  </component>
+<component id="ID_txt09">
+  <text><![CDATA[Allows for device mobility.]]></text> 
+  </component>
+  
+  
+  
+  
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correct</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[You have successfully matched the technologies to their characteristics.]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrect</b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[You have not successfully matched the technologies to their characteristics. Please click Reset to try again.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Check</b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Reset</b>]]></text>
+</component>
+  
+</textcomponents>

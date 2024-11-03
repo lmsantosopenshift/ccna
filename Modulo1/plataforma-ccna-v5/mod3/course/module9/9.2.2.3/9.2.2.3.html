@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.2.3 Back up the License</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>IOS Licensing</h1>
+        <h2>License Verification and Management</h2>
+      </div>
+      <div id="content">
+          <p>The<span class="cmd"><b> license save </b></span>command is used to copy all licenses in a device and store them in a format required by the specified storage location. Saved licenses are restored by using the<span class="cmd"><b> license install </b></span>command.</p>
+          <p></p>
+          <p>The command to back up a copy of the licenses on a device is:</p>
+          <p></p>
+          <p>
+            <span class="cmd">Router#</span>
+            <span class="cmd">
+              <b> license save </b>
+            </span>
+            <span class="cmd">
+              <i>file-sys://lic-location</i>
+            </span>
+            <span class="cmd"></span>
+          </p>
+          <p></p>
+          <p>Use the<span class="cmd"><b> show flash0: </b></span>command to verify that the licenses have been saved (Figure 1).</p>
+          <p></p>
+          <p>The license storage location can be a directory or a URL that points to a file system. Use the<span class="cmd"><b> ? </b></span>command to see the storage locations supported by a device. </p>
+          <p></p>
+          <p>Use the Syntax Checker in Figure 2 to save all license files on router R2.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

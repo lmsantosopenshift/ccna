@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.3.3 Planning a WLAN Deployment</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless LAN Operations</h1>
+        <h2>Channel Management</h2>
+      </div>
+      <div id="content">
+          <p>Implementing a WLAN that takes the best advantage of resources and delivers the best service can require careful planning. WLANs can range from relatively simple installations to very complex and intricate designs. There should be a well-documented plan before a wireless network can be implemented.</p>
+          <p></p>
+          <p>The number of users a WLAN can support is not a straightforward calculation. The number or users depends on the geographical layout of the facility, including the number of bodies and devices that can fit in a space, the data rates users expect, the use of non-overlapping channels by multiple APs in an ESS, and transmit power settings.</p>
+          <p></p>
+          <p>Refer to the floor plan in Figure 1. When planning the location of APs, the administrator cannot simply draw coverage area circles and drop them over a plan. The approximate circular coverage area is important, but there are some additional recommendations:</p>
+          <p>
+            <ul>
+              <li>If APs are to use existing wiring or if there are locations where APs cannot be placed, note these locations on the map.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Position APs above obstructions.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Position APs vertically near the ceiling in the center of each coverage area, if possible.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Position APs in locations where users are expected to be. For example, conference rooms are typically a better location for APs than a hallway.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>When these points have been addressed, estimate the expected coverage area of an AP. This value varies depending on the WLAN standard or mix of standards that are deployed, the nature of the facility, the transmit power that the AP is configured for, and so on. Always consult the specifications for the AP when planning for coverage areas.</p>
+          <p></p>
+          <p>BSAs represent the coverage area provided by a single channel. An ESS should have 10 to 15 percent overlap between BSAs in an ESS. With a 15 percent overlap between BSAs, an SSID, and non-overlapping channels (i.e., one cell on channel 1 and the other on channel 6), roaming capability can be created.</p>
+          <p></p>
+          <p>Figure 2 provides a sample of how the BSAs could overlap.</p>
+          <p></p>
+          <p>Other factors include site surveys, which is a detailed analysis of where to locate the various APs.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

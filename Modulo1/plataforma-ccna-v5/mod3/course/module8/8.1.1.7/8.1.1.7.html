@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.1.7 Summary Route</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.1.7_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Advanced EIGRP Configurations</h1>
+        <h2>Automatic summarization </h2>
+      </div>
+      <div id="content">
+          <p>The figure illustrates a scenario where a routing loop could occur: </p>
+          <p></p>
+          <p>1. R1 has a default route, 0.0.0.0/0 via the ISP router. </p>
+          <p>2. R1 sends a routing update to R2 containing the default route.</p>
+          <p>3. R2 installs the default route from R1 in its IPv4 routing table.</p>
+          <p>4. R2’s routing table contains the 172.16.1.0/24, 172.16.2.0/24, and 172.16.3.0/24 subnets in its routing table. </p>
+          <p>5. R2 sends a summarized update to R1 for the 172.16.0.0/16 network.</p>
+          <p>6. R1 installs the summarized route for 172.16.0.0/16 via R2.</p>
+          <p>7. R1 receives a packet for 172.16.4.10. Because R1 has a route for 172.16.0.0/16 via R2, it forwards the packet to R2.</p>
+          <p>8. R2 receives the packet with the destination address 172.16.4.10 from R1. The packet does not match any specific route so using the default route in its routing table R2 forwards the packet back to R1. </p>
+          <p>9. The packet for 172.16.4.10 is looped between R1 and R2 until the TTL expires and the packet is dropped.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

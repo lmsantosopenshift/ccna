@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.4.3.2 GLBP Verification</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.4.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>First Hop Redundancy Protocols</h1>
+        <h2>FHRP Verification</h2>
+      </div>
+      <div id="content">
+          <p>Although HSRP and VRRP provide gateway resiliency, for the standby members of the redundancy group, the upstream bandwidth is not used while the device is in standby mode. </p>
+          <p></p>
+          <p>Only the active router in HSRP and VRRP groups forwards traffic for the virtual MAC address. Resources that are associated with the standby router are not fully utilized. You can accomplish some load balancing with these protocols by creating multiple groups and assigning multiple default gateways, but this configuration creates an administrative burden.</p>
+          <p></p>
+          <p>GLBP is a Cisco proprietary solution to allow automatic selection and simultaneous use of multiple available gateways in addition to automatic failover between those gateways. Multiple routers share the load of frames that, from a client perspective, are sent to a single default gateway address, as shown in Figure 1.</p>
+          <p></p>
+          <p>With GLBP, you can fully utilize resources without the administrative burden of configuring multiple groups and managing multiple default gateway configurations. GLBP has the following characteristics:</p>
+          <p></p>
+          <p>
+            <ul>
+              <li>Allows full use of resources on all devices without the administrative burden of creating multiple groups.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Provides a single virtual IP address and multiple virtual MAC addresses.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Routes traffic to single gateway distributed across routers.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Provides automatic rerouting in the event of any failure.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>Use the<span class="cmd"><b> show glbp </b></span>command to verify the GLBP status. Figure 2 shows that GLBP group 1 is in the active state with virtual IP address 192.168.2.100.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

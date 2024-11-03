@@ -1,0 +1,5 @@
+﻿<textcomponents>
+<component id="ID_txt01">
+<text><![CDATA[<br/><b>Upon completion of this chapter you will be able to:</b><br/><br/><textformat blockindent='-14'><ul><li>Describe the basic features of EIGRP.</li><li>Describe the types of packets used to establish and maintain an EIGRP neighbor adjacency.</li><li>Describe the encapsulation of EIGRP messages.</li><li>Configure EIGRP for IPv4 in a small routed network.</li><li>Verify an EIGRP for IPv4 implementation in a small routed network.</li><li>Explain how neighbor adjacencies are formed using EIGRP.</li><li>Explain the purpose of the metrics used by EIGRP.</li><li>Explain the operation of DUAL and the use of the topology table.</li><li>Describe events that trigger EIGRP updates.</li><li>Compare characteristics and operation of EIGRP for IPv4 to EIGRP for IPv6.</li><li>Configure EIGRP for IPv6 in a small routed network.</li><li>Verify EIGRP for IPv6 implementation in a small to medium sized network.</li></ul></textformat><br/>]]></text>
+</component> 
+</textcomponents>

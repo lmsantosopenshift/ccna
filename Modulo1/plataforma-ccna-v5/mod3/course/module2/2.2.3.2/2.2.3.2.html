@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.3.2 RSTP BPDU</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Varieties of Spanning Tree Protocols</h1>
+        <h2>Rapid PVST+</h2>
+      </div>
+      <div id="content">
+          <p>RSTP uses type 2, version 2 BPDUs. The original 802.1D STP uses type 0, version 0 BPDUs. However, a switch running RSTP can communicate directly with a switch running the original 802.1D STP. RSTP sends BPDUs and populates the flag byte in a slightly different manner than in the original 802.1D:</p>
+          <p></p>
+          <p>
+            <ul>
+              <li>Protocol information can be immediately aged on a port if Hello packets are not received for three consecutive Hello times, six seconds by default, or if the max age timer expires. </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Because BPDUs are used as a keepalive mechanism, three consecutively missed BPDUs indicate lost connectivity between a bridge and its neighboring root or designated bridge. The fast aging of the information allows failures to be detected quickly.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>
+            <b>Note</b>: Like STP, an RSTP switch sends a BPDU with its current information every Hello time period (two seconds, by default), even if the RSTP bridge does not receive any BPDUs from the root bridge. </p>
+          <p></p>
+          <p>As shown in the figure, RSTP uses the flag byte of version 2 BPDU:</p>
+          <p></p>
+          <p>
+            <ul>
+              <li>Bits 0 and 7 are used for topology change and acknowledgment as they are in the original 802.1D. </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Bits 1 and 6 are used for the Proposal Agreement process (used for rapid convergence).</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Bits from 2 to 5 encode the role and state of the port.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Bits 4 and 5 are used to encode the port role using a 2-bit code.</li>
+            </ul>
+          </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

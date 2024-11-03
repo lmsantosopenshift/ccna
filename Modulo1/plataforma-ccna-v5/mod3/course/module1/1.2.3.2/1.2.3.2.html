@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.3.2 In-Band versus Out-of-Band Management</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Selecting Network Devices</h1>
+        <h2>Managing Devices</h2>
+      </div>
+      <div id="content">
+          <p>Regardless of the Cisco IOS network device being implemented, there are two methods for connecting a PC to that network device for configuration and monitoring tasks. These methods include out-of-band and in-band management, as shown in the figure. </p>
+          <p></p>
+          <p>Out-of-band management is used for initial configuration or when a network connection is unavailable. Configuration using out-of-band management requires:</p>
+          <p>
+            <ul>
+              <li>Direct connection to console or AUX port</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Terminal emulation client</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>In-band management is used to monitor and make configuration changes to a network device over a network connection. Configuration using in-band management requires:</p>
+          <p>
+            <ul>
+              <li>At least one network interface on the device to be connected and operational </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Telnet, SSH, or HTTP to access a Cisco device</li>
+            </ul>
+          </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

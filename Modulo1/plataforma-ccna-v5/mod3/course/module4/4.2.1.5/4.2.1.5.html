@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.1.5 Control Frames </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless LAN Operations</h1>
+        <h2>802.11 Frame Structure</h2>
+      </div>
+      <div id="content">
+          <p>Control frames are used to manage the information exchange between a wireless client and an AP. They help prevent collisions from occurring on the wireless medium. </p>
+          <p></p>
+          <p>The figure displays the field value of common control frames including:</p>
+          <p>
+            <ul>
+              <li>
+                <b>Request to Send (RTS) frame </b>- The RTS and CTS frames provide an optional collision reduction scheme for APs with hidden wireless clients. A wireless client sends an RTS frame as the first step in the two-way handshake, which is required before sending data frames.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Clear to Send (CTS) frame </b>- A wireless AP responds to an RTS frame with a CTS frame. It provides clearance for the requesting wireless client to send a data frame. The CTS contributes to collision control management by including a time value. This time delay minimizes the chance that other wireless clients will transmit while the requesting client transmits.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Acknowledgment (ACK) frame </b>- After receiving a data frame, the receiving wireless client sends an ACK frame to the sending client if no errors are found. If the sending client does not receive an ACK frame within a predetermined period of time, the sending client resends the frame.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>Control frames are integral to wireless transmission and play a significant role in the media contention method used by wireless, known as Carrier Sense Multiple Access with Collision Avoidance (CSMA/CA).  </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

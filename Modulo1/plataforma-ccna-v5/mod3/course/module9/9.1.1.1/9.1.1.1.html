@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.1.1 Cisco IOS Software Release Families and Trains </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Managing IOS System Files</h1>
+        <h2>Naming Conventions</h2>
+      </div>
+      <div id="content">
+          <p>Cisco IOS Software has evolved from a single platform operating system for routing, to a sophisticated operating system that supports a large array of features and technologies such as VoIP, NetFlow, and IPsec. To better meet the requirements of the different market segments, the software is organized into software release families and software trains.</p>
+          <p></p>
+          <p>A software release family is comprised of multiple IOS software release versions that: </p>
+          <p>
+            <ul>
+              <li>Share a code base</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Apply to related hardware platforms</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Overlap in support coverage (as one OS comes to end-of-life, another OS is introduced and supported) </li>
+            </ul>
+          </p>
+          <p></p>
+          <p>Examples of IOS software releases, within a software release family, include 12.3, 12.4, 15.0, and 15.1. </p>
+          <p></p>
+          <p>Along with each software release, there are new versions of the software created to implement bug fixes and new features. IOS refers to these versions as trains.</p>
+          <p></p>
+          <p>A Cisco IOS train is used to deliver releases with a common code base to a specific set of platforms and features. A train may contain several releases, each release being a snapshot of the code base of the train at the moment of the release. Because different software release families can apply to different platforms or market segments, several trains can be current at any point in time. </p>
+          <p></p>
+          <p>This chapter examines the trains of both IOS 12.4 and 15.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

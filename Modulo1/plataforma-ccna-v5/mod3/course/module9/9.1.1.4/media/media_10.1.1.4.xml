@@ -1,0 +1,32 @@
+<textcomponents>
+	<component id="ID_title">
+		<text><![CDATA[<b>Cisco System Image Packaging</b>]]></text>
+	</component>
+	<component id="ID_txt01">
+		<text><![CDATA[<b>Premium Packages</b>]]></text>
+	</component>
+	<component id="ID_txt02">
+		<text><![CDATA[<b>Advanced Enterprise Services</b><br/>(Full Cisco IOS Software)]]></text> 
+	</component>
+	<component id="ID_txt03">
+		<text><![CDATA[<b>Advanced IP Services</b><br/>(Merge Advanced Security & SP Services)<br/><font color="#652C8A"><b>IPv6</b></font>]]></text> 
+	</component>
+	<component id="ID_txt04">
+		<text><![CDATA[<b>Enterprise Services</b><br/>(Merge Enterprise Base & SP Services)]]></text> 
+	</component>
+	<component id="ID_txt05">
+		<text><![CDATA[<b>Advanced Security</b><br/>(Add Security & VPN)<br /><font color="#652C8A"><b>Cisco IOS Firewall, IDS/IPS,<br/>IPsec, 3DES, VPN</b></font>]]></text> 
+	</component>
+	<component id="ID_txt06">
+		<text><![CDATA[<b>SP Services</b><br/>(Add SP Services)<br/><font color="#652C8A"><b>SSH/SSL, ATM, VoATM,<br/>MPLS</b></font>]]></text> 
+	</component>
+	<component id="ID_txt07">
+		<text><![CDATA[<b>Enterprise Base</b><br/>(Add Multiprotocol Services)<br/><font color="#652C8A"><b>AppleTalk, IPX, and IBM<br/>Layer 3 Routed Protocols</b></font>]]></text> 
+	</component>
+	<component id="ID_txt08">
+		<text><![CDATA[<b>IP Voice</b><br/>(Add Voice)<br/><font color="#652C8A"><b>VoIP and VoFR</b></font>]]></text> 
+	</component>
+	<component id="ID_txt09">
+		<text><![CDATA[<b>IP Base</b><br/>Entry Level Cisco IOS<br/><font color="#652C8A"><b>IPv4, Trunking, and DSL</b></font>]]></text> 
+	</component>
+</textcomponents>

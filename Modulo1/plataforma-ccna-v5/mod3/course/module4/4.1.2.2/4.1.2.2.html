@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.2.2 Wireless Home Router</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless Concepts</h1>
+        <h2>Components of WLANs</h2>
+      </div>
+      <div id="content">
+          <p>The type of infrastructure device that an end device associates and authenticates with varies on the size and requirement of the WLAN. </p>
+          <p></p>
+          <p>For instance, a home user typically interconnects wireless devices using a small, integrated wireless router. These smaller, integrated routers serve as:</p>
+          <p>
+            <ul>
+              <li>
+                <b>Access point </b>- Provides 802.11a/b/g/n/ac wireless access </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Switch </b>- Provides a four-port, full-duplex, 10/100/1000 Ethernet switch to connect wired devices </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Router </b>- Provides a default gateway for connecting to other network infrastructures</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>For example, the Cisco Linksys EA6500 router, shown in Figure 1, is commonly implemented as a small business or residential wireless access device. The wireless router connects to the ISP DLS modem and advertises its services by sending beacons containing its shared service set identifier (SSID). Internal devices wirelessly discover the router SSID and attempt to associate and authenticate with it to access the Internet. </p>
+          <p></p>
+          <p>The expected load on the Linksys EA6500 router, in this environment, is low enough that it should be able to manage the provision of WLAN, 802.3 Ethernet, and connect to an ISP. It also provides advanced features, such as high-speed access, optimized to support video streaming, IPv6 enabled, provide QoS, easy setup using Wi-Fi WPS, USB ports to connect printers or portable drives. </p>
+          <p></p>
+          <p>Additionally, for home users that want to extend their network services, both wireless and wired, wireless Powerline adapters can be implemented. With these devices, a device can connect directly to the network through electrical outlets, which is ideal for HD video streaming and online gaming. They are easy to set up: simply plug into wall outlet or power strip and connect the device with a push of a button.</p>
+          <p></p>
+          <p>Click the Play button in Figure 2 to see an overview of the Linksys Powerline adapters.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

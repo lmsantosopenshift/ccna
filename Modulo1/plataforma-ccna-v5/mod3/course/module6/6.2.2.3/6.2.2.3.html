@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.2.3 Interarea Route Summarization</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuring Multiarea OSPF</h1>
+        <h2>OSPF Route Summarization</h2>
+      </div>
+      <div id="content">
+          <p>OSPF does not perform auto-summarization. Interarea summarization must be manually configured on ABRs.</p>
+          <p></p>
+          <p>Summarization of internal routes can only be done by ABRs. When summarization is enabled on an ABR, it injects into the backbone a single type 3 LSA describing the summary route. Multiple routes inside the area are summarized by the one LSA.</p>
+          <p>A summary route is generated if at least one subnet within the area falls in the summary address range. The summarized route metric is equal to the lowest cost of all subnets within the summary address range.</p>
+          <p></p>
+          <p>
+            <b>Note</b>: An ABR can only summarize routes that are within the areas connected to the ABR. </p>
+          <p></p>
+          <p>Figure 1 shows a multiarea OSPF topology. The routing tables of R1 and R3 are examined to see the effect of the summarization. </p>
+          <p></p>
+          <p>Figure 2 displays the R1 routing table before summarization is configured, while Figure 3 displays the R3 routing table. Notice how R3 currently has two interarea entries to the R1 area 1 networks. </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

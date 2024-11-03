@@ -1,0 +1,119 @@
+<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Content of the Frame Control Field</b>]]></text> 
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[Header]]></text> 
+</component>
+
+<component id="ID_s1_txt02">
+<text><![CDATA[Payload]]></text> 
+</component>
+
+
+<component id="ID_s1_txt03">
+<text><![CDATA[FCS]]></text> 
+</component>
+
+<component id="ID_s1_txt04">
+<text><![CDATA[Frame Control]]></text> 
+</component>
+
+
+<component id="ID_s1_txt05">
+<text><![CDATA[Duration]]></text> 
+</component>
+
+<component id="ID_s1_txt06">
+<text><![CDATA[Address1]]></text> 
+</component>
+
+
+<component id="ID_s1_txt07">
+<text><![CDATA[Address2]]></text> 
+</component>
+
+<component id="ID_s1_txt08">
+<text><![CDATA[Address3]]></text> 
+</component>
+
+
+<component id="ID_s1_txt09">
+<text><![CDATA[Sequence Control]]></text> 
+</component>
+
+<component id="ID_s1_txt10">
+<text><![CDATA[Address4]]></text> 
+</component>
+
+<component id="ID_s1_txt11">
+<text><![CDATA[Payload]]></text> 
+</component>
+
+<component id="ID_s1_txt12">
+<text><![CDATA[FCS]]></text> 
+</component>
+
+
+
+<component id="ID_s1_txt13">
+<text><![CDATA[Protocol Version]]></text> 
+</component>
+
+<component id="ID_s1_txt14">
+<text><![CDATA[Frame Type]]></text> 
+</component>
+
+
+<component id="ID_s1_txt15">
+<text><![CDATA[<b><font color='#652C8A'>Frame Subtype</font></b>]]></text> 
+</component>
+
+<component id="ID_s1_txt16">
+<text><![CDATA[ToDS]]></text> 
+</component>
+
+
+<component id="ID_s1_txt17">
+<text><![CDATA[FromDS]]></text> 
+</component>
+
+<component id="ID_s1_txt18">
+<text><![CDATA[More Fragments]]></text> 
+</component>
+
+
+<component id="ID_s1_txt19">
+<text><![CDATA[Retry]]></text> 
+</component>
+
+<component id="ID_s1_txt20">
+<text><![CDATA[Power Management]]></text> 
+</component>
+
+
+<component id="ID_s1_txt21">
+<text><![CDATA[More Data]]></text> 
+</component>
+
+<component id="ID_s1_txt22">
+<text><![CDATA[Security]]></text> 
+</component>
+
+<component id="ID_s1_txt23">
+<text><![CDATA[Reserved]]></text> 
+</component>
+
+
+<component id="ID_s1_txt24">
+<text><![CDATA[0x<b><font color='#652C8A'>1B</font></b> - Request to Send (RTS)<br/>0x<b><font color='#652C8A'>1C</font></b> - Clear to Send (CTS)<br/>0x<b><font color='#652C8A'>1D</font></b> - Acknowledge (ACK)]]></text> 
+</component>
+
+
+
+
+
+
+	
+</textcomponents>

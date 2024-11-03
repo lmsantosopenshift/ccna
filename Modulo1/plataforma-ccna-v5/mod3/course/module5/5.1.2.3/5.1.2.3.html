@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.2.3 OSPF Designated Router</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Advanced Single-Area OSPF Configurations </h1>
+        <h2>OSPF in Multiaccess Networks</h2>
+      </div>
+      <div id="content">
+          <p>The solution to managing the number of adjacencies and the flooding of LSAs on a multiaccess network is the DR. On multiaccess networks, OSPF elects a DR to be the collection and distribution point for LSAs sent and received. A BDR is also elected in case the DR fails. The BDR listens passively to this exchange and maintains a relationship with all the routers. If the DR stops producing Hello packets, the BDR promotes itself and assumes the role of DR.</p>
+          <p></p>
+          <p>All other non-DR or BDR routers become DROTHER (a router that is neither the DR nor the BDR). </p>
+          <p></p>
+          <p>In Figure 1, R1 has been elected as the designated router for the Ethernet LAN interconnecting R2, R3, and R4. Notice how the number of adjacencies has been reduced to 3.</p>
+          <p></p>
+          <p>Routers on a multiaccess network elect a DR and BDR. DROTHERs only form full adjacencies with the DR and BDR in the network. Instead of flooding LSAs to all routers in the network, DROTHERs only send their LSAs to the DR and BDR using the multicast address 224.0.0.6 (all DR routers). </p>
+          <p></p>
+          <p>Click the Play button in Figure 2 to see the animation of the role of DR. In the animation, R1 sends LSAs to the DR. The BDR also listens. The DR is responsible for forwarding the LSAs from R1 to all other routers. The DR uses the multicast address 224.0.0.5 (all OSPF routers). The end result is that there is only one router doing all of the flooding of all LSAs in the multiaccess network.</p>
+          <p></p>
+          <p>
+            <b>Note</b>: DR/BDR elections only occur in multiaccess networks and do not occur in point-to-point networks. </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.3.2 Verify General Multiarea OSPF Settings</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuring Multiarea OSPF</h1>
+        <h2>Verifying Multiarea OSPF</h2>
+      </div>
+      <div id="content">
+          <p>Use the<span class="cmd"><b> show ip protocols </b></span>command to verify the OSPF status. The output of the command reveals which routing protocols are configured on a router. It also includes routing protocol specifics such as the router ID, number of areas in the router, and networks included within the routing protocol configuration. </p>
+          <p></p>
+          <p>Figure 1 displays the OSPF settings of R1. Notice that the command shows that there are two areas. The<span class="cmd"> Routing for Networks </span>section identifies the networks and their respective areas.</p>
+          <p></p>
+          <p>Use the<span class="cmd"><b> show ip ospf interface brief </b></span>command to display concise OSPF-related information of OSPF-enabled interfaces. This command reveals useful information, such as the OSPF process ID that the interface is assigned to, the area that the interfaces are in, and the cost of the interface. </p>
+          <p></p>
+          <p>Figure 2 verifies the OSPF-enabled interfaces and the areas to which they belong.</p>
+          <p></p>
+          <p>Use the Syntax Checker in Figure 3 to verify general settings on R2 and R3.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

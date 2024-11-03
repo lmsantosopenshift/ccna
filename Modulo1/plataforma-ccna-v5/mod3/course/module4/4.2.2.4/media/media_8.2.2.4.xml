@@ -1,0 +1,46 @@
+<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>AP Broadcasts Periodic Beacon Frames</b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+<text><![CDATA[Sender]]></text>
+</component>
+<component id="ID_s1_txt02">
+  <text><![CDATA[Receiver]]></text> 
+  </component>
+  
+<component id="ID_s1_txt03">
+  <text><![CDATA[<B>Probe Request Frame (0x04)</B>]]></text> 
+  </component>
+<component id="ID_s1_txt03_list">
+  <text><![CDATA[<textformat blockindent='-16'><ul><li>SSID</li><li>Supported standards</li></ul></textformat>]]></text> 
+  </component>
+  
+<component id="ID_s1_txt04">
+  <text><![CDATA[<B>Probe Response Frame (0x05)</B>]]></text> 
+  </component>
+<component id="ID_s1_txt04_list">
+  <text><![CDATA[<textformat blockindent='-16'><ul><li>SSID</li><li>Supported standards</li><li>Security settings</li></ul></textformat>]]></text> 
+  </component>  
+  
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Client Devices Listen for an AP</b>]]></text>
+</component>
+<component id="ID_s2_txt01">
+<text><![CDATA[Sender]]></text>
+</component>
+<component id="ID_s2_txt02">
+  <text><![CDATA[Receiver]]></text> 
+  </component>
+<component id="ID_s2_txt03">
+  <text><![CDATA[<B>Beacon Frame (0x08)</B><BR/><textformat blockindent='-16'><ul><li>SSID</li><li>Supported standards</li><li>Security settings</li></ul></textformat>]]></text> 
+  </component>
+  <component id="ID_s2_txt04">
+  <text><![CDATA[<B>Beacon Frame (0x08)</B><BR/><textformat blockindent='-16'><ul><li>SSID</li><li>Supported standards</li><li>Security settings</li></ul></textformat>]]></text> 
+  </component>
+   <component id="ID_s2_txt05">
+  <text><![CDATA[<B>Beacon Frame (0x08)</B><BR/><textformat blockindent='-16'><ul><li>SSID</li><li>Supported standards</li><li>Security settings</li></ul></textformat>]]></text> 
+  </component>
+
+</textcomponents>

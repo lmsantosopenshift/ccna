@@ -1,0 +1,147 @@
+﻿<textcomponents>
+
+<!--slide 1-->
+<component id='ID_s1_title'>
+	<text><![CDATA[<b>Enable a Router with OSPF</b>]]></text>
+</component>
+
+<!--slide 2-->
+<component id='ID_s2_title'>
+	<text><![CDATA[<b>Running Configuration</b>]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+	<text><![CDATA[&lt;output omitted&gt;]]></text>
+</component>
+	
+<!--slide 3-->
+<component id="ID_s3_title">
+	<text><![CDATA[<b>Basic Router Configuration Commands</b>]]></text>
+</component>
+
+<component id="ID_sc_reset">
+	<text><![CDATA[Reset]]></text>
+</component>
+<component id="ID_sc_showme">
+	<text><![CDATA[Show Me]]></text>
+</component>
+<component id="ID_sc_showall">
+	<text><![CDATA[Show All]]></text>
+</component>
+	
+<component id="ID_SC3" fontFace='Courier New' fontSize="10">
+	<feedback id="fb"><![CDATA[<b><font size = '10' face="Arial" color="#0000FF">***You must enter the exact and full command. Commands that include a name or password are case-sensitive.***</font></b>
+	]]></feedback>
+	<existingcommands><![CDATA[<font size = '10' face="Arial"><b>Configure the following on the router:<ul><li>Set the hostname to R1<li>Set the encrypted privileged EXEC password to 'class'<li>Set the console password to 'cisco' and require a login<li>Set the console timeout to never expire<li>Set the password on all 16 vty lines to 'cisco' and require a login<li>Exit to global configuration mode</li></ul></b></font>]]></existingcommands>
+	<command prompt="Router#">
+	<correctresponse><![CDATA[configure terminal]]></correctresponse>
+	</command>
+	<command prompt="Router(config)#">
+	<correctresponse><![CDATA[hostname R1]]></correctresponse>
+	</command>
+	<command prompt="R1(config)#">
+	<correctresponse><![CDATA[enable secret class]]></correctresponse>
+	</command>
+	<command prompt="R1(config)#">
+	<correctresponse><![CDATA[line console 0]]></correctresponse>
+	</command>
+	<command prompt="R1(config-line)#">
+	<correctresponse><![CDATA[password cisco]]></correctresponse>
+	</command>
+	<command prompt="R1(config-line)#">
+	<correctresponse><![CDATA[login]]></correctresponse>
+	</command>
+	<command prompt="R1(config-line)#">
+	<correctresponse><![CDATA[exec-timeout 0 0]]></correctresponse>
+	</command>
+	<command prompt="R1(config-line)#">
+	<correctresponse><![CDATA[line vty 0 15]]></correctresponse>
+	</command>
+	<command prompt="R1(config-line)#">
+	<correctresponse><![CDATA[password cisco]]></correctresponse>
+	</command>
+	<command prompt="R1(config-line)#">
+	<correctresponse><![CDATA[login]]></correctresponse>
+	</command>
+	
+	<command prompt="R1(config-line)#">
+	<correctresponse><![CDATA[exit]]></correctresponse>
+	<instruction><![CDATA[<font size = '10' face="Arial"><b>Configure the router to encrypt all plaintext passwords.</b></font>]]></instruction>
+	</command>
+	<command prompt="R1(config)#">
+	<correctresponse><![CDATA[service password-encryption]]></correctresponse>
+	<instruction><![CDATA[<font size = '10' face="Arial"><b>Set the MOTD to <font color="#0000FF">Authorized Access Only!</font> using a <font color="#0000FF">$</font> as the delimiter character.</b></font>]]></instruction>
+	</command>
+	<command prompt="R1(config)#">
+	<correctresponse><![CDATA[banner motd $Authorized Access Only!$]]></correctresponse>
+	<instruction><![CDATA[<font size = '10' face="Arial"><b>Configure the interfaces in order with the following parameters:<br>- GigabitEthernet0/0<ul><li><font color="#010000">D</font>escription of <font color="#0000FF">Link to LAN 1</font></li><li>IP address 172.16.1.1/24</li><li>Activate the interface</li></ul>- Serial0/0/0<ul><li><font color="#010000">D</font>escription of <font color="#0000FF">Link to R2</font></li><li>IP address 172.16.3.1/30</li><li>Clock rate 128000</li><li>Activate the interface</li></ul>- Serial0/0/1<ul><li><font color="#010000">D</font>escription of  <font color="#0000FF">Link to R3</font></li><li>IP address 192.168.10.5/30</li><li>Activate the interface</li></ul></b></font>]]></instruction>
+	</command>
+	<command prompt="R1(config)#">
+	<correctresponse><![CDATA[interface GigabitEthernet0/0]]></correctresponse>
+	</command>
+	<command prompt="R1(config-if)#">
+	<correctresponse><![CDATA[description Link to LAN 1]]></correctresponse>
+	</command>
+	<command prompt="R1(config-if)#">
+	<correctresponse><![CDATA[ip address 172.16.1.1 255.255.255.0]]></correctresponse>
+	</command>
+	<command prompt="R1(config-if)#">
+	<correctresponse><![CDATA[no shutdown]]></correctresponse>
+	</command>
+	<command prompt="R1(config-if)#">
+	<correctresponse><![CDATA[interface Serial0/0/0]]></correctresponse>
+	</command>
+	<command prompt="R1(config-if)#">
+	<correctresponse><![CDATA[description Link to R2]]></correctresponse>
+	</command>
+	<command prompt="R1(config-if)#">
+	<correctresponse><![CDATA[ip address 172.16.3.1 255.255.255.252]]></correctresponse>
+	</command>
+	<command prompt="R1(config-if)#">
+	<correctresponse><![CDATA[clock rate 128000]]></correctresponse>
+	</command>
+	<command prompt="R1(config-if)#">
+	<correctresponse><![CDATA[no shutdown]]></correctresponse>
+	</command>
+	<command prompt="R1(config-if)#">
+	<correctresponse><![CDATA[interface Serial0/0/1]]></correctresponse>
+	</command>
+	<command prompt="R1(config-if)#">
+	<correctresponse><![CDATA[description Link to R3]]></correctresponse>
+	</command>
+	<command prompt="R1(config-if)#">
+	<correctresponse><![CDATA[ip address 192.168.10.5 255.255.255.252]]></correctresponse>
+	</command>
+	<command prompt="R1(config-if)#">
+	<correctresponse><![CDATA[no shutdown]]></correctresponse>
+	<instruction><![CDATA[<font size = '10' face="Arial"><b>Configure the OSPF routing protocol with the following:<ul><li>Process ID 10<li>Router ID 1.1.1.1<li>Advertise the 172.16.1.0/24 network for area 0<li>Advertise the 172.16.3.0/30 network for area 0<li>Advertise the 192.168.10.4/30 network for area 0</li></ul></b></font>]]></instruction>
+	</command>
+	<command prompt="R1(config-if)#">
+	<correctresponse><![CDATA[router ospf 10]]></correctresponse>
+	</command>
+	<command prompt="R1(config-router)#">
+	<correctresponse><![CDATA[router-id 1.1.1.1]]></correctresponse>
+	</command>
+	<command prompt="R1(config-router)#">
+	<correctresponse><![CDATA[network 172.16.1.0 0.0.0.255 area 0]]></correctresponse>
+	</command>
+	<command prompt="R1(config-router)#">
+	<correctresponse><![CDATA[network 172.16.3.0 0.0.0.3 area 0]]></correctresponse>
+	</command>
+	<command prompt="R1(config-router)#">
+	<correctresponse><![CDATA[network 192.168.10.4 0.0.0.3 area 0]]></correctresponse>
+	<instruction><![CDATA[<font size = '10' face="Arial"><b>Return directly to privileged EXEC mode and display the current configuration.</b></font>]]></instruction>
+	</command>
+	<command prompt="R1(config-router)#">
+	<correctresponse><![CDATA[end]]></correctresponse>
+	</command>
+	<command prompt="R1#">
+	<correctresponse><![CDATA[show running-config]]></correctresponse>
+	<deviceresponse><![CDATA[Building configuration… <br> <br>Current configuration : 1242 bytes <br>! <br>Version 15.1 <br>Service timestamps debug datetime msec <br>Service timestamps log datetime msec <br>Service password-encryption <br>! <br>hostname R1 <br>! <br>enable secret class <br>! <br>&lt;output omitted&gt; <br>! <br>interface GigabitEthernet0/0 <br> description Link to LAN 1 <br> ip address 172.16.1.1 255.255.255.0 <br> no shutdown <br>! <br>interface Serial0/0/0 <br> description Link to R2 <br> ip address 172.16.3.1 255.255.255.252 <br> clock rate 128000 <br> no shutdown <br>! <br>interface Serial0/0/1 <br> description Link to R3 <br> ip address 192.168.10.5 255.255.255.252 <br> no shutdown <br>! <br>router ospf 10 <br> router-id 1.1.1.1 <br> network 172.16.1.0 0.0.0.255 area 0 <br> network 172.16.3.0 0.0.0.3 area 0 <br> network 192.168.10.4 0.0.0.3 area 0 <br>! <br>banner motd ^C Authorized Access Only! ^C <br>! <br>line console 0 <br> password cisco <br> login <br> exec-timeout 0 0 <br>Line aux 0 <br>line vty 0 4 <br> password cisco <br> login<br>R1#]]></deviceresponse>
+	<instruction><![CDATA[<font size = '10' face="Arial"><b>You successfully completed the basic configurations on router R1.</b></font>]]></instruction>
+	</command>
+	
+	<command prompt=""/>
+</component>
+
+</textcomponents>

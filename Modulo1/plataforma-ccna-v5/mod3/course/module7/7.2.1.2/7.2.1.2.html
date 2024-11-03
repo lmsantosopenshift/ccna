@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.2.1.2 Autonomous System Numbers</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.2.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuring EIGRP for IPv4</h1>
+        <h2>Configuring EIGRP with IPv4</h2>
+      </div>
+      <div id="content">
+          <p>EIGRP uses the<span class="cmd"><b> router eigrp </b></span><span class="cmd"><i>autonomous-system</i></span><span class="cmd"><b></b></span> command to enable the EIGRP process. The autonomous system number referred to in the EIGRP configuration is not associated with the Internet Assigned Numbers Authority (IANA) globally assigned autonomous system numbers used by external routing protocols. </p>
+          <p></p>
+          <p>So what is the difference between the IANA globally assigned autonomous system number and the EIGRP autonomous system number?</p>
+          <p></p>
+          <p>An IANA globally assigned autonomous system is a collection of networks under the administrative control of a single entity that presents a common routing policy to the Internet. In the figure, companies A, B, C, and D are all under the administrative control of ISP1. ISP1 presents a common routing policy for all of these companies when advertising routes to ISP2. </p>
+          <p></p>
+          <p>The guidelines for the creation, selection, and registration of an autonomous system are described in RFC 1930. Global autonomous system numbers are assigned by IANA, the same authority that assigns IP address space. The local regional Internet registry (RIR) is responsible for assigning an autonomous system number to an entity from its block of assigned autonomous system numbers. Prior to 2007, autonomous system numbers were 16-bit numbers ranging from 0 to 65,535. Today, 32-bit autonomous system numbers are assigned increasing the number of available autonomous system numbers to over 4 billion. </p>
+          <p></p>
+          <p>Usually Internet Service Providers (ISPs), Internet backbone providers, and large institutions connecting to other entities require an autonomous system number. These ISPs and large institutions use the exterior gateway routing protocol, Border Gateway Protocol (BGP), to propagate routing information. BGP is the only routing protocol that uses an actual autonomous system number in its configuration. </p>
+          <p></p>
+          <p>The vast majority of companies and institutions with IP networks do not need an autonomous system number, because they are controlled by a larger entity, such as an ISP. These companies use interior gateway protocols, such as RIP, EIGRP, OSPF, and IS-IS to route packets within their own networks. They are one of many independent and separate networks within the autonomous system of the ISP. The ISP is responsible for the routing of packets within its autonomous system and between other autonomous systems.</p>
+          <p></p>
+          <p>The autonomous system number used for EIGRP configuration is only significant to the EIGRP routing domain. It functions as a process ID to help routers keep track of multiple, running instances of EIGRP. This is required because it is possible to have more than one instance of EIGRP running on a network. Each instance of EIGRP can be configured to support and exchange routing updates for different networks.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

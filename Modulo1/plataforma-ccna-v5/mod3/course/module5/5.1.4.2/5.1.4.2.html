@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.4.2 Modifying OSPFv2 Intervals</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.4.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Advanced Single-Area OSPF Configurations </h1>
+        <h2>Fine-tuning OSPF Interfaces</h2>
+      </div>
+      <div id="content">
+          <p>It may be desirable to change the OSPF timers so that routers detect network failures in less time. Doing this increases traffic, but sometimes the need for quick convergence is more important than the extra traffic it creates.</p>
+          <p></p>
+          <p>
+            <b>Note</b>: The default Hello and Dead intervals are based on best practices and should only be altered in rare situations. </p>
+          <p></p>
+          <p>OSPF Hello and Dead intervals can be modified manually using the following interface configuration mode commands: </p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">
+                  <b>ip ospf hello-interval </b>
+                </span>
+                <span class="cmd">
+                  <i>seconds</i>
+                </span>
+              </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">
+                  <b>ip ospf dead-interval </b>
+                </span>
+                <span class="cmd">
+                  <i>seconds</i>
+                </span>
+              </li>
+            </ul>
+          </p>
+          <p></p>
+          <p>Use the<span class="cmd"><b> no ip ospf hello-interval </b></span>and<span class="cmd"><b> no ip ospf dead-interval </b></span>commands to reset the intervals to their default.</p>
+          <p></p>
+          <p>The example in Figure 1 modifies the Hello interval to 5 seconds. Immediately after changing the Hello interval, the Cisco IOS automatically modifies the Dead interval to four times the Hello interval. However, it is always good practice to explicitly modify the timer instead of relying on an automatic IOS feature so that modifications are documented in the configuration. Therefore, the Dead interval is also manually set to 20 seconds on the R1 Serial 0/0/0 interface.</p>
+          <p></p>
+          <p>As displayed by the highlighted OSPFv2 adjacency message in Figure 1, when the Dead Timer on R1 expires, R1 and R2 lose adjacency. The reason is because the values have only been altered on one side of the serial link between R1 and R2. Recall that the OSPF Hello and Dead intervals must match between neighbors. </p>
+          <p></p>
+          <p>Use the<span class="cmd"><b> show ip ospf neighbor </b></span>command on R1 to verify the neighbor adjacencies, as shown in Figure 2. Notice that the only neighbor listed is the 3.3.3.3 (R3) router and that R1 is no longer adjacent with the 2.2.2.2 (R2) neighbor. The timers set on Serial 0/0/0 do not affect the neighbor adjacency with R3.</p>
+          <p></p>
+          <p>To restore adjacency between R1 and R2, the R2 Serial 0/0/0 interface Hello interval is set to<span class="cmd"><b> 5 </b></span>seconds, as shown in Figure 3. Almost immediately, the IOS displays a message that adjacency has been established with a state of<span class="cmd"><b> FULL</b></span>.</p>
+          <p></p>
+          <p>Verify the interface intervals using the<span class="cmd"><b> show ip ospf interface </b></span>command, as shown in Figure 4. Notice that the Hello time is 5 seconds and that the Dead Time was automatically set to 20 seconds instead of the default 40 seconds. Remember that the OSPF automatically sets the Dead interval to four times the Hello interval.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

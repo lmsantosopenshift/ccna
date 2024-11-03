@@ -1,0 +1,42 @@
+<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Cloud Managed Wireless AP</b>]]></text>
+</component>
+
+
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>MR Cloud Managed Wireless Access Points</b>]]></text>
+</component>
+
+<component id="ID_s2_btn01_header">
+<text><![CDATA[<b>MR12, MR16, and MR24 Cloud Managed Wireless APs</b>]]></text>
+</component>
+<component id="ID_s2_btn01_body">
+<text><![CDATA[<textformat blockindent="-14"><ul><li>Indoor, cloud managed 802.11n APs.</li><li>Self-configuring, plug-and-play deployment.</li><li>Self-healing, zero-configuration mesh.</li><li>The MR12 is for teleworker environments while the MR24 is for large enterprise deployments.</li><li>Cisco recommends using the MR12 for small branches and low-density deployments.</li><li>The MR16 is recommended for organizations that are mobility-intensive.</li><li>The MR24 is ideal for performance critical wireless LANs and high-density environments.</li></ul></textformat>]]></text>
+</component>
+<component id="ID_s2_btn01_cap">
+<text><![CDATA[MR12, MR16, and MR24 Cloud Managed Wireless APs]]></text>
+</component>
+
+<component id="ID_s2_btn02_header">
+<text><![CDATA[<b>MR62 and MR66 Cloud Managed Wireless APs</b>]]></text>
+</component>
+<component id="ID_s2_btn02_body">
+<text><![CDATA[<textformat blockindent="-14"><ul><li>802.11n outdoor access points designed for harsh, rugged environments (IP-67 rated).</li><li>Enterprise-grade security with guest access and BYOD support.</li><li>Supports external antennas.</li></ul></textformat>]]></text>
+</component>
+<component id="ID_s2_btn02_cap">
+<text><![CDATA[MR62 and MR66 Cloud Managed Wireless APs]]></text>
+</component>
+
+<component id="ID_s2_btn03_header">
+<text><![CDATA[<b>Meraki Cloud Controller (MCC)</b>]]></text>
+</component>
+<component id="ID_s2_btn03_body">
+<text><![CDATA[<textformat blockindent="-14"><ul><li>The MCC is a cloud-based service that is constantly monitoring, optimizing, and reporting on the behavior of the network. </li><li>The MCC provides centralized management, optimization, and monitoring of a Meraki wireless LAN system. </li><li>The two versions of MCC available are the Meraki Enterprise Cloud Controller and Meraki Pro Cloud Controller.</li><li>The Meraki Dashboard is the web-based interface to the MCC and provides remote network monitoring and troubleshooting capabilities.</li></ul></textformat>]]></text>
+</component>
+<component id="ID_s2_btn03_cap">
+<text><![CDATA[Meraki Cloud Controller (MCC)]]></text>
+</component>
+
+</textcomponents>

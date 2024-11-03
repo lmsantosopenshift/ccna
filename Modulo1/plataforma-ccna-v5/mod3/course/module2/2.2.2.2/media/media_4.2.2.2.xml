@@ -1,0 +1,65 @@
+<textcomponents>
+   <component id="ID_title">
+      <text><![CDATA[<b>Port States</b>]]></text>
+      </component>
+<component id="ID_table">
+  <text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4' class="mtable">
+	<tr>
+		<td colspan='6' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#0E6360'><span style="color:#98D3D1">.</span></font></td>
+	</tr>
+		<tr>
+		<td bgcolor='#077A77' width="110"><font color='#ffffff'><b> </b></font></td>
+		<td colspan='5' bgcolor='#077A77'><font color='#ffffff'><p align='center'><b>Port State</b></p></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#077A77' width="110"><font color='#ffffff'><b>Operation Allowed</b></font></td>
+		<td bgcolor='#077A77' width="65"><font color='#ffffff'><b>Blocking</b></font></td>
+		<td bgcolor='#077A77' width="70"><font color='#ffffff'><b>Listening</b></font></td>
+		<td bgcolor='#077A77' width="65"><font color='#ffffff'><b>Learning</b></font></td>
+		<td bgcolor='#077A77' width="85"><font color='#ffffff'><b>Forwarding</b></font></td>
+		<td bgcolor='#077A77'><font color='#ffffff'><b>Disabled</b></font></td>
+	</tr>
+
+	<tr>
+		<td bgcolor='#EFF8F7'>Can receive and process BPDUs</td>
+		<td bgcolor='#EFF8F7'>YES</td>
+		<td bgcolor='#EFF8F7'>YES</td>
+		<td bgcolor='#EFF8F7'>YES</td>
+		<td bgcolor='#EFF8F7'>YES</td>
+		<td bgcolor='#EFF8F7'>NO</td>
+		
+	</tr>
+
+	   <tr>
+		<td bgcolor='#FFFFFF'>Can forward data frames received on interface</td>
+		<td bgcolor='#FFFFFF'>NO</td>
+		<td bgcolor='#FFFFFF'>NO</td>
+		<td bgcolor='#FFFFFF'>NO</td>
+		<td bgcolor='#FFFFFF'>YES</td>
+		<td bgcolor='#FFFFFF'>NO</td>
+	</tr>
+
+	   <tr>
+		<td bgcolor='#EFF8F7'>Can forward data frames switched from another interface</td>
+		<td bgcolor='#EFF8F7'>NO</td>
+		<td bgcolor='#EFF8F7'>NO</td>
+		<td bgcolor='#EFF8F7'>NO</td>
+		<td bgcolor='#EFF8F7'>YES</td>
+		<td bgcolor='#EFF8F7'>NO</td>
+		
+	</tr>
+
+
+	      <tr>
+		<td bgcolor='#FFFFFF'>Can learn MAC addresses</td>
+		<td bgcolor='#FFFFFF'>NO</td>
+		<td bgcolor='#FFFFFF'>NO</td>
+		<td bgcolor='#FFFFFF'>YES</td>
+		<td bgcolor='#FFFFFF'>YES</td>
+		<td bgcolor='#FFFFFF'>NO</td>
+	</tr>
+	
+	
+	</table>]]></text>
+  </component>
+</textcomponents>

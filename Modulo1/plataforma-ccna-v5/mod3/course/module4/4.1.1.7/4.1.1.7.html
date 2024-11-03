@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.1.7 Comparing WLANs to a LAN</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.1.7_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless Concepts</h1>
+        <h2>Introduction to Wireless</h2>
+      </div>
+      <div id="content">
+          <p>WLANs share a similar origin with Ethernet LANs. The IEEE has adopted the 802 LAN/MAN portfolio of computer network architecture standards. The two dominant 802 working groups are 802.3 Ethernet and 802.11 WLAN. However, there are important differences between the two.</p>
+          <p></p>
+          <p>WLANs use RF instead of cables at the physical layer and MAC sublayer of the data link layer. In comparison to cable, RF has the following characteristics:</p>
+          <p>
+            <ul>
+              <li>RF does not have boundaries, such as the limits of a wire in a sheath. This allows data frames traveling over the RF media to be available to anyone who can receive the RF signal.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>RF is unprotected from outside signals, whereas cable is in an insulating sheath. Radios operating independently in the same geographic area, but using the same or a similar RF can interfere with each other.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>RF transmission is subject to the same challenges inherent in any wave-based technology, such as consumer radio. For example, as the radio travels further away from the source, radio stations may start playing over each other and static noise increases. Eventually the signal is completely lost. Wired LANs have cables that are of an appropriate length to maintain signal strength.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>RF bands are regulated differently in various countries. The use of WLANs is subject to additional regulations and sets of standards that are not applied to wired LANs.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>WLANs also differ from wired LANs as follows:</p>
+          <p>
+            <ul>
+              <li>WLANs connect clients to the network through a wireless access point (AP) or wireless router, instead of an Ethernet switch.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>WLANs connect mobile devices that are often battery powered, as opposed to plugged-in LAN devices. Wireless NICs tend to reduce the battery life of a mobile device.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>WLANs support hosts that contend for access on the RF media (frequency bands). 802.11 prescribes collision-avoidance (CSMA/CA) instead of collision-detection (CSMA/CD) for media access to proactively avoid collisions within the media.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>WLANs use a different frame format than wired Ethernet LANs. WLANs require additional information in the Layer 2 header of the frame.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>WLANs raise more privacy issues because radio frequencies can reach outside the facility.</li>
+            </ul>
+          </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Controller-Based Wireless APs</b>]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[<b>Cisco Aironet 1600, 2600, and 3600 Series</b><br/>Robust controller-based APs]]></text>
+</component>
+
+<component id="ID_s1_txt03">
+<text><![CDATA[<b>Cisco Aironet 600 Series OfficeExtend</b><br/>Used to extend 802.11n wireless coverage to the home teleworking environment]]></text>
+</component>
+
+<component id="ID_s1_txt05">
+<text><![CDATA[<b>Cisco 1552 Series Outdoor Rugged APs</b><br/>Robust outdoor controller-based AP]]></text>
+</component>
+
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Controllers for Small and Medium-Sized Businesses</b>]]></text>
+</component>
+
+<component id="ID_s2_txt01_header">
+<text><![CDATA[<b>Cisco Virtual Controller</b>]]></text>
+</component>
+<component id="ID_s2_txt01_body">
+<text><![CDATA[<textformat blockindent="-14"><ul><li>Deployed on an x86 server that supports VMware ESXi 4.x or 5.x, 1 virtual CPU, 2 GB memory, 8 GB disk space, and 2 or more virtual Network Interface cards (vNICs).</li><li>Used to configure, manage, and troubleshoot up to 200 APs and 3000 clients.</li><li>Supports secure guest access, rogue detection for PCI compliance.</li></ul></textformat>]]></text>
+</component>
+<component id="ID_s2_txt01">
+<text><![CDATA[Cisco Virtual Controller]]></text>
+</component>
+
+<component id="ID_s2_txt02_header">
+<text><![CDATA[<b>Cisco Wireless Controller on the Cisco Services Ready Engine (SRE)</b>]]></text>
+</component>
+<component id="ID_s2_txt02_body">
+<text><![CDATA[<textformat blockindent="-14"><ul><li>Integrated Services Module 300 (ISM-300) supports up to 10 APs.</li><li>Cisco Services-Ready Engine Module 710 and 910 (SM-710) and (SM-910) supports up to 50 AP and 500 clients.</li><li> PCI functionality for scanner and kiosk support.</li></ul></textformat>]]></text>
+</component>
+<component id="ID_s2_txt02">
+<text><![CDATA[Cisco Wireless Controller on the Cisco Services Ready Engine (SRE)]]></text>
+</component>
+
+<component id="ID_s2_txt03_header">
+<text><![CDATA[<b>Cisco 2500 Series</b>]]></text>
+</component>
+<component id="ID_s2_txt03_body">
+<text><![CDATA[<textformat blockindent="-14"><ul><li>Standalone, small form-factor appliance.</li><li>Four 1 Gigabit Ethernet ports (two PoE).</li><li>Support up to 75 access points and 1000 clients.</li><li>PCI functionality for scanner and kiosk.</li></ul></textformat>]]></text>
+</component>
+<component id="ID_s2_txt03">
+<text><![CDATA[Cisco 2500 Series]]></text>
+</component>
+
+
+
+<component id="ID_s2_txt09">
+<text><![CDATA[<b>Cisco 2500 Series</b>]]></text>
+</component>
+
+
+</textcomponents>

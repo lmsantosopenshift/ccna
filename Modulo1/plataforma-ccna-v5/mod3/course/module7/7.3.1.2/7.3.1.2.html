@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.1.2 EIGRP Topology Table</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1> Operation of EIGRP</h1>
+        <h2>EIGRP Initial Route Discovery</h2>
+      </div>
+      <div id="content">
+          <p>EIGRP updates contain networks that are reachable from the router sending the update. As EIGRP updates are exchanged between neighbors, the receiving router adds these entries to its EIGRP topology table. </p>
+          <p></p>
+          <p>Each EIGRP router maintains a topology table for each routed protocol configured, such as IPv4 and IPv6. The topology table includes route entries for every destination that the router learns from its directly connected EIGRP neighbors. </p>
+          <p></p>
+          <p>The figure shows the continuation of the initial route discovery process from the previous page. It now shows the update of the topology table. </p>
+          <p></p>
+          <p>When a router receives an EIGRP routing update, it adds the routing information to its EIGRP topology table and replies with an EIGRP acknowledgment. </p>
+          <p></p>
+          <p>1. R1 receives the EIGRP update from neighbor R2 and includes information about the routes that the neighbor is advertising, including the metric to each destination. R1 adds all update entries to its topology table. The topology table includes all destinations advertised by neighboring (adjacent) routers and the cost (metric) to reach each network.</p>
+          <p></p>
+          <p>2. EIGRP update packets use reliable delivery; therefore, R1 replies with an EIGRP acknowledgment packet informing R2 that it has received the update.</p>
+          <p></p>
+          <p>3. R1 sends an EIGRP update to R2 advertising the routes that it is aware of, except those learned from R2 (split horizon).</p>
+          <p></p>
+          <p>4. R2 receives the EIGRP update from neighbor R1 and adds this information to its own topology table.</p>
+          <p></p>
+          <p>5. R2 responds to the R1’s EIGRP update packet with an EIGRP acknowledgment. </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

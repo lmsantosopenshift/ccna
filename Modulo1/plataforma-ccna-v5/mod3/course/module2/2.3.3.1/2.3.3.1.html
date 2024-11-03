@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.3.3.1 Analyzing the STP Topology</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.3.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Spanning Tree Configuration</h1>
+        <h2>STP Configuration Issues</h2>
+      </div>
+      <div id="content">
+          <p>To analyze the STP topology, follow these steps:</p>
+          <p></p>
+          <p>
+            <b>Step 1.</b> Discover the Layer 2 topology. Use network documentation if it exists or use the<span class="cmd"><b> show cdp neighbors </b></span>command to discover the Layer 2 topology.</p>
+          <p></p>
+          <p>
+            <b>Step 2. </b>After discovering the Layer 2 topology, use STP knowledge to determine the expected Layer 2 path. It is necessary to know which switch is the root bridge.</p>
+          <p></p>
+          <p>
+            <b>Step 3. </b>Use the<span class="cmd"><b> show spanning-tree vlan </b></span>command to determine which switch is the root bridge.</p>
+          <p></p>
+          <p>
+            <b>Step 4. </b>Use the<span class="cmd"><b> show spanning-tree vlan </b></span>command on all switches to find out which ports are in blocking or forwarding state and confirm your expected Layer 2 path.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

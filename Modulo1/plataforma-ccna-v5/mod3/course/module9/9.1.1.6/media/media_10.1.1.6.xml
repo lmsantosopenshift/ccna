@@ -1,0 +1,60 @@
+<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Cisco IOS 15 Software Train Numbering</b>]]></text>
+</component>
+<component id="ID_txt01">
+  <text><![CDATA[New Feature Release Number]]></text> 
+  </component>
+<component id="ID_txt02">
+  <text><![CDATA[Major Release Number]]></text> 
+  </component>
+  
+<component id="ID_txt03">
+  <text><![CDATA[Minor Release Number]]></text> 
+  </component>
+  
+<component id="ID_txt04">
+  <text><![CDATA[M=Extended Maintenance Release]]></text> 
+  </component>
+  
+<component id="ID_txt05">
+  <text><![CDATA[Maintenance Rebuild Number]]></text> 
+  </component>
+  
+  
+<component id="ID_txt06">
+  <text><![CDATA[New Feature Release Number]]></text> 
+  </component>
+<component id="ID_txt07">
+  <text><![CDATA[Major Release Number]]></text> 
+  </component>
+  
+<component id="ID_txt08">
+  <text><![CDATA[Minor Release Number]]></text> 
+  </component>
+  
+<component id="ID_txt09">
+  <text><![CDATA[T=Standard Maintenance Release]]></text> 
+  </component>
+  
+<component id="ID_txt10">
+  <text><![CDATA[Maintenance Rebuild Number]]></text> 
+  </component>
+  
+<component id="ID_txt11">
+  <text><![CDATA[EM Release]]></text> 
+  </component>
+  
+<component id="ID_txt12">
+  <text><![CDATA[T Release]]></text> 
+  </component>
+ 
+<component id="ID_txt13">
+	<text><![CDATA[<font color="#FFFFFF">15.0M</font>]]></text> 
+</component>  
+ 
+<component id="ID_txt14">
+	<text><![CDATA[<font color="#FFFFFF">15.0T</font>]]></text> 
+</component>  
+  
+</textcomponents>

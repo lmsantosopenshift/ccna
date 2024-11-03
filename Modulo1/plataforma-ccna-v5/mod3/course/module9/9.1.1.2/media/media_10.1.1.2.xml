@@ -1,0 +1,63 @@
+<textcomponents>
+
+<component id="ID_title">
+  <text><![CDATA[<b>Cisco IOS Software 12.4 Release Family</b>]]></text> 
+</component>
+
+<component id="ID_txt01">
+	<text><![CDATA[12.3T(14)]]></text>
+</component>
+
+<component id="ID_txt02">
+	<text><![CDATA[12.4(1)]]></text> 
+</component>
+
+<component id="ID_txt03">
+	<text><![CDATA[12.4(3)]]></text> 
+</component>
+
+<component id="ID_txt04">
+	<text><![CDATA[12.4(5)]]></text> 
+</component>
+
+<component id="ID_txt05">
+	<text><![CDATA[12.4(7)]]></text> 
+</component>
+
+<component id="ID_txt06">
+	<text><![CDATA[12.4(8)]]></text> 
+</component>
+
+<component id="ID_txt07">
+	<text><![CDATA[12.4(2)T]]></text> 
+</component>
+
+<component id="ID_txt08">
+	<text><![CDATA[12.4(4)T]]></text> 
+</component>
+
+<component id="ID_txt09">
+	<text><![CDATA[12.4(9)T]]></text> 
+</component>
+
+<component id="ID_txt10">
+	<text><![CDATA[Mainline Train]]></text> 
+</component>
+
+<component id="ID_txt11">
+	<text><![CDATA[T Train]]></text> 
+</component>
+
+<component id="ID_txt12">
+	<text><![CDATA[Bug Fixes (Maintenance)]]></text> 
+</component>
+
+<component id="ID_txt13">
+	<text><![CDATA[New Features and Functionality]]></text> 
+</component>
+
+<component id="ID_txt14">
+	<text><![CDATA[*Note: Focus of this graphic is on the mainline train and T train. 12.4(6) was used on a different train.]]></text> 
+</component>
+
+</textcomponents>

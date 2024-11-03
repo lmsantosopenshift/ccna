@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.3.1 DUAL Concepts</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1> Operation of EIGRP</h1>
+        <h2>DUAL and the Topology Table</h2>
+      </div>
+      <div id="content">
+          <p>EIGRP uses the Diffusing Update Algorithm (DUAL) to provide the best loop-free path and loop-free backup paths. </p>
+          <p></p>
+          <p>DUAL uses several terms, which are discussed in more detail throughout this section:</p>
+          <p>
+            <ul>
+              <li>Successor</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Feasible Distance (FD)</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Feasible Successor (FS)</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Reported Distance (RD) or Advertised Distance (AD)</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Feasible Condition or Feasibility Condition (FC)</li>
+            </ul>
+          </p>
+          <p>These terms and concepts are at the center of the loop avoidance mechanism of DUAL.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

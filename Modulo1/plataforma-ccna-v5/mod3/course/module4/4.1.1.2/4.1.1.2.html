@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.1.2 Benefits of Wireless </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless Concepts</h1>
+        <h2>Introduction to Wireless</h2>
+      </div>
+      <div id="content">
+          <p>There are many benefits to supporting wireless networking, both in the business environment and at home. Some of the benefits include increased flexibility, increased productivity, reduced costs, and the ability to grow and adapt to changing requirements. </p>
+          <p></p>
+          <p>Figure 1 provides examples of wireless flexibility for the mobile employee.</p>
+          <p></p>
+          <p>Most businesses rely on switch-based LANs for day-to-day operation within the office. However, employees are becoming more mobile and want to maintain access to their business LAN resources from locations other than their desks. Workers want to take their wireless devices to meetings, co-worker’s offices, conference rooms, and even customer sites, all while maintaining access to office resources. Wireless networking provides this type of flexibility. Instead of spending a significant amount of time transporting necessary company material or locating wired connections to access network resources, using the wireless network, LAN resources can be easily made available to a varieties of wireless devices.  </p>
+          <p></p>
+          <p>Although hard to measure, wireless access can result in increased productivity and more relaxed employees. With wireless networking, employees have the flexibility to work when they want, where they want. They can respond to customer inquiries whether at the office, or out to dinner. They can access email and other work-related resources quickly and easily, providing better management, better and faster results for customers, and increased profits. </p>
+          <p></p>
+          <p>Wireless networking can also reduce costs. In businesses with a wireless infrastructure already in place, savings are realized any time equipment changes or moves are required, such as when relocating an employee within a building, or reorganizing equipment or a lab, or moving to temporary locations or project sites. </p>
+          <p></p>
+          <p>Another important benefit of wireless networking is the ability to adapt to changing needs and technologies. Adding new equipment to the network is fairly seamless with wireless networking. Consider the wireless connectivity of the home. Users can surf the web from their kitchen table, living rooms, or even outdoors. Home users connect new devices, such as smart phones and smart pads, laptops, and smart televisions.  </p>
+          <p></p>
+          <p>As shown in Figure 2, a wireless home router allows the user to connect to these devices without the additional cost or inconveniences of running cables to different locations in the home. </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

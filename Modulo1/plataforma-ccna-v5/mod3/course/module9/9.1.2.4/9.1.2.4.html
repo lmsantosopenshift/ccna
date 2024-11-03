@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.2.4 Boot System</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Managing IOS System Files</h1>
+        <h2>Managing Cisco IOS Images</h2>
+      </div>
+      <div id="content">
+          <p>To upgrade to the copied IOS image after that image is saved on the router's flash memory, configure the router to load the new image during bootup using the<span class="cmd"><b> boot system </b></span>command. Save the configuration. Reload the router to boot the router with new image. After the router has booted, to verify the new image has loaded, use the<span class="cmd"><b> show version </b></span>command.</p>
+          <p></p>
+          <p>During startup, the bootstrap code parses the startup configuration file in NVRAM for the<span class="cmd"><b> boot system </b></span>commands that specify the name and location of the Cisco IOS Software image to load. Several<span class="cmd"><b> boot system </b></span>commands can be entered in sequence to provide a fault-tolerant boot plan. </p>
+          <p></p>
+          <p>Shown in Figure 1, the<span class="cmd"><b> boot system </b></span>command is a global configuration command that allows the user to specify the source for the Cisco IOS Software image to load. Some of the syntax options available include:</p>
+          <p>
+            <ul>
+              <li>Specify the flash device as the source of the Cisco IOS image.</li>
+            </ul>
+          </p>
+          <p>
+            <span class="cmd">Router(config)# </span>
+            <span class="cmd">
+              <b>boot system flash0://c1900-universalk9-mz.SPA.152-4.M3.bin</b>
+            </span>
+          </p>
+          <p>
+            <ul>
+              <li>Specify the TFTP server as a source of Cisco IOS image, with ROMmon as backup.</li>
+            </ul>
+          </p>
+          <p>
+            <span class="cmd">Router(config)# </span>
+            <span class="cmd">
+              <b>boot system tftp://c1900-universalk9-mz.SPA.152-4.M3.bin</b>
+            </span>
+          </p>
+          <p>
+            <span class="cmd">Router(config)# </span>
+            <span class="cmd">
+              <b>boot system rom</b>
+            </span>
+          </p>
+          <p></p>
+          <p>If there are no<span class="cmd"><b> boot system </b></span>commands in the configuration, the router defaults to loading the first valid Cisco IOS image in flash memory and running it.</p>
+          <p></p>
+          <p>As shown in Figure 2, the<span class="cmd"><b> show version </b></span>command can be used to verify the software image file.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

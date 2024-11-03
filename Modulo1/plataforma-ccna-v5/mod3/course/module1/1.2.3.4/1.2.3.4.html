@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.3.4 Basic Router Show Commands</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.3.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Selecting Network Devices</h1>
+        <h2>Managing Devices</h2>
+      </div>
+      <div id="content">
+          <p>Here are some of the most commonly used IOS commands to display and verify the operational status of the router and related network functionality. These commands are divided into several categories. </p>
+          <p></p>
+          <p>Routing Related:</p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">
+                  <b>show ip protocols</b>
+                </span>
+                <b></b>- Displays information about the routing protocols configured. If OSPF is configured, this includes the OSPF process ID, the router ID, networks the router is advertising, the neighbors the router is receiving updates from, and the default administrative distance, which is 110 for OSPF. (Figure 1)</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">
+                  <b>show ip route</b>
+                </span>
+                <b></b>- Displays routing table information, including: routing codes, known networks, administrative distance and metrics, how routes were learned, next hop, static routes, and default routes. (Figure 2)</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">
+                  <b>show ip ospf neighbor</b>
+                </span>
+                <b></b>- Displays information about OSPF neighbors that have been learned, including the Router ID of the neighbor, priority, the state (Full = adjacency has been formed), the IP address, and the local interface that learned of the neighbor. (Figure 3)</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>Interface Related:</p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">
+                  <b>show interfaces </b>
+                </span>- Displays interfaces with line (protocol) status, bandwidth, delay, reliability, encapsulation, duplex, and I/O statistics. If specified without a specific interface designation, all interfaces will be displayed. If a specific interface is specified after the command, information about that interface only will be displayed. (Figure 4) </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">
+                  <b>show ip interfaces</b>
+                </span>
+                <b></b>- Displays interface information, including: protocol status, the IP address, if a helper address is configured, and whether an ACL is enabled on the interface. If specified without a specific interface designation, all interfaces will be displayed. If a specific interface is specified after the command, information about that interface only will be displayed. (Figure 5)</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">
+                  <b>show ip interface brief</b>
+                </span>
+                <b></b>- Displays all interfaces with IP addressing information and interface and line protocols status. (Figure 6)</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">
+                  <b>show protocols </b>
+                </span>- Displays information about the routed protocol that is enabled, and the protocol status of interfaces. (Figure 7)</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>Other connectivity related commands include the<span class="cmd"><b> show cdp neighbors </b></span>command (Figure 8). This command displays information on directly connected devices including Device ID, the local interface the device is connected to, capability (R = router, S = switch), the platform, and Port ID of the remote device. The details option includes IP addressing information and the IOS version.<span class="cmd"><b></b></span></p>
+          <p></p>
+          <p>Use the Syntax Checker in Figure 9 to verify router configurations using these<span class="cmd"><b> show </b></span>commands. </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

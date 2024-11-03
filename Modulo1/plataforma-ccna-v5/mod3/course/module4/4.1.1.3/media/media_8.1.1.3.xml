@@ -1,0 +1,58 @@
+<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Common Wireless Technologies</b>]]></text>
+</component>
+
+
+<component id="ID_txt01_body">
+<text><![CDATA[<textformat blockindent="-14"><ul><li>IEEE 802.15 standard.</li><li>Variations include Bluetooth v1 to Bluetooth v3.</li><li>Supports speeds of up to 24 Mb/s (Bluetooth v3).</li><li>Supports three different power ranges:</li></ul></textformat><ul><li>100 meters (long range).</li><li>10 meters (ordinary range).</li><li>10 cm (short range).</li></ul>]]></text>
+</component>
+<component id="ID_txt01_header">
+<text><![CDATA[<b>Bluetooth</b>]]></text>
+</component>
+<component id="ID_txt01b">
+<text><![CDATA[Bluetooth]]></text>
+</component>
+
+<component id="ID_txt02_body">
+<text><![CDATA[<textformat blockindent="-14"><ul><li>Cellular broadband access consisting of various standards supporting download speeds up to 5 Mb/s and higher, depending on wireless provider infrastructure.</li><li>Variations include 2G (using GSM, CDMA, or TDMA), 3G (using UMTS, CDMA2000, EDGE, or HSPA+) and 4G (using WiMAX or LTE).</li></ul></textformat>]]></text>
+</component>
+<component id="ID_txt02_header">
+<text><![CDATA[<b>Cellular Broadband</b>]]></text>
+</component>
+<component id="ID_txt02b">
+<text><![CDATA[Cellular Broadband]]></text>
+</component>
+
+<component id="ID_txt03_body">
+<text><![CDATA[<textformat blockindent="-14"><ul><li>Satellite communication using a directional satellite dish aligned with satellite.</li><li>Expensive, but ideal in situations such as remote areas where no other wireless access is available.</li><li>Supports download speeds up to 10 Mb/s and higher, depending on satellite provider infrastructure.</li></ul></textformat>]]></text>
+</component>
+<component id="ID_txt03_header">
+<text><![CDATA[<b>Satellite</b>]]></text>
+</component>
+<component id="ID_txt03b">
+<text><![CDATA[Satellite]]></text>
+</component>
+
+<component id="ID_txt04_body">
+<text><![CDATA[<textformat blockindent="-14"><ul><li>IEEE 802.11 standards.</li><li>Variations include 802.11a/b/g/n/ac/ad.</li><li>Speeds vary based on technology.</li></ul></textformat>]]></text>
+</component>
+<component id="ID_txt04_header">
+<text><![CDATA[<b>Wi-Fi</b>]]></text>
+</component>
+<component id="ID_txt04b">
+<text><![CDATA[Wi-Fi]]></text>
+</component>
+
+<component id="ID_txt05_body">
+<text><![CDATA[<textformat blockindent="-14"><ul><li>IEEE 802.16 standard commonly called WiMAX.</li><li>Uses a point-to-multipoint topology to provide wireless cellular broadband access.</li><li>Used as an alternative to cable and DSL.</li><li>Supports speeds up to 1 Gb/s.</li></ul></textformat>]]></text>
+</component>
+<component id="ID_txt05_header">
+<text><![CDATA[<b>WiMAX</b>]]></text>
+</component>
+<component id="ID_txt05b">
+<text><![CDATA[WiMAX]]></text>
+</component>
+
+
+</textcomponents>

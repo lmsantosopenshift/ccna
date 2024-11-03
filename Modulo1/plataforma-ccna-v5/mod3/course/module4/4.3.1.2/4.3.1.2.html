@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.3.1.2 DoS Attack</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.3.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless LAN Security</h1>
+        <h2>WLAN Threats</h2>
+      </div>
+      <div id="content">
+          <p>Wireless DoS attacks can be the result of:</p>
+          <p>
+            <ul>
+              <li>
+                <b>Improperly configured devices </b>- Configuration errors can disable the WLAN. For instance, an administrator could accidently alter a configuration and disable the network, or an intruder with administrator privileges could intentionally disable a WLAN.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>A malicious user intentionally interfering with the wireless communication </b>- Their goal is to disable the wireless network completely or to the point where no legitimate device can access the medium. </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Accidental interference </b>- WLANs operate in the unlicensed frequency bands and; therefore, all wireless networks, regardless of security features, are prone to interference from other wireless devices. Accidental interference may occur from such devices as microwave ovens, cordless phones, baby monitors, and more. The 2.4 GHz band is more prone to interference than the 5 GHz band.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>To minimize the risk of a DoS attack due to improperly configured devices and malicious attack, harden all devices, keep passwords secure, create backups, and ensure that all configuration changes are incorporated off-hours. </p>
+          <p></p>
+          <p>Accidental interference only happens when another wireless device is introduced. The best solution is to monitor the WLAN for any interference problem and address them as they appear. Because the 2.4 GHz band is more prone to interference, the 5 GHz could be used in areas prone to interference. Some WLAN solutions enable APs to automatically adjust channels and use the 5 GHz band to compensate for interference. For instance, some 802.11n/ac/ad solutions automatically adjust to counter interference. </p>
+          <p></p>
+          <p>The figure illustrates how a cordless phone, or even a microwave, can interfere with WLAN communication.</p>
+          <p></p>
+          <p>The Cisco CleanAir technology enables devices to identify and locate non-802.11 interference sources. It creates a network that has the ability to adjust automatically to changes in its environment.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

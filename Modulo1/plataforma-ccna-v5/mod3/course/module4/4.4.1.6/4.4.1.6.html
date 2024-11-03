@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.4.1.6 Backing Up a Configuration</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.4.1.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless LAN Configuration</h1>
+        <h2>Configure a Wireless Router</h2>
+      </div>
+      <div id="content">
+          <p>Just like the IOS of a Cisco router should be backed up in case of failure, so should the configuration of a home router. If a home router is left to its default configuration, then backing up the configuration is not really warranted. However, if many of the Smart Wi-Fi tools have been customized, then it may be advantageous to back up the configuration. </p>
+          <p></p>
+          <p>Backing up the configuration is easy to do with the Linksys EA6500 wireless router: </p>
+          <p></p>
+          <p>
+            <b>Step 1.</b> Log in to the Smart Wi-Fi Home page. Click the <b>Troubleshooting</b> icon to display the Troubleshooting Status window (Figure 1).</p>
+          <p></p>
+          <p>
+            <b>Step 2.</b> Click the <b>Diagnostic</b> tab to open the Diagnostic Troubleshooting window (Figure 2). </p>
+          <p></p>
+          <p>
+            <b>Step 3.</b> Under the Router configuration title, click <b>Backup</b> and save the file to an appropriate folder.</p>
+          <p></p>
+          <p>
+            <b>Note</b>: To upload a previously saved backup, click <b>Restore</b>, locate the file, and start the restore process. </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

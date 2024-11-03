@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.1.6 Verifying Auto-Summary: Routing Table</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.1.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Advanced EIGRP Configurations</h1>
+        <h2>Automatic summarization </h2>
+      </div>
+      <div id="content">
+          <p>Examine the routing table to verify that the summarized route was received.  </p>
+          <p></p>
+          <p>Figure 1 shows R3’s routing table prior to automatic summarization, and then with automatic summarization enabled using the<span class="cmd"><b> auto-summary </b></span>command. Notice that with automatic summarization enabled, R3’s routing table now only contains the single class B network address 172.16.0.0/16. The successor or next-hop router is R1 via 192.168.10.5.</p>
+          <p></p>
+          <p>
+            <b>Note</b>: Automatic summarization is only an option with EIGRP for IPv4. Classful addressing does not exist in IPv6; therefore, there is no need for automatic summarization with EIGRP for IPv6.</p>
+          <p></p>
+          <p>When enabling automatic summarization , it is also necessary to understand the Null interface. Figure 2 shows the routing table for R1. Notice the two entries highlighted are using an exit interface of Null0. EIGRP has automatically included a summary route to Null0 for two classful networks 192.168.10.0/24 and 172.16.0.0/16. </p>
+          <p></p>
+          <p>The Null0 interface is a virtual IOS interface that is a route to nowhere, commonly known as "the bit bucket." Packets that match a route with a Null0 exit interface are discarded. </p>
+          <p></p>
+          <p>EIGRP for IPv4 automatically includes a Null0 summary route whenever the following conditions exist:</p>
+          <p>
+            <ul>
+              <li>There is at least one subnet that was learned via EIGRP.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>There are two or more<span class="cmd"><b> network </b></span>EIGRP router configuration mode commands.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Automatic summarization is enabled.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>The purpose of the Null0 summary route is to prevent routing loops for destinations that are included in the summary, but do not actually exist in the routing table.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

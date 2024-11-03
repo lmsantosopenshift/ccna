@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.2.5 Small Wireless Deployment Solutions</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless Concepts</h1>
+        <h2>Components of WLANs</h2>
+      </div>
+      <div id="content">
+          <p>For small wireless deployment requirements, Cisco offers the following wireless autonomous AP solutions:</p>
+          <p>
+            <ul>
+              <li>
+                <b>Cisco WAP4410N AP </b>- This AP is ideal for small organization requiring two APs and supporting a small group of users.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Cisco WAP121 and WAP321 APs </b>- These APs are ideal for small organizations that want to simplify their wireless deployment using several APs.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Cisco AP541N AP </b>- This AP is ideal for small- to mid-sized organizations that want robust and an easily manageable cluster of APs.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>
+            <b>Note</b>: Most enterprise-level APs support PoE. </p>
+          <p></p>
+          <p>Figure 1 displays and summarizes the Cisco small business APs.</p>
+          <p></p>
+          <p>Figure 2 displays a sample topology for a small business network using the WAP4410N APs. Each AP is configured and managed individually. This can become a problem when several APs are required.</p>
+          <p></p>
+          <p>For this reason, the WAP121, WAP321, and AP541N APs support the clustering of APs without the use of a controller. The cluster provides a single point of administration and enables the administrator to view the deployment of APs as a single wireless network, rather than a series of separate wireless devices. The clustering capability makes it easy to set up, configure, and manage a growing wireless network. Multiple APs can be deployed and push a single configuration to all the devices within the cluster, managing the wireless network as a single system without worrying about interference between APs, and without configuring each AP as a separate device.</p>
+          <p></p>
+          <p>Specifically, the WAP121 and WAP321 support Single Point Setup (SPS), which makes AP deployment easier and faster, as shown in Figure 3. SPS helps to enable the wireless LAN to scale up to four WAP121 and up to eight WAP321 devices to provide broader coverage and support additional users as business needs change and grow. The Cisco AP541N AP can cluster up to 10 APs together and can support multiple clusters. </p>
+          <p></p>
+          <p>A cluster can be formed between two APs if the following conditions are met:</p>
+          <p>
+            <ul>
+              <li>Clustering mode is enabled on the APs.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>The APs joining the cluster have the same Cluster Name.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>The APs are connected on the same network segment.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>The APs use the same radio mode (i.e., both radios use 802.11n.).</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>Access an online AP541N <a href="https://www.cisco.com/assets/sol/sb/AP541N_GUI/AP541N_1_9_2/Getting_Started.htm" target="_blank">emulator</a>. </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>EIGRP Parameters</b>]]></text>
+</component>
+
+
+<component id="ID_txt01">
+<text><![CDATA[Data Link Frame Header]]></text>
+</component>
+
+<component id="ID_txt02">
+<text><![CDATA[IP Packet Header]]></text>
+</component>
+
+<component id="ID_txt03">
+<text><![CDATA[EIGRP Packet Header]]></text>
+</component>
+
+
+<component id="ID_txt04">
+<text><![CDATA[TLV Types<br/><font color = "#f26200"><b>EIGRP Parameters TLV</b></font>]]></text>
+</component>
+
+<component id="ID_txt05">
+<text><![CDATA[Bit]]></text>
+</component>
+
+
+<component id="ID_txt06">
+<text><![CDATA[Type = 0x0001]]></text>
+</component>
+
+<component id="ID_txt07">
+<text><![CDATA[Length]]></text>
+</component>
+
+<component id="ID_txt08">
+<text><![CDATA[Values]]></text>
+</component>
+
+<component id="ID_txt09">
+<text><![CDATA[K1]]></text>
+</component>
+<component id="ID_txt10">
+<text><![CDATA[K2]]></text>
+</component>
+<component id="ID_txt11">
+<text><![CDATA[K3]]></text>
+</component>
+<component id="ID_txt12">
+<text><![CDATA[K4]]></text>
+</component>
+<component id="ID_txt13">
+<text><![CDATA[K5]]></text>
+</component>
+<component id="ID_txt14">
+<text><![CDATA[Reserved]]></text>
+</component>
+<component id="ID_txt15">
+<text><![CDATA[Hold Time]]></text>
+</component>
+
+
+<component id="ID_txt16">
+<text><![CDATA[<font size="10" class="font10px"><textformat blockindent="-14"><li><b>K1</b> and <b>K3</b>: Weights for bandwidth and delay; set to 1</li><li><b>Hold Time</b>: Maximum time the router should wait for the next Hello</li></textformat></font>]]></text></component>
+
+
+</textcomponents>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.4.3 DUAL: No Feasible Successor</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.4.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1> Operation of EIGRP</h1>
+        <h2>DUAL and Convergence</h2>
+      </div>
+      <div id="content">
+          <p>Occasionally, the path to the successor fails and there are not any FSs. In this instance, DUAL does not have a guaranteed loop-free backup path to the network, so the path is not in the topology table as an FS. If there are not any FSs in the topology table, DUAL puts the network into the active state. DUAL actively queries its neighbors for a new successor. </p>
+          <p></p>
+          <p>R1 is currently using R3 as the successor to 192.168.1.0/24, as shown in Figure 1. However, R1 does not have R2 listed as an FS, because R2 does not satisfy the FC. To understand how DUAL searches for a new successor when there is no FS, a link failure is simulated between R1 and R3.</p>
+          <p></p>
+          <p>Before the link failure is simulated, DUAL debugging is enabled with the<span class="cmd"><b> debug eigrp fsm </b></span>command on R1, as shown in Figure 2. A link failure is simulated using the<span class="cmd"><b> shutdown </b></span>command on the Serial 0/0/1 interface on R1. </p>
+          <p></p>
+          <p>When the successor is no longer available and there is no feasible successor, DUAL puts the route into an active state. DUAL sends EIGRP queries asking other routers for a path to the network. Other routers return EIGRP replies, letting the sender of the EIGRP query know whether or not they have a path to the requested network. If none of the EIGRP replies have a path to this network, the sender of the query does not have a route to this network. </p>
+          <p></p>
+          <p>The selected debug output in Figure 2 shows the 192.168.1.0/24 network put into the active state and EIGRP queries sent to other neighbors. R2 replies with a path to this network, which becomes the new successor and is installed into the routing table.</p>
+          <p></p>
+          <p>If the sender of the EIGRP queries receives EIGRP replies that include a path to the requested network, the preferred path is added as the new successor and added to the routing table. This process takes longer than if DUAL had an FS in its topology table and was able to quickly add the new route to the routing table. In Figure 3, notice that R1 has a new route to the 192.168.1.0/24 network. The new EIGRP successor is router R2.</p>
+          <p></p>
+          <p>Figure 4 shows that the topology table for R1 now has R2 as the successor with no new FSs. If the link between R1 and R3 is made active again, R3 returns as the successor. However, R2 is still not the FS, because it does not meet the FC.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.2.1 Manual Summary Routes</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Advanced EIGRP Configurations</h1>
+        <h2>Manual Summarization</h2>
+      </div>
+      <div id="content">
+          <p>EIGRP can be configured to summarize routes, whether or not automatic summarization (<span class="cmd"><b>auto-summary</b></span>) is enabled. Because EIGRP is a classless routing protocol and includes the subnet mask in the routing updates, manual summarization can include supernet routes. Remember, a supernet is an aggregation of multiple major classful network addresses.</p>
+          <p></p>
+          <p>In Figure 1, two more networks are added to router R3 using loopback interfaces: 192.168.2.0/24 and 192.168.3.0/24. Although the loopback interfaces are virtual interfaces, they are used to represent physical networks for this example.</p>
+          <p></p>
+          <p>Figure 2 shows the commands on R3 to configure the two loopback interfaces and the configuration to enable both interfaces for EIGRP. </p>
+          <p></p>
+          <p>To verify that R3 sent EIGRP update packets to R1 and R2, the routing tables are examined on both routers. </p>
+          <p></p>
+          <p>In Figure 3, only the pertinent routes are shown. R1 and R2 routing tables show these additional networks in their routing tables: 192.168.2.0/24 and 192.168.3.0/24. Instead of sending three separate networks, R3 can summarize the 192.168.1.0/24, 192.168.2.0/24, and 192.168.3.0/24 networks as a single route.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

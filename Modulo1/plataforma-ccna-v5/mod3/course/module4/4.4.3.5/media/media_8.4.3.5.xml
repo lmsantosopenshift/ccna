@@ -1,0 +1,173 @@
+<textcomponents>
+	<component id="ID_s1_title">
+		<text><![CDATA[<b>Activity - Part 1: Identify the Troubleshooting Solution</b><br/>In the diagram shown, all PCs can connect to the network, but the network is slow. Drag the three solutions which will provide the best performance result to the fields provided. Click Button 2 to continue this activity.]]></text>
+	</component>
+	<component id="ID_s1_txt14">
+		<text><![CDATA[Upgrade to 802.11n-capable wireless devices.]]></text>
+	</component>
+
+	<component id="ID_s1_txt15">
+		<text><![CDATA[Use 2.4 GHz for voice and video and 5 GHz for data traffic.]]></text>
+	</component>
+
+	<component id="ID_s1_txt16">
+		<text><![CDATA[Use 2.4 GHz for data and 5 GHz for voice and video traffic.]]></text>
+	</component>
+
+	<component id="ID_s1_txt17">
+		<text><![CDATA[Reboot all devices to clear all connections.]]></text>
+	</component>
+
+	<component id="ID_s1_txt18">
+		<text><![CDATA[Move any furniture which may be blocking the WLAN signal.]]></text>
+	</component>
+
+
+
+
+	<component id='ID_s1_CORRECT_TITLE'>
+		<text><![CDATA[<b>Correct</b>]]></text>
+	</component>
+
+	<component id='ID_s1_CORRECT_BODY'>
+		<text><![CDATA[You have successfully identified the troubleshooting solutions for this scenario. Click Button 2 to continue.]]></text>
+	</component>
+
+
+	<component id='ID_s1_INCORRECT_TITLE'>
+		<text><![CDATA[<b>Incorrect</b>]]></text>
+	</component>
+
+	<component id='ID_s1_INCORRECT_BODY'>
+		<text><![CDATA[You have not successfully identified the troubleshooting solutions for this scenario. Click Reset to try again.]]></text>
+	</component>
+
+	<component id='ID_s1_CHECK'>
+		<text><![CDATA[<b>Check</b>]]></text>
+	</component>
+
+	<component id='ID_s1_RESET'>
+		<text><![CDATA[<b>Reset</b>]]></text>
+	</component>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<component id="ID_s2_title">
+		<text><![CDATA[<b>Activity - Part 2: Identify the Troubleshooting Solution</b><br/>In the diagram shown, wireless Client B cannot connect to the WLAN. Drag the four best solutions that would help troubleshoot connectivity to the WLAN to the fields provided. Click Button 3 to continue this activity.]]></text>
+	</component>
+
+	<component id="ID_s2_txt01">
+		<text><![CDATA[Check encryption and security settings on the PC.]]></text>
+	</component>
+	<component id="ID_s2_txt02">
+		<text><![CDATA[Use tracert to check network connectivity.]]></text>
+	</component>
+	<component id="ID_s2_txt03">
+		<text><![CDATA[Reload PC network card drivers and firmware.]]></text>
+	</component>
+	<component id="ID_s2_txt04">
+		<text><![CDATA[Connect the PC to a port on the wired network.]]></text>
+	</component>
+	<component id="ID_s2_txt05">
+		<text><![CDATA[Use ipconfig to check network connectivity.]]></text>
+	</component>
+	<component id="ID_s2_txt06">
+		<text><![CDATA[Ping the loopback address.]]></text>
+	</component>
+
+
+
+	<component id='ID_s2_CORRECT_TITLE'>
+		<text><![CDATA[<b>Correct</b>]]></text>
+	</component>
+
+	<component id='ID_s2_CORRECT_BODY'>
+		<text><![CDATA[You have successfully identified the troubleshooting solutions for this scenario. Click Button 3 to continue.]]></text>
+	</component>
+
+
+	<component id='ID_s2_INCORRECT_TITLE'>
+		<text><![CDATA[<b>Incorrect</b>]]></text>
+	</component>
+
+	<component id='ID_s2_INCORRECT_BODY'>
+		<text><![CDATA[You have not successfully identified the troubleshooting solutions for this scenario. Click Reset to try again.]]></text>
+	</component>
+
+	<component id='ID_s2_CHECK'>
+		<text><![CDATA[<b>Check</b>]]></text>
+	</component>
+
+	<component id='ID_s2_RESET'>
+		<text><![CDATA[<b>Reset</b>]]></text>
+	</component>
+
+
+
+
+
+
+
+
+	<component id="ID_s3_title">
+		<text><![CDATA[<b>Activity - Part 3: Identify the Troubleshooting Solution</b><br/>In the diagram shown, PC-A can connect to the WLAN. The connection is very slow and sometimes drops completely. Drag the five troubleshooting solutions which will provide information to correct these problems to the fields provided.]]></text>
+	</component>
+	<component id="ID_s3_txt01">
+		<text><![CDATA[Check to see if there is a wireless alarm system nearby.]]></text>
+	</component>
+	<component id="ID_s3_txt02">
+		<text><![CDATA[See if the AP and all switches are powered on.]]></text>
+	</component>
+	<component id="ID_s3_txt03">
+		<text><![CDATA[Look for defective or loose cables on the wired LAN.]]></text>
+	</component>
+	<component id="ID_s3_txt04">
+		<text><![CDATA[Move the laptop to another BSA or ESA.]]></text>
+	</component>
+	<component id="ID_s3_txt05">
+		<text><![CDATA[See if the router has connectivity to the ISP.]]></text>
+	</component>
+	<component id="ID_s3_txt06">
+		<text><![CDATA[Check channel settings.]]></text>
+	</component>
+
+
+	<component id='ID_s3_CORRECT_TITLE'>
+		<text><![CDATA[<b>Correct</b>]]></text>
+	</component>
+
+	<component id='ID_s3_CORRECT_BODY'>
+		<text><![CDATA[You have successfully identified the troubleshooting solutions for this scenario.]]></text>
+	</component>
+
+
+	<component id='ID_s3_INCORRECT_TITLE'>
+		<text><![CDATA[<b>Incorrect</b>]]></text>
+	</component>
+
+	<component id='ID_s3_INCORRECT_BODY'>
+		<text><![CDATA[You have not successfully identified the troubleshooting solutions for this scenario. Click Reset to try again.]]></text>
+	</component>
+
+	<component id='ID_s3_CHECK'>
+		<text><![CDATA[<b>Check</b>]]></text>
+	</component>
+
+	<component id='ID_s3_RESET'>
+		<text><![CDATA[<b>Reset</b>]]></text>
+	</component>
+
+
+</textcomponents>

@@ -1,0 +1,91 @@
+<textcomponents>
+
+<component id='ID_inst'>
+	<text><![CDATA[<b>Activity – Match the 802.11 Topology Terms</b><br/>Complete the table by dragging the WLAN terms to the appropriate fields. Some answers may be used more than once.]]></text>
+</component>
+<component id='ID_header01'>
+	<text><![CDATA[<b>WLAN Topology Building Block</b>]]></text>
+</component>
+<component id='ID_header02'>
+	<text><![CDATA[<b>Mode</b>]]></text>
+</component>
+<component id='ID_header03'>
+	<text><![CDATA[<b>Number of Access Points (APs)</b>]]></text>
+</component>
+<component id='ID_header04'>
+	<text><![CDATA[<b>Wireless Coverage Area</b>]]></text>
+</component>
+
+<component id='ID_txt01'>
+	<text><![CDATA[2 or more]]></text>
+</component>
+
+<component id='ID_txt02'>
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id='ID_txt03'>
+	<text><![CDATA[0]]></text>
+</component>
+
+
+
+
+
+<component id='ID_s1_drag01'>
+	<text><![CDATA[<font color="#393536"><span style="margin-left:5px;">Extended Services Set (ESS)</span></font>]]></text>
+</component>
+
+<component id='ID_s1_drag02'>
+	<text><![CDATA[<font color="#393536">Infrastructure</font>]]></text>
+</component>
+
+<component id='ID_s1_drag03'>
+	<text><![CDATA[<font color="#393536">Basic Service Area (BSA)</font>]]></text>
+</component>
+
+<component id='ID_s1_drag04'>
+	<text><![CDATA[<font color="#393536">Independent Basic Service Set (IBSS)</font>]]></text>
+</component>
+
+<component id='ID_s1_drag05'>
+	<text><![CDATA[<font color="#393536"><span style="margin-left:5px;">Extended Service Area (ESA)</span></font>]]></text>
+</component>
+
+<component id='ID_s1_drag06'>
+	<text><![CDATA[<font color="#393536">Ad Hoc</font>]]></text>
+</component>
+
+<component id='ID_s1_drag07'>
+	<text><![CDATA[<font color="#393536">Basic Service Set (BSS)</font>]]></text>
+</component>
+
+
+<component id='ID_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correct</b>]]></text>
+</component>
+
+<component id='ID_CORRECT_BODY'>
+	<text><![CDATA[You have successfully completed the WLAN 802.11 table.]]></text>
+</component>
+
+<component id='ID_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrect</b>]]></text>
+</component>
+
+<component id='ID_INCORRECT_BODY'>
+	<text><![CDATA[You have not successfully completed the WLAN 802.11 table. Please click Reset to try again.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Check</b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Reset</b>]]></text>
+</component>
+
+
+
+
+</textcomponents>

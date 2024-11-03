@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.3.2 Selecting Channels</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless LAN Operations</h1>
+        <h2>Channel Management</h2>
+      </div>
+      <div id="content">
+          <p>The IEEE 802.11b/g/n all operate in the microwaves frequencies of the radio spectrum. The IEEE 802.11b/g/n standards operate in the 2.4 GHz to 2.5 GHz spectrum while 802.11a/n/ac standards operate in the more heavily regulated 5 GHz band. Figure 1 highlights which 802.11 standard operates in the 2.4 GHz, 5 GHz, and 60 GHz bands. Each spectrum is subdivided into channels with a center frequency and bandwidth, analogous to the way radio bands are subdivided.  </p>
+          <p></p>
+          <p>The 2.4 GHz band is subdivided into multiple channels. The overall, combined channel bandwidth is 22 MHz with each channel separated by 5 MHz. The 802.11b standard identifies 11 channels for North America. The 22 MHz bandwidth, combined with the 5 MHz separation between frequencies, results in an overlap between successive channels, as shown in Figure 2. </p>
+          <p></p>
+          <p>
+            <b>Note</b>: In Europe, there are 13 802.11b channels.</p>
+          <p></p>
+          <p>Interference occurs when an undesired signal overlaps a channel reserved for a desired signal, causing possible distortion. The solution to interference is to use non-overlapping channels. Specifically, channels 1, 6, and 11 are non-overlapping 802.11b channels, as shown in Figure 3.</p>
+          <p></p>
+          <p>A best practice for WLANs requiring multiple APs is to use non-overlapping channels. If there are three adjacent APs, use channels 1, 6, and 11. If there are just two, select any two that are five channels apart, such as channels 5 and 10. Most APs can automatically select a channel based on adjacent channels used. Some products continuously monitor the radio space to adjust the channel settings dynamically in response to environmental changes.</p>
+          <p></p>
+          <p>As enterprise WLANs migrate to 802.11n, they can use channels in the larger, less-crowded 5 GHz band, reducing “accidental denial of service (DoS)”. For instance, the 802.11n standard uses OFDM and can support four non-overlapping channels, as shown in Figure 4. </p>
+          <p></p>
+          <p>802.11n can also use channel bonding, which combines two 20 MHz channel into on 40 MHz channels, as shown in Figure 5. Channel bonding increase throughput by using two channels at one time to deliver data.</p>
+          <p></p>
+          <p>Most modern APs can auto-adjust channels to circumvent interference. </p>
+          <p></p>
+          <p>
+            <b>Note</b>: IEEE 802.11ac uses OFDM with channels widths of 80,160, and 80+80.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

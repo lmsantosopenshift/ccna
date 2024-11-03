@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.5.4 Configuring OSPF MD5 Authentication</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.5.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Advanced Single-Area OSPF Configurations </h1>
+        <h2>Secure OSPF</h2>
+      </div>
+      <div id="content">
+          <p>OSPF supports routing protocol authentication using MD5. MD5 authentication can be enabled globally for all interfaces or on a per-interface basis.</p>
+          <p></p>
+          <p>To enable OSPF MD5 authentication globally, configure:</p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">
+                  <b>ip ospf message-digest-key </b>
+                </span>
+                <span class="cmd">
+                  <i>key</i>
+                </span>
+                <span class="cmd">
+                  <b> md5 </b>
+                </span>
+                <span class="cmd">
+                  <i>password</i>
+                </span>
+                <span class="cmd">
+                  <b></b>
+                </span>interface configuration mode command.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">
+                  <b>area </b>
+                </span>
+                <span class="cmd">
+                  <i>area-id</i>
+                </span>
+                <span class="cmd">
+                  <b> authentication message-digest </b>
+                </span>router configuration mode command.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>This method forces authentication on all OSPF enabled interfaces. If an interface is not configured with the<span class="cmd"><b> ip ospf message-digest-key </b></span>command, it will not be able to form adjacencies with other OSPF neighbors. </p>
+          <p></p>
+          <p>To provide more flexibility, authentication is now supported on a per-interface basis. To enable MD5 authentication on a per-interface basis, configure:</p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">
+                  <b>ip ospf message-digest-key </b>
+                </span>
+                <span class="cmd">
+                  <i>key</i>
+                </span>
+                <span class="cmd">
+                  <b> md5 </b>
+                </span>
+                <span class="cmd">
+                  <i>password</i>
+                </span>
+                <span class="cmd">
+                  <b></b>
+                </span>interface configuration mode command.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">
+                  <b>ip ospf authentication message-digest </b>
+                </span>interface configuration mode command.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>Global and per-interface OSPF MD5 authentication can be used on the same router. However, the interface setting overrides the global setting. MD5 authentication passwords do not have to be the same throughout an area; however, they do need to be the same between neighbors.</p>
+          <p></p>
+          <p>For example, assume that all routers in the figure have converged using OSPF and routing is functioning properly. OSPF authentication will be implemented on all routers. </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

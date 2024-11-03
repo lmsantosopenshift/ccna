@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.3.6 Basic Switch Show Commands</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.3.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Selecting Network Devices</h1>
+        <h2>Managing Devices</h2>
+      </div>
+      <div id="content">
+          <p>Switches make use of common IOS commands for configuration, to check for connectivity and to display current switch status. Click buttons 1 to 4 for sample outputs of the commands and the important pieces of information that an administrator can gather from it. </p>
+          <p></p>
+          <p>Interface / Port Related:</p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">
+                  <b>show port-security</b>
+                </span>
+                <b></b>- Displays any ports with security activated. To examine a specific interface, include the interface ID. Information included in the output: the maximum addresses allowed, current count, security violation count, and action to be taken. (Figure 1)</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">
+                  <b>show port-security address</b>
+                </span>
+                <b></b>- Displays all secure MAC addresses configured on all switch interfaces. (Figure 2)</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">
+                  <b>show interfaces</b>
+                </span>
+                <b></b>- Displays one or all interfaces with line (protocol) status, bandwidth, delay, reliability, encapsulation, duplex, and I/O statistics. (Figure 3)</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">
+                  <b>show mac-address-table</b>
+                </span>
+                <b></b>- Displays all MAC addresses that the switch has learned, how those addresses were learned (dynamic/static), the port number, and the VLAN assigned to the port. (Figure 4)</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>Like the router, the switch also supports the <span class="cmd"><b>show cdp neighbors</b></span> command.</p>
+          <p></p>
+          <p>The same in-band and out-of-band management techniques that apply to routers also applies to switch configuration.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

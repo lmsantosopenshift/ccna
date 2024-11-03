@@ -1,0 +1,66 @@
+<textcomponents>
+
+<!--SLIDE 1-->
+<component id="ID_s1_title">
+   <text><![CDATA[<b>DSSS Example</b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+   <text><![CDATA[User Information Data]]></text>
+</component>
+<component id="ID_s1_txt02">
+   <text><![CDATA[Spreading Code]]></text>
+</component>
+<component id="ID_s1_txt03">
+   <text><![CDATA[Spreaded Information]]></text>
+</component>
+
+
+<!--SLIDE 2-->
+<component id="ID_s2_title">
+   <text><![CDATA[<b>FHSS Example</b>]]></text>
+</component>
+<component id="ID_s2_txt01">
+   <text><![CDATA[FHSS]]></text>
+</component>
+<component id="ID_s2_txt02">
+   <text><![CDATA[DSSS]]></text>
+</component>
+<component id="ID_s2_txt03">
+   <text><![CDATA[P(f)]]></text>
+</component>
+<component id="ID_s2_txt04">
+   <text><![CDATA[Hop<br/>#23]]></text>
+</component>
+<component id="ID_s2_txt05">
+   <text><![CDATA[Hop<br/>#29]]></text>
+</component>
+<component id="ID_s2_txt06">
+   <text><![CDATA[Hop<br/>#5]]></text>
+</component>
+<component id="ID_s2_txt07">
+   <text><![CDATA[Hop<br/>#12]]></text>
+</component>
+<component id="ID_s2_txt08">
+   <text><![CDATA[Hop<br/>#1]]></text>
+</component>
+<component id="ID_s2_txt09">
+   <text><![CDATA[Hop<br/>#58]]></text>
+</component>
+
+
+<!--SLIDE 3-->
+<component id="ID_s3_title">
+   <text><![CDATA[<b>OFDM Example</b>]]></text>
+</component>
+<component id="ID_s3_txt01">
+   <text><![CDATA[Magnitude]]></text>
+</component>
+<component id="ID_s3_txt02">
+   <text><![CDATA[Channel]]></text>
+</component>
+<component id="ID_s3_txt03">
+   <text><![CDATA[Subchannel]]></text>
+</component>
+
+
+</textcomponents>

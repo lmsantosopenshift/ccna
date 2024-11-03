@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.2.4 Wireless Access Points </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless Concepts</h1>
+        <h2>Components of WLANs</h2>
+      </div>
+      <div id="content">
+          <p>APs can be categorized as either autonomous APs or controller-based APs.</p>
+          <p></p>
+          <p>
+            <b>Autonomous APs</b>
+          </p>
+          <p>Autonomous APs, sometimes referred to as heavy APs, are standalone devices configured using the Cisco CLI or a GUI. Autonomous APs are useful in situations where only a couple of APs are required in the network. Optionally, multiple APs can be controlled using wireless domain services (WDS) and managed using CiscoWorks Wireless LAN Solution Engine (WLSE).</p>
+          <p></p>
+          <p>
+            <b>Note</b>: A home router is an example of an autonomous AP because the entire AP configuration resides on the device.</p>
+          <p></p>
+          <p>Figure 1 displays an autonomous AP in a small network. If the wireless demands increase, more APs would be required. Each AP would operate independent of other APs and require manual configuration and management. </p>
+          <p></p>
+          <p>
+            <b>Controller-Based APs</b>
+          </p>
+          <p>Controller-based APs are server-dependent devices that require no initial configuration. Cisco offers two controller-based solutions. Controller-based APs are useful in situations where many APs are required in the network. As more APs are added, each AP is automatically configured and managed by a WLAN controller.</p>
+          <p></p>
+          <p>Figure 2 displays a controller-based AP in a small network. Notice how a WLAN controller is now required to manage the APs. The benefit of the controller is that it can be used to manage many APs.</p>
+          <p></p>
+          <p>
+            <b>Note</b>: Some AP models can operate in either autonomous mode or in controller-based mode.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

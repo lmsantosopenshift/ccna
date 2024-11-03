@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.1.2.1 Design for Scalability </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.1.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Implementing a Network Design</h1>
+        <h2>Expanding the Network</h2>
+      </div>
+      <div id="content">
+          <p>To support an enterprise network, the network designer must develop a strategy to enable the network to be available and to scale effectively and easily. Included in a basic network design strategy are the following recommendations:</p>
+          <p></p>
+          <p>
+            <ul>
+              <li>Use expandable, modular equipment or clustered devices that can be easily upgraded to increase capabilities. Device modules can be added to the existing equipment to support new features and devices without requiring major equipment upgrades.  Some devices can be integrated in a cluster to act as one device to simplify management and configuration.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Design a hierarchical network to include modules that can be added, upgraded, and modified, as necessary, without affecting the design of the other functional areas of the network. For example, creating a separate access layer that can be expanded without affecting the distribution and core layers of the campus network. </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Create an IPv4 or IPv6 address strategy that is hierarchical. Careful IPv4 address planning eliminates the need to re-address the network to support additional users and services. </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Choose routers or multilayer switches to limit broadcasts and filter other undesirable traffic from the network. Use Layer 3 devices to filter and reduce traffic to the network core. </li>
+            </ul>
+          </p>
+          <p></p>
+          <p>As shown in the figure, more advanced network design requirements include:</p>
+          <p>
+            <ul>
+              <li>Implementing redundant links in the network between critical devices and between access layer and core layer devices.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Implementing multiple links between equipment, with either link aggregation (EtherChannel) or equal cost load balancing, to increase bandwidth. Combining multiple Ethernet links into a single, load-balanced EtherChannel configuration increases available bandwidth. EtherChannel implementations can be used when budget restrictions prohibit purchasing high-speed interfaces and fiber runs.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Implementing wireless connectivity to allow for mobility and expansion.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Using a scalable routing protocol and implementing features within that routing protocol to isolate routing updates and minimize the size of the routing table.</li>
+            </ul>
+          </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

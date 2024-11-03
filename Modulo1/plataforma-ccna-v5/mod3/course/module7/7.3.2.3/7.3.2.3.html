@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.2.3 Bandwidth Metric </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1> Operation of EIGRP</h1>
+        <h2>Metrics</h2>
+      </div>
+      <div id="content">
+          <p>The bandwidth metric is a static value used by some routing protocols, such as EIGRP and OSPF, to calculate their routing metric. The bandwidth is displayed in kilobits per second (kb/s). Most serial interfaces use the default bandwidth value of 1544 kb/s or 1,544,000 b/s (1.544 Mb/s). This is the bandwidth of a T1 connection. However, some serial interfaces use a different default bandwidth value. Figure 1 shows the topology used throughout this section. The types of serial interfaces and their associated bandwidths may not necessarily reflect the more common types of connections found in networks today. </p>
+          <p></p>
+          <p>Always verify bandwidth with the <span class="cmd"><b>show interfaces </b></span>command.</p>
+          <p></p>
+          <p>The default value of the bandwidth may or may not reflect the actual physical bandwidth of the interface. If actual bandwidth of the link differs from the default bandwidth value, the bandwidth value should be modified.</p>
+          <p></p>
+          <p>
+            <b>Configuring the Bandwidth Parameter</b>
+          </p>
+          <p></p>
+          <p>On most serial links, the bandwidth metric defaults to 1544 kb/s. Because both EIGRP and OSPF use bandwidth in default metric calculations, a correct value for bandwidth is very important to the accuracy of routing information. </p>
+          <p></p>
+          <p>Use the following interface configuration mode command to modify the bandwidth metric: </p>
+          <p></p>
+          <p></p>
+          <p>
+            <span class="cmd">Router(config-if)# </span>
+            <span class="cmd">
+              <b>bandwidth </b>
+            </span>
+            <span class="cmd">
+              <i>kilobits-bandwidth-value</i>
+            </span>
+          </p>
+          <p></p>
+          <p>Use the <span class="cmd"><b>no bandwidth</b></span> command to restore the default value.</p>
+          <p></p>
+          <p>In Figure 2, the link between R1 and R2 has a bandwidth of 64 kb/s, and the link between R2 and R3 has a bandwidth of 1,024 kb/s. The figure shows the configurations used on all three routers to modify the bandwidth on the appropriate serial interfaces.</p>
+          <p></p>
+          <p>
+            <b>Verifying the Bandwidth Parameter</b>
+          </p>
+          <p></p>
+          <p>Use the<span class="cmd"><b> show interfaces </b></span>command to verify the new bandwidth parameters, as shown in Figure 3. It is important to modify the bandwidth metric on both sides of the link to ensure proper routing in both directions.</p>
+          <p></p>
+          <p>Modifying the bandwidth value does not change the actual bandwidth of the link. The<span class="cmd"><b> bandwidth </b></span>command only modifies the bandwidth metric used by routing protocols, such as EIGRP and OSPF. </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

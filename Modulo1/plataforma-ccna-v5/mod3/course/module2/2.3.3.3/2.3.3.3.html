@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.3.3.3 Overview of Spanning Tree Status</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.3.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Spanning Tree Configuration</h1>
+        <h2>STP Configuration Issues</h2>
+      </div>
+      <div id="content">
+          <p>Using the<span class="cmd"><b> show spanning-tree </b></span>command without specifying any additional options provides a quick overview of the status of STP for all VLANs that are defined on a switch. If interested only in a particular VLAN, limit the scope of this command by specifying that VLAN as an option.</p>
+          <p></p>
+          <p>Use the<span class="cmd"><b> show spanning-tree vlan </b></span><span class="cmd"><i>vlan_id </i></span>command to get STP information for a particular VLAN. Use this command to get information about the role and status of each port on the switch. The example output on switch S1 shows all three ports in the forwarding (FWD) state and the role of the three ports as either designated ports or root ports. Any ports being blocked display the output status as “BLK”.</p>
+          <p></p>
+          <p>The output also gives information about the BID of the local switch and the root ID, which is the BID of the root bridge.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

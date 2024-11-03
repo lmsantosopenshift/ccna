@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.1.6 Cisco IOS 15 Train Numbering</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.1.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Managing IOS System Files</h1>
+        <h2>Naming Conventions</h2>
+      </div>
+      <div id="content">
+          <p>The release numbering convention for IOS 15 identifies the specific IOS release, including bug fixes and new software features, similar to previous IOS release families. The figure shows examples of this convention for both the EM release and T release.</p>
+          <p></p>
+          <p>
+            <b>Extended Maintenance Release</b>
+          </p>
+          <p></p>
+          <p>The EM release is ideal for long-term maintenance, enabling customers to qualify, deploy, and remain on the release for an extended period. The mainline train incorporates features delivered in previous releases plus incremental new feature enhancements and hardware support.</p>
+          <p></p>
+          <p>The first maintenance rebuild (for bug fixes only, not new features or new hardware support) of Release 15.0(1)M is numbered 15.0(1)M1. Subsequent maintenance releases are defined by an increment of the maintenance rebuild number (i.e., M2, M3, etc.).</p>
+          <p></p>
+          <p>
+            <b>Standard Maintenance Release</b>
+          </p>
+          <p></p>
+          <p>The T release is used for short deployment releases ideal for the latest new features and hardware support before the next EM release becomes available. The T release provides regular bug fix maintenance rebuilds, plus critical fix support for network affecting bugs such as Product Security Incident Report Team (PSIRT) issues.</p>
+          <p></p>
+          <p>The first planned 15 T new feature release is numbered Release 15.1(1)T. The first maintenance rebuild (for bug fixes only, not new features or new hardware support) of Release 15.1(1)T will be numbered 15.1(1)T1. Subsequent releases are defined by an increment of the maintenance rebuild number (i.e., T2, T3, etc.).</p>
+          <p></p>
+          <p></p>
+          <p></p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

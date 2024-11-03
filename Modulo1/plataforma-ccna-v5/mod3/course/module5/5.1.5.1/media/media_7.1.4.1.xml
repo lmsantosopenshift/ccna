@@ -1,0 +1,52 @@
+<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Routing Protocol Authentication Overview</b>]]></text>
+</component>
+<component id="ID_txt01">
+  <text><![CDATA[Tell R1:<BR/>192.168.10.10/32 is reachable through R2.]]></text> 
+  </component>
+<component id="ID_txt02">
+  <text><![CDATA[R1 should forward here...]]></text> 
+  </component>
+<component id="ID_txt03">
+  <text><![CDATA[...but attacker manipulated R1’s routing information, so R1 forwards to R2...]]></text> 
+  </component>
+<component id="ID_txt04">
+  <text><![CDATA[...but R2 knows better and sends packet back to R1 creating a loop.]]></text> 
+  </component>
+<component id="ID_txt05">
+  <text><![CDATA[Normal best path]]></text> 
+  </component>
+<component id="ID_txt06">
+  <text><![CDATA[R1 updates its routing table.]]></text> 
+  </component>
+  
+<component id="ID_to">
+<text><![CDATA[To: 192.168.10.10/24]]></text>
+</component>
+
+<component id="end">
+<text><![CDATA[End]]></text>
+</component>
+
+<component id="fforward">
+<text><![CDATA[Fast Forward]]></text>
+</component>
+
+<component id="pause">
+<text><![CDATA[Pause]]></text>
+</component>
+
+<component id="play">
+<text><![CDATA[Play]]></text>
+</component>
+
+<component id="rewind">
+<text><![CDATA[Rewind]]></text>
+</component>
+
+<component id="start">
+<text><![CDATA[Start]]></text>
+</component>
+
+</textcomponents>

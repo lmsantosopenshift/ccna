@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.4.1.5 Smart Wi-Fi Tools </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.4.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless LAN Configuration</h1>
+        <h2>Configure a Wireless Router</h2>
+      </div>
+      <div id="content">
+          <p>As shown in Figures 1 to 6, the Smart Wi-Fi tools provide additional services including:</p>
+          <p>
+            <ul>
+              <li>
+                <b>Device List </b>- View to see who is connected to the WLAN. Device names and icons can be personalized. Devices can also be connected with this service.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Guest Access </b>- Create a separate network for up to 50 guests at home while keeping network files safe with the Guest Access Tool.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Parental Controls </b>- Protect kids and family members by restricting access to potentially harmful websites. This tool is used to restrict Internet access on specific devices, control the time and days of specific devices that can access the Internet, block specific websites for certain devices, disable restrictions on Internet access, and disable the Parental Controls feature.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Media Prioritization </b>- Prioritize bandwidth to specific devices and applications. With this tool, optimize the online experience by prioritizing bandwidth on applications and devices that need it the most. This tool can be used to utilize the Settings feature of the Media Prioritization Tool, add more applications to be assigned with a specific bandwidth, and allocate higher bandwidth to an application, device, or online game by setting the bandwidth priority.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Speed Test </b>- Tool used to test the upload and download speed of the Internet link. Useful for baselining.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>USB Storage</b>
+                <b></b>- Controls access to shared files. Configures how users can access shared files. With this tool, users can access USB storage in the local network, create shares on a USB storage device, configure the Folder Access settings, configure how devices and computers within the network can access the FTP server, and configure the access to a Media Server.</li>
+            </ul>
+          </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

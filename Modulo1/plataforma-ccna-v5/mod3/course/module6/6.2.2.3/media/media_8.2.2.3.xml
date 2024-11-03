@@ -1,0 +1,27 @@
+<textcomponents>
+<component id="ID_s1_header">
+<text><![CDATA[<b>Summarizing Interarea Routes on ABRs</b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+<text><![CDATA[<b>Area 0</b>]]></text>
+</component>
+
+<component id="ID_s1_txt02">
+<text><![CDATA[<b>Area 1</b>]]></text>
+</component>
+
+<component id="ID_s1_txt03">
+<text><![CDATA[<b>Area 2</b>]]></text>
+</component>
+
+<component id="ID_s1_txt04">
+<text><![CDATA[<b>Send summary route 10.1.0.0/22</b>]]></text>
+</component>
+
+<component id="ID_s2_header">
+  <text><![CDATA[<b>Verify the R1 Routing Table Before Summarization</b>]]></text> 
+  </component>
+<component id="ID_s3_header">
+  <text><![CDATA[<b>Verify the R3 Routing Table Before Summarization</b>]]></text> 
+  </component>
+</textcomponents>

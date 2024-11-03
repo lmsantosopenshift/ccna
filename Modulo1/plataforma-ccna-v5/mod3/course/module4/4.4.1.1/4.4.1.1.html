@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.4.1.1 Configuring a Wireless Router </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.4.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless LAN Configuration</h1>
+        <h2>Configure a Wireless Router</h2>
+      </div>
+      <div id="content">
+          <p>Modern wireless routers offer a variety of features and most are designed to be functional right out of the box with the default settings. However, it is good practice to change initial, default configurations. </p>
+          <p></p>
+          <p>Home wireless routers are configured using a GUI web interface.</p>
+          <p></p>
+          <p>The basic approach to wireless implementation, as with any basic networking, is to configure and test incrementally. For example, before implementing any wireless devices, verify that the existing wired network is operational and wired hosts can access Internet services. </p>
+          <p></p>
+          <p>After the wired network operation has been confirmed, the implementation plan consists of the following:</p>
+          <p>
+            <b>Step 1.</b> Start the WLAN implementation process with a single AP and a single wireless client, without enabling wireless security. </p>
+          <p>
+            <b>Step 2.</b> Verify that the client has received a DHCP IP address and can ping the local wired default router and then browse to the external Internet. </p>
+          <p>
+            <b>Step 3.</b> Configure wireless security using WPA2/WPA Mixed Personal. Never use WEP unless no other options exist.</p>
+          <p>
+            <b>Step 4.</b> Back up the configuration.</p>
+          <p></p>
+          <p>Before installing a wireless router, consider the following settings:</p>
+          <p>
+            <ul>
+              <li>
+                <b>SSID Name </b>- Name of the WLAN network.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Network Password (if required) </b>- If prompted, this is the password required to associate and access the SSID.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Router Password </b>- This is a management router password equivalent to the<span class="cmd"><b> enable secret </b></span>privileged EXEC mode password.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Guest Network SSID Name </b>- For security reasons, guests can be isolated to a different SSID.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Guest Network Password </b>- This is the password to access the guest SSID.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Linksys Smart Wi-Fi Username </b>- Internet account required to access the router remotely over the Internet.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Linksys Smart Wi-Fi Password </b>- Password to access the router remotely.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>The table in the figure outlines example settings used to configure the Linksys EA6500 wireless router. </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

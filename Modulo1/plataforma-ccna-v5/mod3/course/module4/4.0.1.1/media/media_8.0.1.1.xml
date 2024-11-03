@@ -1,0 +1,9 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[]]></text>
+</component>
+   
+<component id="ID_txt01">
+<text><![CDATA[<br/><b>Upon completion of this chapter, you will be able to:</b><br/><br/><textformat blockindent='-14'><ul><li>Describe wireless LAN technology and standards.</li><li>Describe the components of a wireless LAN infrastructure.</li><li>Describe wireless topologies.</li><li>Describe the 802.11 frame structure.</li><li>Describe the media access method used by wireless technology.</li><li>Describe channel management in a WLAN.</li><li>Describe threats to wireless LANs.</li><li>Describe wireless LAN security mechanisms.</li><li>Configure a wireless router to support a remote site.</li><li>Configure wireless clients to connect to a wireless router.</li><li>Troubleshoot common wireless configuration issues.</li></ul></textformat>]]></text>
+</component>
+</textcomponents>

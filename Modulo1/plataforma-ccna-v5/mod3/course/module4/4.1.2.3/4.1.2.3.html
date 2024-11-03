@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.2.3 Business Wireless Solutions </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless Concepts</h1>
+        <h2>Components of WLANs</h2>
+      </div>
+      <div id="content">
+          <p>Organizations providing wireless connectivity to their users require a WLAN infrastructure to provide additional connectivity options. </p>
+          <p></p>
+          <p>
+            <b>Note</b>: IEEE 802.11 refers to a wireless client as a station (STA). In this chapter, the term wireless client is used to describe any wireless capable device.</p>
+          <p></p>
+          <p>The small business network shown in Figure 1 is an 802.3 Ethernet LAN. Each client (i.e., PC1 and PC2) connects to a switch using a network cable. The switch is the point where the clients gain access to the network. Notice that the wireless AP also connects to the switch. In this example, either the Cisco WAP4410N AP or the WAP131 AP could be used to provide wireless network connectivity.</p>
+          <p></p>
+          <p>Wireless clients use their wireless NIC to discover nearby APs advertising their SSID. Clients then attempt to associate and authenticate with an AP, as shown in Figure 2. After being authenticated, wireless users have access to network resources.</p>
+          <p></p>
+          <p>
+            <b>Note</b>: Wireless needs of a small organization differ from those of a large organization. Large, wireless deployments require additional wireless hardware to simplify the installation and management of the wireless network.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

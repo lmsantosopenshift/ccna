@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.1.1.2 Protocol Dependent Modules</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Characteristics of EIGRP</h1>
+        <h2>Basic Features of EIGRP</h2>
+      </div>
+      <div id="content">
+          <p>EIGRP has the capability for routing several different protocols including IPv4 and IPv6 using protocol-dependent modules (PDMs). Although now obsolete, EIGRP also used PDMs to route Novell’s IPX and Apple Computer’s AppleTalk network layer protocols. </p>
+          <p></p>
+          <p>PDMs are responsible for network layer protocol-specific tasks. An example is the EIGRP module that is responsible for sending and receiving EIGRP packets that are encapsulated in IPv4. This module is also responsible for parsing EIGRP packets and informing DUAL of the new information that is received. EIGRP asks DUAL to make routing decisions, but the results are stored in the IPv4 routing table.</p>
+          <p></p>
+          <p>PDMs are responsible for the specific routing tasks for each network layer protocol, including: </p>
+          <p>
+            <ul>
+              <li>Maintaining the neighbor and topology tables of EIGRP routers that belong to that protocol suite</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Building and translating protocol-specific packets for DUAL</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Interfacing DUAL to the protocol-specific routing table</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Computing the metric and passing this information to DUAL</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Implementing filtering and access lists</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Performing redistribution functions to and from other routing protocols</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Redistributing routes that are learned by other routing protocols</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>When a router discovers a new neighbor, it records the neighbor’s address and interface as an entry in the neighbor table. One neighbor table exists for each protocol-dependent module, such as IPv4. EIGRP also maintains a topology table. The topology table contains all destinations that are advertised by neighboring routers. There is also a separate topology table for each PDM.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

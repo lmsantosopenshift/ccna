@@ -1,0 +1,30 @@
+<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Common Wi-Fi Certified Logos</b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+<text><![CDATA[Generic Wi-Fi Alliance logo stating that the product has been tested and meets the specified Wi-Fi feature.]]></text>
+</component>
+<component id="ID_s1_txt02">
+<text><![CDATA[Wi-Fi logo certifying that the product will interoperate with 802.11 a/b/g/n devices.]]></text>
+</component>
+<component id="ID_s1_txt03">
+<text><![CDATA[Wi-Fi logo certifying that the device is Wi-Fi Protected Setup, certified to simplify initial device connectivity.]]></text>
+</component>
+<component id="ID_s1_txt04">
+<text><![CDATA[Wi-Fi logo certifying that the device is Wi-Fi Direct capable, simplifying the sharing of media between devices.]]></text>
+</component>
+
+
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Wi-Fi CERTIFIED Direct</b>]]></text>
+</component>
+<component id="ID_s3_title">
+<text><![CDATA[<b>Wi-Fi CERTIFIED Passpoint</b>]]></text>
+</component>
+<component id="ID_s4_title">
+<text><![CDATA[<b>Wi-Fi CERTIFIED Miracast</b>]]></text>
+</component>
+
+</textcomponents>

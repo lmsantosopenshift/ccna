@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.1.5 Step 3. Install the License</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>IOS Licensing</h1>
+        <h2>Software Licensing </h2>
+      </div>
+      <div id="content">
+          <p>
+            <b>Step 3. Install the License</b>
+          </p>
+          <p></p>
+          <p>After the license has been purchased, the customer receives a license file, which is an XML text file with a .lic extension. Installing a permanent license requires two steps:</p>
+          <p></p>
+          <p>
+            <b>Step 1.</b> Use the<span class="cmd"><b> license install </b></span><span class="cmd"><i>stored-location-url </i></span>privileged exec mode command to install a license file.</p>
+          <p></p>
+          <p>
+            <b>Step 2.</b> Reload the router using the privileged exec command<span class="cmd"><b> reload</b></span>. A reload is not required if an evaluation license is active. </p>
+          <p></p>
+          <p>Figure 1 shows the configuration for installing the permanent license for the Security package on the router.</p>
+          <p></p>
+          <p>
+            <b>Note</b>: Unified Communications is not supported on 1941 routers.</p>
+          <p></p>
+          <p>A permanent license is a license that never expires. After a permanent license is installed on a router, it is good for that particular feature set for the life of the router, even across IOS versions. For example, when a UC, SEC, or Data license is installed on a router, the subsequent features for that license are activated even if the router is upgraded to a new IOS release. A permanent license is the most common license type used when a feature set is purchased for a device.</p>
+          <p></p>
+          <p>
+            <b>Note</b>: Cisco manufacturing preinstalls the appropriate permanent license on the ordered device for the purchased feature set. No customer interaction with the Cisco IOS Software Activation processes is required to enable that license on new hardware.</p>
+          <p></p>
+          <p>Use the Syntax Checker in Figure 2 to install a permanent license file on router R2.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

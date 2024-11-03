@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.2.2 EIGRP Parameters</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Troubleshoot EIGRP</h1>
+        <h2>Troubleshoot EIGRP Neighbor Issues</h2>
+      </div>
+      <div id="content">
+          <p>When troubleshooting an EIGRP network, one of the first things to verify is that all routers that are participating in the EIGRP network are configured with the same autonomous system number. The<span class="cmd"><b> router eigrp </b></span><span class="cmd"><i>as-number </i></span>command starts the EIGRP process and is followed by a number that is the autonomous system number. The value of the<span class="cmd"><i> as-number </i></span>argument must be the same in all routers that are in the EIGRP routing domain.</p>
+          <p></p>
+          <p>Figure 1 shows that all routers should be participating in autonomous system number 1. In Figure 2, the<span class="cmd"><b> show ip protocols </b></span>command verifies that R1, R2, and R3 all use the same autonomous system number.</p>
+          <p></p>
+          <p>
+            <b>EIGRP for IPv6</b>
+          </p>
+          <p></p>
+          <p>Similar commands and troubleshooting criteria also apply to EIGRP for IPv6.</p>
+          <p></p>
+          <p>The following are the equivalent commands used with EIGRP for IPv6:</p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">Router(config)# </span>
+                <span class="cmd">
+                  <b>ipv6 router eigrp </b>
+                </span>
+                <span class="cmd">
+                  <i>as-number</i>
+                </span>
+                <span class="cmd">
+                  <b></b>
+                </span>
+              </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">Router# </span>
+                <span class="cmd">
+                  <b>show ipv6 protocols</b>
+                </span>
+              </li>
+            </ul>
+          </p>
+          <p></p>
+          <p></p>
+          <p>
+            <b>Note</b>: At the top of the output, “IP Routing is NSF aware” refers to Nonstop Forwarding (NSF). This capability allows the EIGRP peers of a failing router to retain the routing information that it has advertised, and to continue using this information until the failed router resumes normal operation and is able to exchange routing information. For more information refer to: <a href="http://www.cisco.com/en/US/docs/ios-xml/ios/iproute_eigrp/configuration/15-mt/eigrp-nsf-awa.html" target="_blank">http://www.cisco.com/en/US/docs/ios-xml/ios/iproute_eigrp/configuration/15-mt/eigrp-nsf-awa.html</a></p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

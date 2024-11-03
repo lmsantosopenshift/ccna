@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.1.1.2 Enterprise Business Devices</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Implementing a Network Design</h1>
+        <h2>Hierarchical Network Design</h2>
+      </div>
+      <div id="content">
+          <p>Users expect enterprise networks, such as the example shown in the figure, to be up 99.999 percent of the time. Outages in the enterprise network prevent the business from performing normal activities, which can result in a loss of revenue, customers, data, and opportunities. </p>
+          <p></p>
+          <p>To obtain this level of reliability, high-end, enterprise class equipment is commonly installed in the enterprise network. Designed and manufactured to more stringent standards than lower-end devices, enterprise equipment moves large volumes of network traffic.</p>
+          <p></p>
+          <p>Enterprise class equipment is designed for reliability, with features such as redundant power supplies and failover capabilities. Failover capability refers to the ability of a device to switch from a non-functioning module, service or device, to a functioning one with little or no break in service. </p>
+          <p></p>
+          <p>Purchasing and installing enterprise class equipment does not eliminate the need for proper network design. </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

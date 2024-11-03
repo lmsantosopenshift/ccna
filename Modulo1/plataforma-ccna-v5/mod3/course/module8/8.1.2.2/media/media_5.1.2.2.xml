@@ -1,0 +1,68 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>EIGRP for IPv4 Topology</b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+  <text><![CDATA[<b>EIGRP Routing Domain</b>]]></text> 
+  </component>
+<component id="ID_s1_txt02">
+  <text><![CDATA[Internet]]></text> 
+  </component>
+
+
+<component id="ID_s2_title">
+  <text><![CDATA[<b>Calculating a Summary Route</b>]]></text> 
+  </component>
+<component id="ID_s2_txt01">
+  <text><![CDATA[22 matching bits]]></text> 
+  </component>
+<component id="ID_s2_txt02">
+  <text><![CDATA[22 matching bits = a /22 or 255.255.252.0 subnet mask]]></text> 
+</component>
+
+<component id="ID_s2_txt03">
+<text><![CDATA[Configure the summary route on all interfaces that send EIGRP packets.]]></text>
+</component>
+
+<component id="ID_s3_title">
+	<text><![CDATA[<b>Configuring a Manual Summary Route on R3</b>]]></text>		
+	</component>
+
+<component id="ID_sc_reset">
+		<text><![CDATA[Reset]]></text>
+	</component>
+	<component id="ID_sc_showme">
+		<text><![CDATA[Show Me]]></text>
+	</component>
+	<component id="ID_sc_showall">
+		<text><![CDATA[Show All]]></text>
+	</component>
+
+	<component id="ID_SC3" fontFace='Courier New' fontSize="10" >
+		<feedback id="fb"><![CDATA[<pre><b>***</b><font size = '10' face="Arial" color="#0000FF" >You must enter the exact and full command.</font><b>***</b></pre> ]]></feedback>		
+		<existingcommands><![CDATA[<pre><font face="Arial" fontSize="10" ><b>Configure an EIGRP summary route to summarize the following networks<br/> on R3’s Serial 0/0/1 interface for EIGRP AS 1:<ul><li> 192.168.1.0/24</li><li> 192.168.2.0/24</li><li> 192.168.3.0/24</li></ul>Return to privileged EXEC mode.</b></font></pre>]]></existingcommands>
+		<command  prompt="R3(config)#">
+		    <correctresponse><![CDATA[interface serial 0/0/1]]></correctresponse>
+		</command>
+		<command  prompt="R3(config-if)#">
+	<correctresponse><![CDATA[ip summary-address eigrp 1 192.168.0.0 255.255.252.0]]></correctresponse>
+		</command>
+		<command  prompt="R3(config-if)#">
+		    <correctresponse><![CDATA[end]]></correctresponse>
+			<instruction><![CDATA[<pre><font  face="Arial" fontSize="10" ><b>Display the routing table on R1 to view the manual summarization from R3.</b></pre>]]></instruction>
+		</command>
+		<command  prompt="R1#">
+		    <correctresponse><![CDATA[show ip route]]></correctresponse>
+				<deviceresponse><![CDATA[<pre><font face="Courier New" fontSize="10" >&lt;output omitted&gt;<br><br>D     192.168.0.0/22 [90/2170112] via 192.168.10.6, 01:53:19, <br>Serial0/0/1<br>R1#</font></pre>]]></deviceresponse> 
+			<instruction><![CDATA[<pre><font face="Arial"><b>Display the routing table on R2 to view the manual summarization from R3.</b></pre>]]></instruction>
+		</command>
+		<command  prompt="R2#">
+		    <correctresponse><![CDATA[show ip route]]></correctresponse>
+				<deviceresponse><![CDATA[<pre><font face="Courier New" fontSize="10" >&lt;output omitted&gt;<br><br>D     192.168.0.0/22 [90/3012096] via 192.168.10.10, 01:53:33, <br>Serial0/0/1<br>R2#</font></pre>]]></deviceresponse> 
+			<instruction><![CDATA[<font face="Arial" class="syntaxBottomLine"><b>You successfully configured a manual summary route on R3.</b>]]></instruction>
+		</command>
+		<command prompt=""/>
+	</component>
+
+
+</textcomponents>

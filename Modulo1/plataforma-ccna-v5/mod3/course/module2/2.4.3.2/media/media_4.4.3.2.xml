@@ -1,0 +1,27 @@
+<textcomponents>
+
+<component id="ID_s1_title">
+<text><![CDATA[<b>Gateway Load Balancing Protocol</b>]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[Internet]]></text>
+</component>
+
+<component id="ID_s1_txt02">
+<text><![CDATA[Forwarding Router]]></text> 
+</component>
+
+<component id="ID_s1_txt03">
+<text><![CDATA[Virtual Router]]></text> 
+</component>
+
+<component id="ID_s1_txt04">
+<text><![CDATA[Standby Router]]></text> 
+</component>
+
+<component id="ID_s1_txt05">
+<text><![CDATA[LAN]]></text> 
+</component>
+
+</textcomponents>

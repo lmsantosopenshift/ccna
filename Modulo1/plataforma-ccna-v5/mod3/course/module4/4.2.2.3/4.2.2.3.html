@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.2.3 Association Parameters </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless LAN Operations</h1>
+        <h2>Wireless Operation</h2>
+      </div>
+      <div id="content">
+          <p>Figure 1 displays the wireless settings on a Linksys EA6500 wireless router. Common configurable wireless parameters include:</p>
+          <p>
+            <ul>
+              <li>
+                <b>SSID </b>- An SSID is a unique identifier that wireless clients use to distinguish between multiple wireless networks in the same vicinity. The SSID name appears in the list of available wireless network on a client. Depending on the network configuration, several APs on a network can share an SSID. Names are usually 2 to 32 characters long.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Password </b>- Required from the wireless client to authenticate to the AP. A password is sometimes called the security key. It prevents intruders and other unwanted users from accessing the wireless network.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Network mode </b>- Refers to the 802.11a/b/g/n/ac/ad WLAN standards. APs and wireless routers can operate in a Mixed mode meaning that it can simultaneously use multiple standards.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Security mode </b>- Refers to the security parameter settings, such as WEP, WPA, or WPA2. Always enable the highest security level supported.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Channel settings </b>- Refers to the frequency bands being used to transmit wireless data. Wireless routers and AP can choose the channel setting or it can be set manually if there is interference with another AP or wireless device.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>Notice that the Linksys EA6500 supports 2.4 GHz and 5 GHz radios.</p>
+          <p></p>
+          <p>Figure 2 displays the options for the 2.4 GHz radio Network mode. Notice that it can support Mixed, Wireless-N Only, or Wireless-G Only. The Mixed setting provides more flexibility, but it can also slow down communication. For example, if all the wireless clients connecting to the router are using 802.11n, then they all enjoy the better data rates provided. If 802.11g wireless client associate with the AP, then all of the faster wireless client contending for the channel must wait on 802.11g clients to clear the channel before transmitting. However, if all wireless client support 802.11n, then select Wireless-N Only for best performance.</p>
+          <p></p>
+          <p>Figure 3 displays the Network mode options for the 5 GHz radio. Notice that it also supports a Mixed setting, along with the Wireless-N Only and Wireless-AC Only settings. </p>
+          <p></p>
+          <p>Notice that the Linksys EA6500 does not support 802.11ad.</p>
+          <p></p>
+          <p>The Security options listed in Figure 4 are choices of security protocols available on the Linksys EA6500 wireless router. Home users should choose WPA2/WPA Mixed Personal, while business users would typically choose WPA2/WPA Mixed Enterprise. The 5 GHz radio offers the identical choices. The wireless end device must also support the selected security option to associate.</p>
+          <p></p>
+          <p>
+            <b>Note</b>: All wireless routers and APs should be secured using the highest available settings. The None or WEP options should be avoided and only used in situations where security is of no concern.</p>
+          <p></p>
+          <p>Figure 5 displays the Channel settings for the 2.4 GHz radio. The preferred option to use is Auto; however, a specific channel could be selected if there were other APs or other devices nearby interfering with the channel selected by the router. Although the 5GHz radio also has the Auto option, in the example, it lists a specific channel (153) and channel width. </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

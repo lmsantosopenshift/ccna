@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.1.1.4 Cisco Enterprise Architecture</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.1.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Implementing a Network Design</h1>
+        <h2>Hierarchical Network Design</h2>
+      </div>
+      <div id="content">
+          <p>The Cisco Enterprise Architecture divides the network into functional components while still maintaining the core, distribution, and access layers. As the figure shows, the primary Cisco Enterprise Architecture modules include:</p>
+          <p>
+            <ul>
+              <li>Enterprise Campus </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Enterprise Edge </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Service Provider Edge </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Remote</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>
+            <b>Enterprise Campus</b>
+          </p>
+          <p>The Enterprise Campus consists of the entire campus infrastructure, to include the access, distribution, and core layers. The access layer module contains Layer 2 or Layer 3 switches to provide the required port density. Implementation of VLANs and trunk links to the building distribution layer occurs here. Redundancy to the building distribution switches is important. The distribution layer module aggregates building access using Layer 3 devices. Routing, access control, and QoS are performed at this distribution layer module. The core layer module provides high-speed interconnectivity between the distribution layer modules, data center server farms, and the enterprise edge. Redundancy, fast convergence, and fault tolerance are the focus of the design in this module.</p>
+          <p></p>
+          <p>In addition to these modules, the Enterprise Campus can include other submodules such as: </p>
+          <p>
+            <ul>
+              <li>
+                <b>Server Farm and Data Center Module </b>- This area provides high-speed connectivity and protection for servers. It is critical to provide security, redundancy, and fault tolerance. The network management systems monitor performance by monitoring device and network availability. </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Services Module </b>- This area provides access to all services, such as IP Telephony services, wireless controller services, and unified services. </li>
+            </ul>
+          </p>
+          <p></p>
+          <p>
+            <b>Enterprise Edge </b>
+          </p>
+          <p>The Enterprise Edge consists of the Internet, VPN, and WAN modules connecting the enterprise with the service provider's network. This module extends the enterprise services to remote sites and enables the enterprise to use Internet and partner resources. It provides QoS, policy reinforcement, service levels, and security.</p>
+          <p></p>
+          <p>
+            <b>Service Provider Edge </b>
+          </p>
+          <p>The Service Provider Edge provides Internet, Public Switched Telephone Network (PSTN), and WAN services.</p>
+          <p></p>
+          <p>All data that enters or exits the Enterprise Composite Network Model (ECNM) passes through an edge device. This is the point that all packets can be examined and a decision made whether the packet should be allowed on the enterprise network. Intrusion detection systems (IDS) and intrusion prevention systems (IPS) can also be configured at the enterprise edge to protect against malicious activity.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

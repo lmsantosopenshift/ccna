@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<data>
+	<slide>
+		<element type="IMAGE" src="text_box.jpg" x="0" y="86.5" width="468" height="202.5" />
+		<element type="TEXT" compId="ID_txt01" x="20.9" y="178.5" width="430" expand="up+down" align="left" size="11"/>
+	</slide>
+</data>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.2.2 Examining Interface Values</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1> Operation of EIGRP</h1>
+        <h2>Metrics</h2>
+      </div>
+      <div id="content">
+          <p>
+            <b>Examining the Metric Values</b>
+          </p>
+          <p></p>
+          <p>The <span class="cmd"><b>show interfaces</b></span> command displays interface information, including the parameters used to compute the EIGRP metric. The figure shows the <span class="cmd"><b>show interfaces</b></span> command for the Serial 0/0/0 interface on R1.</p>
+          <p>
+            <ul>
+              <li>
+                <b>BW </b>- Bandwidth of the interface (in kilobits per second).</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>DLY </b>- Delay of the interface (in microseconds).</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Reliability </b>- Reliability of the interface as a fraction of 255 (255/255 is 100% reliability), calculated as an exponential average over five minutes. By default, EIGRP does not include its value in computing its metric.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Txload, Rxload </b>- Transmit and receive load on the interface as a fraction of 255 (255/255 is completely saturated), calculated as an exponential average over five minutes. By default, EIGRP does not include its value in computing its metric.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>
+            <b>Note</b>: Throughout this course, bandwidth is referenced as kb/s. However, router output displays bandwidth using the Kbit/sec abbreviation. Router output also displays delay as usec. In this course, delay is referenced as microseconds.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

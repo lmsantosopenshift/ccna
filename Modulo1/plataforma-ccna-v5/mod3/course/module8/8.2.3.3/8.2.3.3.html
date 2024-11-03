@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.3.3 Automatic summarization </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Troubleshoot EIGRP</h1>
+        <h2>Troubleshoot EIGRP Routing Table Issues</h2>
+      </div>
+      <div id="content">
+          <p>Another issue that may create problems for the network administrator is EIGRP automatic summarization.</p>
+          <p></p>
+          <p>Figure 1 shows a different network topology than what has been used throughout this chapter. There is no connection between R1 and R3. R1’s LAN has the network address 10.10.10.0/24, while R3’s LAN is 10.20.20.0/24. The serial connections between both routers and R2 have the same bandwidth of 1024 kb/s.</p>
+          <p></p>
+          <p>R1 and R3 have their LAN and serial interfaces enabled for EIGRP, as shown in Figure 2. Both routers perform EIGRP automatic summarization.</p>
+          <p></p>
+          <p>EIGRP for IPv4 can be configured to automatically summarize routes at classful boundaries. If there are discontiguous networks, automatic summarization causes inconsistent routing.</p>
+          <p></p>
+          <p>In Figure 3, R2’s routing table shows that it does not receive individual routes for the 10.10.10.0/24 and 10.20.20.0/24 subnets. Both R1 and R3 automatically summarized those subnets to the 10.0.0.0/8 classful boundary when sending EIGRP update packets to R2. The result is that R2 has two equal-cost routes to 10.0.0.0/8 in the routing table, which can result in inaccurate routing and packet loss. Depending upon whether per-packet, per-destination, or CEF load balancing is being used, packets may or may not be forwarded out the proper interface.</p>
+          <p></p>
+          <p>In Figure 4, the<span class="cmd"><b> show ip protocols </b></span>command verifies that automatic summarization is performed on both R1 and R3. Notice that both routers summarize the 10.0.0.0/8 network using the same metric.</p>
+          <p></p>
+          <p>The<span class="cmd"><b> auto-summary </b></span>command is disabled by default on Cisco IOS Software versions of 15 and newer versions of 12.2(33). By default, older software has automatic summarization enabled. To disable automatic summarization, enter the<span class="cmd"><b> no auto-summary </b></span>command in<span class="cmd"><b> router EIGRP </b></span>configuration mode.</p>
+          <p></p>
+          <p>To correct this problem, R1 and R3 have automatic summarization disabled:</p>
+          <p></p>
+          <p>
+            <span class="cmd">R1(config)# </span>
+            <span class="cmd">
+              <b>router eigrp 1</b>
+            </span>
+          </p>
+          <p>
+            <span class="cmd">R1(config-router)# </span>
+            <span class="cmd">
+              <b>no auto-summary</b>
+            </span>
+          </p>
+          <p></p>
+          <p>
+            <span class="cmd">R3(config)# </span>
+            <span class="cmd">
+              <b>router eigrp 1</b>
+            </span>
+          </p>
+          <p>
+            <span class="cmd">R3(config-router)# </span>
+            <span class="cmd">
+              <b>no auto-summary</b>
+            </span>
+          </p>
+          <p></p>
+          <p>After automatic summarization has been disabled on R1 and R3, R2’s routing table now indicates that it receives the individual 10.10.10.0/24 and 10.20.20.0/24 subnets from R1 and R3, respectively, as shown in Figure 5. Accurate routing and connectivity to both subnets is now restored.</p>
+          <p></p>
+          <p>
+            <b>EIGRP for IPv6</b>
+          </p>
+          <p></p>
+          <p>Classful networks do not exist in IPv6; therefore EIGRP for IPv6 does not support automatic summarization. All summarization must be accomplished using EIGRP manual summary routes.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

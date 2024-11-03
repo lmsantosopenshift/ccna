@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.1.4 Cisco IOS 12.4 System Image Packaging</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Managing IOS System Files</h1>
+        <h2>Naming Conventions</h2>
+      </div>
+      <div id="content">
+          <p>Prior to Cisco IOS Software Release 15.0, Cisco IOS Software Packaging consisted of eight packages for Cisco routers, as shown in the figure. This packaging scheme was introduced with the Cisco IOS Software 12.3 mainline train and was later used in other trains. The image packaging consists of eight IOS images, three of which are considered premium packages.</p>
+          <p></p>
+          <p>The five non-premium packages are:</p>
+          <p>
+            <ul>
+              <li>
+                <b>IP Base </b>- IP Base is the entry level Cisco IOS Software Image</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>IP Voice</b> - Converged voice and data, VoIP, VoFR, and IP Telephony</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Advanced Security</b> - Security and VPN features including Cisco IOS Firewall, IDS/IPS, IPsec, 3DES, and VPN</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>SP (Service Provider) Services</b> - Adds SSH/SSL, ATM, VoATM, and MPLS to IP Voice</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Enterprise Base</b> - Enterprise protocols: Appletalk, IPX, and IBM Support</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>
+            <b>Note</b>: Starting with the Cisco IOS Software 12.4 release family SSH is available in all images.</p>
+          <p></p>
+          <p>Three other premium packages offer additional IOS software feature combinations that address more complex network requirements. All features merge in the Advanced Enterprise Services package. This package integrates support for all routing protocols with Voice, Security, and VPN capabilities:</p>
+          <p>
+            <ul>
+              <li>
+                <b>Advanced Enterprise Services</b> - Full Cisco IOS Software features</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Enterprise Services</b> - Enterprise Base and Service Provider Services</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Advanced IP Services</b> - Advanced Security, Service Provider Services, and support for IPv6</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>
+            <b>Note</b>: The Cisco Feature Navigator is a tool used to find the right Cisco operating system depending on the features and technologies needed.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

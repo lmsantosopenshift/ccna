@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.3.3.4 Spanning Tree Failure Consequences</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.3.3.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Spanning Tree Configuration</h1>
+        <h2>STP Configuration Issues</h2>
+      </div>
+      <div id="content">
+          <p>With many protocols, a malfunction means that you lose the functionality which the protocol was providing. For example, if OSPF malfunctions on a router, connectivity to networks that are reachable via that router might be lost. This would generally not affect the rest of the OSPF network. If connectivity to the router is still available, it is possible to troubleshoot to diagnose and fix the problem.</p>
+          <p></p>
+          <p>With STP, there are two types of failure. The first is similar to the OSPF problem; STP might erroneously block ports that should have gone into the forwarding state. Connectivity might be lost for traffic that would normally pass through this switch, but the rest of the network remains unaffected. The second type of failure is much more disruptive, as shown in Figure 1. It happens when STP erroneously moves one or more ports into the forwarding state.</p>
+          <p></p>
+          <p>Remember that an Ethernet frame header does not include a TTL field, which means that any frame that enters a bridging loop continues to be forwarded by the switches indefinitely. The only exceptions are frames that have their destination address recorded in the MAC address table of the switches. These frames are simply forwarded to the port that is associated with the MAC address and do not enter a loop. However, any frame that is flooded by a switch enters the loop (Figure 2). This may include broadcasts, multicasts, and unicasts with a globally unknown destination MAC address.</p>
+          <p></p>
+          <p>What are the consequences and corresponding symptoms of STP failure (Figure 3)?</p>
+          <p></p>
+          <p>The load on all links in the switched LAN quickly starts increasing as more and more frames enter the loop. This problem is not limited to the links that form the loop, but also affects any other links in the switched domain because the frames are flooded on all links. When the spanning tree failure is limited to a single VLAN only links in that VLAN are affected. Switches and trunks that do not carry that VLAN operate normally.</p>
+          <p></p>
+          <p>If the spanning tree failure has created a bridging loop, traffic increases exponentially. The switches will then flood the broadcasts out multiple ports. This creates copies of the frames every time the switches forward them.</p>
+          <p></p>
+          <p>When control plane traffic starts entering the loop (for example, OSPF Hellos or EIGRP Hellos), the devices that are running these protocols quickly start getting overloaded. Their CPUs approach 100 percent utilization while they are trying to process an ever-increasing load of control plane traffic. In many cases, the earliest indication of this broadcast storm in progress is that routers or Layer 3 switches are reporting control plane failures and that they are running at a high CPU load. </p>
+          <p></p>
+          <p>The switches experience frequent MAC address table changes. If a loop exists, a switch may see a frame with a certain source MAC address coming in on one port and then see the another frame with the same source MAC address coming in on a different port a fraction of a second later. This will cause the switch to update the MAC address table twice for the same MAC address.</p>
+          <p></p>
+          <p>Due to the combination of very high load on all links and the switch CPUs running at maximum load, these devices typically become unreachable. This makes it very difficult to diagnose the problem while it is happening.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.2.2 Activate an Evaluation Right-To-Use License</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>IOS Licensing</h1>
+        <h2>License Verification and Management</h2>
+      </div>
+      <div id="content">
+          <p>The Evaluation license process has gone through three revisions on the ISR G2 devices. The latest revision, starting with Cisco IOS Releases 15.0(1)M6, 15.1(1)T4, 15.1(2)T4, 15.1(3)T2, and 15.1(4)M Evaluation licenses are replaced with Evaluation Right-To-Use licenses (RTU) after 60 days. An Evaluation license is good for a 60 day evaluation period. After the 60 days, this license automatically transitions into an RTU license. These licenses are available on the honor system and require the customer’s acceptance of the EULA. The EULA is automatically applied to all Cisco IOS software licenses. </p>
+          <p></p>
+          <p>The<span class="cmd"><b> license accept end user agreement </b></span>global configuration mode command is used to configure a one-time acceptance of the EULA for all Cisco IOS software packages and features. After the command is issued and the EULA accepted, the EULA is automatically applied to all Cisco IOS software licenses and the user is not prompted to accept the EULA during license installation.</p>
+          <p></p>
+          <p>Figure 1 shows how to configure a one-time acceptance of the EULA:</p>
+          <p></p>
+          <p>
+            <span class="cmd">Router(config)# </span>
+            <span class="cmd">
+              <b>license accept end user agreement</b>
+            </span>
+          </p>
+          <p></p>
+          <p>In addition, Figure 1 shows the command to activate an Evaluation RTU license:</p>
+          <p></p>
+          <p>
+            <span class="cmd">Router# </span>
+            <span class="cmd">
+              <b>license boot module </b>
+            </span>
+            <span class="cmd">
+              <i>module-name</i>
+            </span>
+            <span class="cmd">
+              <b> technology-package </b>
+            </span>
+            <span class="cmd">
+              <i>package-name</i>
+            </span>
+          </p>
+          <p></p>
+          <p>Use the<span class="cmd"><b> ? </b></span>in place of the arguments to determine which module names and supported software packages are available on the router. Technology package names for Cisco ISR G2 platforms are:</p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">ipbasek9</span>
+                <b></b>- IP Base technology package</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">securityk9</span>
+                <b></b> - Security technology package </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">datak9 </span>- Data technology package</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">uck9 </span>- Unified Communications package (not available on 1900 series)</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>
+            <b>Note</b>: A reload using the<span class="cmd"><b> reload </b></span>command is required to activate the software package.</p>
+          <p></p>
+          <p>Evaluation licenses are temporary, and are used to evaluate a feature set on new hardware. Temporary licenses are limited to a specific usage period (for example, 60 days).</p>
+          <p></p>
+          <p>Reload the router after a license is successfully installed using the<span class="cmd"><b> reload </b></span>command. The<span class="cmd"><b> show license </b></span>command in Figure 2 verifies that the license has been installed.</p>
+          <p></p>
+          <p>Use the Syntax Checker in Figure 3 to accept the EULA and activate an Evaluation RTU data package license on the 1900 router.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

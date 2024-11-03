@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.1.1 Wireless 802.11 Frame </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless LAN Operations</h1>
+        <h2>802.11 Frame Structure</h2>
+      </div>
+      <div id="content">
+          <p>All Layer 2 frames consist of a header, payload, and FCS section as shown in Figure 1. The 802.11 frame format is similar to the Ethernet frame format, with the exception that it contains more fields. </p>
+          <p></p>
+          <p>As shown in Figure 2, all 802.11 wireless frames contain the following fields:</p>
+          <p>
+            <ul>
+              <li>
+                <b>Frame Control </b>- Identifies the type of wireless frame and contains subfields for protocol version, frame type, address type, power management, and security settings. </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Duration </b>- Typically used to indicate the remaining duration needed to receive the next frame transmission. </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Address1 </b>- Usually contains the MAC address of the receiving wireless device or AP. </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Address2 </b>- Usually contains the MAC address of the transmitting wireless device or AP.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Address3 </b>- Sometimes contains the MAC address of the destination, such as the router interface (default gateway) to which the AP is attached.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Sequence Control </b>- Contains the Sequence Number and the Fragment Number subfields. The Sequence Number indicates the sequence number of each frame. The Fragment Number indicates the number of each frame sent of a fragmented frame. </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Address4 </b>- Usually missing because it is used only in ad hoc mode.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Payload </b>- Contains the data for transmission.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>FCS </b>- Frame Check Sequence; used for Layer 2 error control.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>Figure 3 displays a Wireshark capture of a WLAN beacon frame. Notice how the Frame Control field has also been expanded to display its subfields.</p>
+          <p></p>
+          <p>
+            <b>Note</b>: The content of the Address fields vary depending on settings in the Frame Control field.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.3.2.2 Shared Key Authentication Methods </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.3.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless LAN Security</h1>
+        <h2>Securing WLANs</h2>
+      </div>
+      <div id="content">
+          <p>As shown in Figure 1, there are three shared key authentication techniques available:</p>
+          <p>
+            <ul>
+              <li>
+                <b>Wired Equivalent Privacy (WEP) </b>- Original 802.11 specification designed to provide privacy similar to connecting to a network using a wired connection. The data is secured using the RC4 encryption method with a static key. However, the key never changes when exchanging packets making it easy to hack. </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Wi-Fi Protected Access (WPA) </b>- A Wi-Fi Alliance standard that uses WEP, but secures the data with the much stronger Temporal Key Integrity Protocol (TKIP) encryption algorithm. TKIP changes the key for each packet making it much more difficult to hack. </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>IEEE 802.11i/WPA2 </b>- IEEE 802.11i is the industry standard for securing wireless networks. The Wi-Fi alliance version is called WPA2. 802.11i and WPA2; both use the Advanced Encryption Standard (AES) for encryption. AES is currently considered the strongest encryption protocol. </li>
+            </ul>
+          </p>
+          <p></p>
+          <p>WEP is no longer recommended. Its shared WEP keys have proven to be flawed and; therefore, should never be used. To counteract shared WEP key weakness, the very first approach by companies was to try techniques, such as cloaking SSIDs and filtering MAC addresses. These techniques have also proven to be too weak. </p>
+          <p></p>
+          <p>Following the weakness of WEP-based security, there was a period of interim security measures. Vendors like Cisco, wanting to meet the demand for better security, developed their own systems while simultaneously helping to evolve the 802.11i standard. On the way to 802.11i, the TKIP encryption algorithm was created, which was linked to the Wi-Fi Alliance WPA security method.</p>
+          <p></p>
+          <p>Modern wireless networks should always use the 802.11i/WPA2 standard. WPA2 is the Wi-Fi version of 802.11i and; therefore, the terms WPA2 and 802.11i are often used interchangeably.</p>
+          <p></p>
+          <p>Since 2006, any device that bears the Wi-Fi Certified logo is WPA2 certified.</p>
+          <p></p>
+          <p>
+            <b>Note</b>: Wireless-N networks should use the WPA2-Personal security mode for best performance.</p>
+          <p></p>
+          <p>The table in Figure 2 summarizes the three types of shared key authentication methods.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

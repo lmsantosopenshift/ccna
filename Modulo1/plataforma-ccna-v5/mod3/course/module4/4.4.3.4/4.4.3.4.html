@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.4.3.4 Updating Firmware </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.4.3.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless LAN Configuration</h1>
+        <h2>Troubleshoot WLAN Issues</h2>
+      </div>
+      <div id="content">
+          <p>The IOS of the Linksys EA6500 router is called firmware. The firmware may need to be upgraded if there is a problem with the device or there is a new feature included with a new firmware update. Regardless of the reason, most modern wireless home routers offer upgradable firmware. </p>
+          <p></p>
+          <p>You can easily upgrade the Linksys EA6500 Smart Wi-Fi router firmware by performing the following steps:</p>
+          <p></p>
+          <p>
+            <b>Step 1.</b> Access the Linksys Smart Wi-Fi Home page. </p>
+          <p></p>
+          <p>
+            <b>Step 2.</b> Click the <b>Connectivity</b> icon to open the Connectivity window (Figure 1). </p>
+          <p></p>
+          <p>
+            <b>Step 3.</b> Under the Firmware Update label, click <b>Check for Updates</b>. </p>
+          <p></p>
+          <p>The router either responds with<span class="cmd"> No updates found </span>or it prompts to download and install the new firmware.</p>
+          <p></p>
+          <p>
+            <b>Note</b>: Some routers require that the firmware file be downloaded ahead of time and then manually uploaded. To do so, select<b> Choose File</b>. If a firmware upgrade fails or makes the situation worse, then the router can load the previous firmware by clicking <b>Troubleshooting</b>, <b>Diagnostics</b>, and then selecting <b>Restore previous firmware</b> (Figure 2). </p>
+          <p></p>
+          <p>
+            <b>Caution</b>: Do not upgrade the firmware unless there are problems with the AP or the new firmware has a desired feature.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

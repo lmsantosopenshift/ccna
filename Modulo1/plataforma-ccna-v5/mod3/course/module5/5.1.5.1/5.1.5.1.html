@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.5.1 Routers are Targets</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.5.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Advanced Single-Area OSPF Configurations </h1>
+        <h2>Secure OSPF</h2>
+      </div>
+      <div id="content">
+          <p>The role of routers in a network is so crucial that they are often the targets of network attacks. Network administrators must be aware that routers are at risk from attack just as much as end-user systems. </p>
+          <p></p>
+          <p>In general, routing systems can be attacked by disrupting the routing peers or by falsifying the information carried within the routing protocol. Falsified routing information may generally be used to cause systems to misinform (lie to) each other, cause a denial-of-service (DoS) attack, or cause traffic to follow a path it would not normally follow. The consequences of falsifying routing information are:</p>
+          <p>
+            <ul>
+              <li>Redirecting traffic to create routing loops</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Redirecting traffic so it can be monitored on an insecure link</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Redirecting traffic to discard it</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>Click the Play button in the animation to see an example of an attack that creates a routing loop. An attacker has been able to connect directly to the link between routers R1 and R2. The attacker injects false routing information destined to router R1 only, indicating that R2 is the preferred destination to the 192.168.10.10/32 host route. Although R1 has a routing table entry to the directly connected 192.168.10.0/24 network, it adds the injected route to its routing table because of the longer subnet mask. A route with a longer matching subnet mask is considered to be superior to a route with a shorter subnet mask. Consequently, when a router receives a packet, it selects the longer subnet mask, because it is a more precise route to the destination.</p>
+          <p></p>
+          <p>When PC3 sends a packet to PC1 (192.168.10.10/24), R1 does not forward the packet to the PC1 host. Instead, it routes the packet to router R2, because the apparent best path to 192.168.10.10/32 is through R2. When R2 gets the packet, it looks in its routing table and forwards the packet back to R1, which creates the loop.</p>
+          <p></p>
+          <p>To mitigate against routing protocol attacks, configure OSPF authentication.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

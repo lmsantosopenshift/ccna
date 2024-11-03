@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.1.5 Configuring Single-Area OSPF</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Advanced Single-Area OSPF Configurations </h1>
+        <h2>Routing in the Distribution and Core Layers</h2>
+      </div>
+      <div id="content">
+          <p>The focus of this chapter is to adjust and troubleshoot OSPF. However, it is a good idea to review a basic implementation of the OSPF routing protocol.</p>
+          <p></p>
+          <p>The example in Figure 1 displays the topology used for configuring OSPFv2. The routers in the topology have a starting configuration, including enabled interface addresses. There is currently no static routing or dynamic routing configured on any of the routers. All interfaces on routers R1, R2, and R3 (except the loopback on R2) are within the OSPF backbone area. The ISP router is used as the routing domain’s gateway to the Internet.</p>
+          <p></p>
+          <p>In Figure 2, the Gigabit Ethernet 0/0 interface of R1 is configured to reflect its true bandwidth of 1,000,000 kilobits (i.e.1,000,000,000 b/s). Next, from OSPF router configuration mode, the router ID is assigned, the reference bandwidth is adjusted to account for fast interfaces, and the three networks attached to R1 are advertised. Notice how the wildcard mask is used to identify the specific networks.</p>
+          <p></p>
+          <p>In Figure 3, the Gigabit Ethernet 0/0 interface of R2 is also configured to reflect its true bandwidth, the router ID is assigned, the reference bandwidth is adjusted to account for fast interfaces, and the three networks attached to R2 are advertised. Notice how the use of the wildcard mask can be avoided by identifying the actual router interface with a quad zero mask. This effectively makes OSPF use the subnet mask assigned to the router interface as the advertised network mask.</p>
+          <p></p>
+          <p>Use the Syntax Checker in Figure 4 to adjust the bandwidth on the R3 G0/0 interface, enter OSPF router configuration mode, assign the correct router ID, adjust the reference bandwidth, and advertise the three directly connected networks using the router interfaces and quad zero wildcard mask.</p>
+          <p></p>
+          <p>Notice the informational messages displaying that R3 has established a full neighbor adjacency with R1 with router ID 1.1.1.1 and R2 with router ID 2.2.2.2. The OSPF network has converged.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.3.1.3 Summary</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.3.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Summary</h1>
+        <h2>Summary</h2>
+      </div>
+      <div id="content">
+          <p>OSPF defines five network types: point-to-point, broadcast multiaccess, nonbroadcast multiaccess, point-to-multipoint, and virtual links. </p>
+          <p></p>
+          <p>Multiaccess networks can create two challenges for OSPF regarding the flooding of LSAs: creation of multiple adjacencies and extensive flooding of LSAs. The solution to managing the number of adjacencies and the flooding of LSAs on a multiaccess network is the DR and BDR. If the DR stops producing Hellos, the BDR promotes itself and assumes the role of DR.</p>
+          <p></p>
+          <p>The routers in the network elect the router with the highest interface priority as DR. The router with the second highest interface priority is elected the BDR. The higher the priority, the likelier the router will be selected as the DR. If set to 0, the router is not capable of becoming the DR. The default priority of multiaccess broadcast interfaces is 1. Therefore, unless otherwise configured, all routers have an equal priority value and must rely on another tie breaking method during the DR/BDR election. If the interface priorities are equal, then the router with the highest router ID is elected the DR. The router with the second highest router ID is the BDR. The addition of a new router does not initiate a new election process. </p>
+          <p></p>
+          <p>To propagate a default route in OSPF, the router must be configured with a default static route and the<span class="cmd"><b> default-information originate </b></span>command must be added to the configuration. Verify routes with the<span class="cmd"><b> show ip route </b></span>or<span class="cmd"><b> show ipv6 route </b></span>command.</p>
+          <p></p>
+          <p>To assist OSPF in making the correct path determination, the reference bandwidth must be changed to a higher value to accommodate networks with links faster than 100 Mb/s. To adjust the reference bandwidth, use the<span class="cmd"><b> auto-cost reference-bandwidth </b></span><span class="cmd"><i>Mbps </i></span>router configuration mode command. To adjust the interface bandwidth, use the<span class="cmd"><b> bandwidth </b></span><span class="cmd"><i>kilobits </i></span>interface configuration mode command. The cost can be manually configured on an interface using the<span class="cmd"><b> ip ospf cost </b></span><span class="cmd"><i>value </i></span>interface configuration mode command. </p>
+          <p></p>
+          <p>The OSPF Hello and Dead intervals must match or a neighbor adjacency does not occur. To modify these intervals, use the following interface commands:</p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">
+                  <b>ip ospf hello-interval </b>
+                </span>
+                <span class="cmd">
+                  <i>seconds</i>
+                </span>
+              </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">
+                  <b>ip ospf dead-interval </b>
+                </span>
+                <span class="cmd">
+                  <i>seconds</i>
+                </span>
+                <span class="cmd">
+                  <b></b>
+                </span>
+              </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">
+                  <b>ipv6 ospf hello-interval </b>
+                </span>
+                <span class="cmd">
+                  <i>seconds</i>
+                </span>
+              </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">
+                  <b>ipv6 ospf dead-interval </b>
+                </span>
+                <span class="cmd">
+                  <i>seconds</i>
+                </span>
+              </li>
+            </ul>
+          </p>
+          <p></p>
+          <p>OSPF supports 3 types of authentication: null, simple password authentication, and MD5 authentication. OSPF MD5 authentication can be configured globally or per interface. To verify OSPF MD5 implementation is enabled, use the<span class="cmd"><b> show ip ospf interface </b></span>privileged EXEC mode command.</p>
+          <p></p>
+          <p>When troubleshooting OSPF neighbors, be aware that the FULL or 2WAY states are normal. The following commands summarize IPv4 OSPF troubleshooting:<span class="cmd"><b></b></span></p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">
+                  <b>show ip protocols </b>
+                </span>
+              </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">
+                  <b>show ip ospf neighbor </b>
+                </span>
+              </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">
+                  <b>show ip ospf interface </b>
+                </span>
+              </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">
+                  <b>show ip ospf</b>
+                </span>
+              </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">
+                  <b>show ip route ospf </b>
+                </span>
+              </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">
+                  <b>clear ip ospf </b>
+                </span>
+                <span class="cmd">[</span>
+                <span class="cmd">
+                  <i>process-id</i>
+                </span>
+                <span class="cmd">]</span>
+                <span class="cmd">
+                  <b> process</b>
+                </span>
+              </li>
+            </ul>
+          </p>
+          <p></p>
+          <p>Troubleshooting OSPFv3 is similar to OSPFv2. The following commands are the equivalent commands used with OSPFv3:<span class="cmd"><b> show ipv6 protocols</b></span>,<span class="cmd"><b> show ipv6 ospf neighbor</b></span><span class="cmd">,</span><span class="cmd"><b> show ipv6 ospf interface</b></span>,<span class="cmd"><b> show ipv6 ospf</b></span>,<span class="cmd"><b> show ipv6 route ospf</b></span>, and<span class="cmd"><b> clear ipv6 ospf </b></span><span class="cmd">[</span><span class="cmd"><i>process-id</i></span><span class="cmd">]</span><span class="cmd"><b> process</b></span>.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

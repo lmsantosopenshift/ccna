@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.2.8 The OSPF Priority</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.2.8_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Advanced Single-Area OSPF Configurations </h1>
+        <h2>OSPF in Multiaccess Networks</h2>
+      </div>
+      <div id="content">
+          <p>The DR becomes the focal point for the collection and distribution of LSAs; therefore, this router must have sufficient CPU and memory capacity to handle the workload. It is possible to influence the DR/BDR election process through configurations.</p>
+          <p></p>
+          <p>If the interface priorities are equal on all routers, the router with the highest router ID is elected the DR. It is possible to configure the router ID to manipulate the DR/BDR election. However, this process only works if there is a stringent plan for setting the router ID on all routers. In large networks, this can be cumbersome. </p>
+          <p></p>
+          <p>Instead of relying on the router ID, it is better to control the election by setting interface priorities. Priorities are an interface-specific value, which means it provides better control on a multiaccess network. This also allows a router to be the DR in one network and a DROTHER in another. </p>
+          <p></p>
+          <p>To set the priority of an interface, use the following commands: </p>
+          <p></p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">
+                  <b>ip ospf priority </b>
+                </span>
+                <span class="cmd">
+                  <i>value</i>
+                </span>
+                <span class="cmd">
+                  <b></b>
+                </span>- OSPFv2 interface command</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">
+                  <b>ipv6 ospf priority </b>
+                </span>
+                <span class="cmd">
+                  <i>value</i>
+                </span>
+                <span class="cmd">
+                  <b></b>
+                </span>- OSPFv3 interface command</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>The<span class="cmd"><i> value </i></span>can be:</p>
+          <p>
+            <ul>
+              <li>
+                <b>0 </b>- Does not become a DR or BDR.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>1</b> – <b>255 </b>- The higher the priority value, the more likely the router becomes the DR or BDR on the interface.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>In the figure, all routers have an equal OSPF priority because the priority value defaults to 1 for all router interfaces. Therefore, the router ID is used to determine the DR (R3) and BDR (R2). Changing the priority value on an interface from 1 to a higher value, would enable the router to become a DR or BDR router during the next election. </p>
+          <p></p>
+          <p>If the interface priority is configured after OSPF is enabled, the administrator must shut down the OSPF process on all routers, and then re-enable the OSPF process, to force a new DR/BDR election.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

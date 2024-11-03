@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.2.2.2 Verifying EIGRP: show ip protocols Command</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuring EIGRP for IPv4</h1>
+        <h2>Verifying EIGRP with IPv4</h2>
+      </div>
+      <div id="content">
+          <p>The<span class="cmd"><b> show ip protocols </b></span>command displays the parameters and other information about the current state of any active IPv4 routing protocol processes configured on the router. The<span class="cmd"><b> show ip protocols </b></span>command displays different types of output specific to each routing protocol. </p>
+          <p></p>
+          <p>The output in Figure 1 indicates several EIGRP parameters, including:</p>
+          <p></p>
+          <p>1. EIGRP is an active dynamic routing protocol on R1 configured with the autonomous system number 1.</p>
+          <p>2. The EIGRP router ID of R1 is 1.1.1.1. </p>
+          <p>3. The EIGRP administrative distances on R1 are internal AD of 90 and external of 170 (default values). </p>
+          <p>4. By default, EIGRP does not automatically summarize networks. Subnets are included in the routing updates. </p>
+          <p>5. The EIGRP neighbor adjacencies R1 has with other routers used to receive EIGRP routing updates.</p>
+          <p></p>
+          <p>
+            <b>Note</b>: Prior to IOS 15, EIGRP automatic summarization was enabled by default. </p>
+          <p></p>
+          <p>The output from the<span class="cmd"><b> show ip protocols </b></span>command is useful in debugging routing operations. Information in the Routing Information Sources field can help identify a router suspected of delivering bad routing information. The Routing Information Sources field lists all the EIGRP routing sources the Cisco IOS software uses to build its IPv4 routing table. For each source, note the following:</p>
+          <p>
+            <ul>
+              <li>IPv4 address </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Administrative distance </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Time the last update was received from this source</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>As shown in Figure 2, EIGRP has a default AD of 90 for internal routes and 170 for routes imported from an external source, such as default routes. When compared to other IGPs, EIGRP is the most preferred by the Cisco IOS, because it has the lowest administrative distance. EIGRP has a third AD value of 5, for summary routes. </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

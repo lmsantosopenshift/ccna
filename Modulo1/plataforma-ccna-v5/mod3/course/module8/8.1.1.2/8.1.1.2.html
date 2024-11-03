@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.1.2 EIGRP Automatic summarization </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Advanced EIGRP Configurations</h1>
+        <h2>Automatic summarization </h2>
+      </div>
+      <div id="content">
+          <p>One of the most common tuning methods of EIGRP is enabling and disabling automatic route summarization. Route summarization allows a router to group networks together and advertises them as one large group using a single, summarized route. The ability to summarize routes is necessary due to the rapid growth of networks.</p>
+          <p></p>
+          <p>A border router is a router that sits at the edge of a network. This router must be able to advertise all of the known networks within its route table to a connecting network router or ISP router. This convergence can potentially result in very large route tables. Imagine if a single router had 10 different networks and had to advertise all 10 route entries to a connecting router. What if that connecting router also had 10 networks, and had to advertise all 20 routes to an ISP router? If every enterprise router followed this pattern, the routing table of the ISP router would be huge. </p>
+          <p></p>
+          <p>Summarization decreases the number of entries in routing updates and lowers the number of entries in local routing tables. It also reduces bandwidth utilization for routing updates and results in faster routing table lookups. </p>
+          <p></p>
+          <p>To limit the number of routing advertisements and the size of routing tables, routing protocols such as EIGRP, use automatic summarization  at classful boundaries. This means that EIGRP recognizes subnets as a single Class A, B, or C network, and creates only one entry in the routing table for the summary route. As a result, all traffic destined for the subnets travels across that one path. </p>
+          <p></p>
+          <p>The figure shows an example of how automatic summarization works. Routers R1 and R2 are both configured using EIGRP for IPv4 with automatic summarization. R1 has three subnets in its routing table: 172.16.1.0/24, 172.16.2.0/24, and 172.16.3.0/24. In the classful network addressing architecture, these subnets are all considered part of a larger class B network, 172.16.0.0/16. Because EIGRP on router R1 is configured for automatic summarization, when it sends its routing update to R2, it summarizes the three /24 subnets as a single network of 172.16.0.0/16, which reduces the number of routing updates sent and the number of entries in R2’s IPv4 routing table.</p>
+          <p></p>
+          <p>All traffic destined for the three subnets travels across the one path. R2 does not maintain routes to individual subnets and no subnet information is learned. In an enterprise network, the path chosen to reach the summary route may not be the best choice for the traffic that is trying to reach each individual subnet. The only way that all routers can find the best routes for each individual subnet is for neighbors to send subnet information. In this situation, automatic summarization should be disabled. When automatic summarization is disabled, updates include subnet information. </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

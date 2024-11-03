@@ -1,0 +1,12 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[]]></text>
+</component>
+   
+<component id="ID_txt01">
+<text><![CDATA[<br/><b>After completing this chapter, you will be able to:</b><br/><br/><textformat blockindent='-14'><ul><li>Modify the OSPF interface priority to influence the DR/BDR election.</li><li>Configure a router to propagate a default route in an OSPF network.</li><li>Modify OSPF interface settings to improve network performance.</li><li>Configure OSPF authentication to ensure secure routing updates.</li><li>Explain the process and tools used to troubleshoot a single-area OSPF network.</li><li>Troubleshoot missing route entries in a single-area OSPFv2 route table.</li><li>Troubleshoot missing route entries in a single-area OSPFv3 route table.</li></ul></textformat><br/>]]></text>
+</component>
+
+
+
+</textcomponents>

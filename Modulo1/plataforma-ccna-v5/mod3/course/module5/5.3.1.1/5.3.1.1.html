@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.3.1.1 Class Activity - OSPF Troubleshooting Mastery</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.3.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Summary</h1>
+        <h2>Summary</h2>
+      </div>
+      <div id="content">
+          <p>
+            <b>OSPF Troubleshooting Mastery</b>
+          </p>
+          <p></p>
+          <p>You have decided to change your routing protocol from RIPv2 to OSPFv2. Your small- to medium-sized business network topology will not change from its original physical settings. Use the diagram on the PDF for this activity as your company’s small- to medium-sized business network design.</p>
+          <p></p>
+          <p>Your addressing design is complete and you then configure your routers with IPv4 and VLSM. OSPF has been applied as the routing protocol. However, some routers are sharing routing information with each other and some are not.</p>
+          <p></p>
+          <p>Open the PDF file that accompanies this modeling activity and follow the directions to complete the activity.</p>
+          <p></p>
+          <p>When the steps in the directions are complete, regroup as a class and compare recorded activity correction times. The group taking the shortest time to find and fix the configuration error will be declared the winner only after successfully explaining how they found the error, fixed it, and proved that the topology is now working.</p>
+          <p></p>
+          <p>
+            <a href="../../files/5.3.1.1%20OSPF%20Troubleshooting%20Mastery%20Instructions.pdf" target="_blank">Class Activity - OSPF Troubleshooting Mastery</a>
+          </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

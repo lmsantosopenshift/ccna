@@ -1,0 +1,36 @@
+<textcomponents>
+<component id="ID_title">
+<text><![CDATA[]]></text>
+</component>
+<component id="ID_txt01">
+  <text><![CDATA[EtherChannel Formed]]></text> 
+  </component>
+<component id="ID_txt02">
+  <text><![CDATA[S1<br/>Speed<br/>Duplex<br/>VLAN]]></text> 
+  </component>
+<component id="ID_txt03">
+  <text><![CDATA[Both Ports<br/>1 Gb/s<br/>Full<br/>10]]></text> 
+  </component>
+<component id="ID_txt04">
+  <text><![CDATA[S2<br/>Speed<br/>Duplex<br/>VLAN]]></text> 
+  </component>
+<component id="ID_txt05">
+  <text><![CDATA[Both Ports<br/>1 Gb/s<br/>Full<br/>10]]></text> 
+  </component>
+  
+<component id="ID_txt06">
+  <text><![CDATA[EtherChannel Not Formed]]></text> 
+  </component>
+<component id="ID_txt07">
+  <text><![CDATA[S1<br/>Speed<br/>Duplex<br/>VLAN]]></text> 
+  </component>
+<component id="ID_txt08">
+  <text><![CDATA[Both Ports<br/>1 Gb/s<br/>Half<br/>10]]></text> 
+  </component>
+<component id="ID_txt09">
+  <text><![CDATA[S2<br/>Speed<br/>Duplex<br/>VLAN]]></text> 
+  </component>
+<component id="ID_txt10">
+  <text><![CDATA[Both Ports<br/>1 Gb/s<br/>Full<br/>10]]></text> 
+  </component>
+</textcomponents>

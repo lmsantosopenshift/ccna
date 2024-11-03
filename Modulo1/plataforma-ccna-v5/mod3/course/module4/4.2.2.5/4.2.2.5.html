@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.2.5 Authentication </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless LAN Operations</h1>
+        <h2>Wireless Operation</h2>
+      </div>
+      <div id="content">
+          <p>The 802.11 standard was originally developed with two authentication mechanisms:</p>
+          <p>
+            <ul>
+              <li>
+                <b>Open authentication </b>- Fundamentally a NULL authentication where the wireless client says “authenticate me” and the AP responds with “yes”. Open authentication provides wireless connectivity to any wireless device and should only be used in situations where security is of no concern. </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Shared key authentication </b>- Technique is based on a key that is pre-shared between the client and the AP. </li>
+            </ul>
+          </p>
+          <p></p>
+          <p>Figure 1 provides a simple overview of the authentication process. However, in most shared key authentication installations, the exchange is as follows:</p>
+          <p>1. The wireless client sends an authentication frame to the AP. </p>
+          <p>2. The AP responds with a challenge text to the client.</p>
+          <p>3. The client encrypts the message using its shared key and returns the encrypted text back to the AP. </p>
+          <p>4. The AP then decrypts the encrypted text using its shared key. </p>
+          <p>5. If the decrypted text matches the challenge text, the AP authenticates the client. If the messages do not match, the wireless client is not authenticated and wireless access is denied.</p>
+          <p></p>
+          <p>After a wireless client has been authenticated, the AP proceeds to the association stage. As shown in Figure 2, the association stage finalizes settings and establishes the data link between the wireless client and the AP. </p>
+          <p></p>
+          <p>As part of this stage:</p>
+          <p>
+            <ul>
+              <li>The wireless client forwards an Association Request frame that includes its MAC address.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>The AP responds with an Associate Response that includes the AP BSSID, which is the AP MAC address.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>The AP maps a logical port known as the association identifier (AID) to the wireless client. The AID is equivalent to a port on a switch and allows the infrastructure switch to keep track of frames destined for the wireless client to be forwarded. </li>
+            </ul>
+          </p>
+          <p></p>
+          <p>After a wireless client has associated with an AP, traffic is now able to flow between the client and the AP.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.3.2 Introduction to DUAL</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1> Operation of EIGRP</h1>
+        <h2>DUAL and the Topology Table</h2>
+      </div>
+      <div id="content">
+          <p>EIGRP uses convergence algorithm DUAL. Convergence is critical to a network to avoid routing loops. </p>
+          <p></p>
+          <p>Routing loops, even temporary ones, can be detrimental to network performance. Distance vector routing protocols, such as RIP, prevent routing loops with hold-down timers and split horizon. Although EIGRP uses both of these techniques, it uses them somewhat differently; the primary way that EIGRP prevents routing loops is with the DUAL algorithm. </p>
+          <p></p>
+          <p>Click Play in the figure to view the basic operation of DUAL.</p>
+          <p></p>
+          <p>The DUAL algorithm is used to obtain loop-freedom at every instance throughout a route computation. This allows all routers involved in a topology change to synchronize at the same time. Routers that are not affected by the topology changes are not involved in the recomputation. This method provides EIGRP with faster convergence times than other distance vector routing protocols.</p>
+          <p></p>
+          <p>The decision process for all route computations is done by the DUAL Finite State Machine (FSM). An FSM is a workflow model, similar to a flow chart that is composed of the following:</p>
+          <p>
+            <ul>
+              <li>A finite number of stages (states)</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Transitions between those stages</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Operations </li>
+            </ul>
+          </p>
+          <p></p>
+          <p>The DUAL FSM tracks all routes, uses EIGRP metrics to select efficient, loop-free paths, and identify the routes with the least-cost path to be inserted into the routing table. </p>
+          <p></p>
+          <p>Recomputation of the DUAL algorithm can be processor-intensive. EIGRP avoids recomputation whenever possible by maintaining a list of backup routes that DUAL has already determined to be loop-free. If the primary route in the routing table fails, the best backup route is immediately added to the routing table.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

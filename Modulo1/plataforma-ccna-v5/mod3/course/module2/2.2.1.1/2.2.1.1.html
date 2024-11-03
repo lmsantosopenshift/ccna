@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.1.1 List of Spanning Tree Protocols</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Varieties of Spanning Tree Protocols</h1>
+        <h2>Overview</h2>
+      </div>
+      <div id="content">
+          <p>Several varieties of spanning tree protocols have emerged since the original IEEE 802.1D. </p>
+          <p></p>
+          <p>The varieties of spanning tree protocols include:</p>
+          <p></p>
+          <p>
+            <ul>
+              <li>
+                <b>STP </b>- This is the original IEEE 802.1D version (802.1D-1998 and earlier) that provides a loop-free topology in a network with redundant links. Common Spanning Tree (CST) assumes one spanning tree instance for the entire bridged network, regardless of the number of VLANs.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>PVST+</b> - This is a Cisco enhancement of STP that provides a separate 802.1D spanning tree instance for each VLAN configured in the network. The separate instance supports PortFast, UplinkFast, BackboneFast, BPDU guard, BPDU filter, root guard, and loop guard. </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>802.1D-2004</b> - This is an updated version of the STP standard, incorporating IEEE 802.1w.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Rapid Spanning Tree Protocol (RSTP) or IEEE 802.1w</b> - This is an evolution of STP that provides faster convergence than STP.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Rapid PVST+</b> - This is a Cisco enhancement of RSTP that uses PVST+. Rapid PVST+ provides a separate instance of 802.1w per VLAN. The separate instance supports PortFast, BPDU guard, BPDU filter, root guard, and loop guard.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Multiple Spanning Tree Protocol</b>
+                <b>(MSTP) </b>- This is an IEEE standard inspired by the earlier Cisco proprietary Multiple Instance STP (MISTP) implementation. MSTP maps multiple VLANs into the same spanning tree instance. The Cisco implementation of MSTP is MST, which provides up to 16 instances of RSTP and combines many VLANs with the same physical and logical topology into a common RSTP instance. Each instance supports PortFast, BPDU guard, BPDU filter, root guard, and loop guard.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>A network professional, whose duties include switch administration, may be required to decide which type of spanning tree protocol to implement.</p>
+          <p></p>
+          <p>
+            <b>Note</b>: The legacy Cisco-proprietary features UplinkFast and BackboneFast are not described in this course. These features are superseded by the implementation of Rapid PVST+, which incorporates these features as part of the implementation of the RSTP standard.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

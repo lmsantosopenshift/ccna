@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.5.5 OSPF MD5 Authentication Example</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.5.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Advanced Single-Area OSPF Configurations </h1>
+        <h2>Secure OSPF</h2>
+      </div>
+      <div id="content">
+          <p>The example in Figure 1 configures R1 to enable OSPF MD5 authentication on all interfaces. Notice the informational messages stating that the OSPF neighbor adjacencies with R2 and R3 have changed to the<span class="cmd"> Down </span>state, because R2 and R3 have not yet been configured to support MD5 authentication.</p>
+          <p></p>
+          <p>As an alternative to globally enabling MD5 authentication, the example in Figure 2 demonstrates how to configure R1 to enable OSPF MD5 authentication on a per-interface basis. Again, notice how the OSPF neighbor adjacencies have changed to the<span class="cmd"> Down </span>state. </p>
+          <p></p>
+          <p>Use the Syntax Checker in Figure 3 to enable OSPF MD5 authentication globally on R2 and per interface on R3.</p>
+          <p></p>
+          <p>Again, informational messages appear. The first message is because the neighbor adjacency with R1 has been re-established. However, the adjacency with R3 has transitioned to the<span class="cmd"> Down </span>state, because R3 is still not configured</p>
+          <p></p>
+          <p>After R3 is configured, all neighbor adjacencies have been re-established.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

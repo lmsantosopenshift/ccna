@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.1.4 Radio Frequencies </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless Concepts</h1>
+        <h2>Introduction to Wireless</h2>
+      </div>
+      <div id="content">
+          <p>All wireless devices operate in the radio waves range of the electromagnetic spectrum. It is the responsibility of the International Telecommunication Union - Radiocommunication Sector (ITU-R) to regulate the allocation of the radio frequency (RF) spectrum. Ranges of frequencies, called bands, are allocated for various purposes. Some bands in the electromagnetic spectrum are heavily regulated and are used for applications, such as air traffic control and emergency responder communications networks. Other bands are license free, such as the Industrial, Scientific, and Medical (ISM) and the national information infrastructure (UNII) frequency bands. </p>
+          <p></p>
+          <p>
+            <b>Note</b>: WLAN networks operate in the ISM 2.4 GHz frequency band and the UNII 5 GHz band. </p>
+          <p></p>
+          <p>Wireless communication occurs in the radio waves range (i.e., 3 Hz to 300 GHz) of the electromagnetic spectrum, as shown in the figure. The radio waves range is subdivided into a radio frequencies section and a microwave frequencies section. Notice that WLANs, Bluetooth, cellular, and satellite communication all operate in the microwave UHF, SHF, and EHF ranges.</p>
+          <p></p>
+          <p>Wireless LAN devices have transmitters and receivers tuned to specific frequencies of the radio waves range. Specifically, the following frequency bands are allocated to 802.11 wireless LANs:</p>
+          <p>
+            <ul>
+              <li>
+                <b>2.4 GHz (UHF) </b>- 802.11b/g/n/ad </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>5 GHz (SHF) </b>- 802.11a/n/ac/ad</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>60 GHz</b>
+                <b>(EHF) </b>- 802.11ad</li>
+            </ul>
+          </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

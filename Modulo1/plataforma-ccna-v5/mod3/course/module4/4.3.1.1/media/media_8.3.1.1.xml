@@ -1,0 +1,61 @@
+<textcomponents>
+
+<component id="ID_title">
+<text><![CDATA[<b>Common Wireless Threats</b>]]></text>
+</component>
+
+<component id="ID_txt05">
+<text><![CDATA[<b>Wireless Threats</b>]]></text>
+</component>
+
+<component id="ID_txt01">
+<text><![CDATA[Rogue APs]]></text>
+</component>
+
+<component id="ID_txt02">
+<text><![CDATA[Wireless Intruders]]></text>
+</component>
+
+<component id="ID_txt03">
+<text><![CDATA[Interception of Data]]></text>
+</component>
+
+<component id="ID_txt04">
+<text><![CDATA[Denial of Service Attacks]]></text>
+</component>
+
+<component id="ID_titleTxt_btn02">
+<text><![CDATA[<b>Wireless Intruders</b>]]></text>
+</component>
+
+<component id="ID_bodyTxt_btn02">
+<text><![CDATA[Unauthorized users attempting to access network resources. The solution is to deter intruders using authentication.]]></text>
+</component>
+
+<component id="ID_titleTxt_btn03">
+<text><![CDATA[<b>Interception of Data</b>]]></text>
+</component>
+<component id="ID_bodyTxt_btn03">
+<text><![CDATA[Wireless data can easily be captured by eavesdroppers. Protect data exchanged between client and AP using encryption.]]></text>
+</component>
+
+
+<component id="ID_titleTxt_btn04">
+<text><![CDATA[<b>Denial of Service Attacks </b>]]></text>
+</component>
+
+<component id="ID_bodyTxt_btn04">
+<text><![CDATA[WLANs services can be compromised either accidently or for malicious intent. Various solutions exist depending on the source of DoS.]]></text>
+</component>
+
+
+<component id="ID_titleTxt_btn01">
+<text><![CDATA[<b>Rogue APs</b>]]></text>
+</component>
+
+<component id="ID_bodyTxt_btn01">
+<text><![CDATA[Unauthorized APs installed by a well-intentioned user or willingly for malicious purpose. Use wireless management software to detect rogue APs.]]></text>
+</component>
+
+
+</textcomponents>

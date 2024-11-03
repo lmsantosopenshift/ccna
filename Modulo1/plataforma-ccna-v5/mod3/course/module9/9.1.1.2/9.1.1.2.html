@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.1.2 Cisco IOS 12.4 Mainline and T Trains </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Managing IOS System Files</h1>
+        <h2>Naming Conventions</h2>
+      </div>
+      <div id="content">
+          <p>
+            <b>12.4 Trains </b>
+          </p>
+          <p>The figure shows the migration from software release 12.3 to 12.4. Within a software release family there may be two or more closely related and active trains. For example, the Cisco IOS Software 12.4 release family has two trains, the 12.4 mainline and the 12.4T trains. </p>
+          <p></p>
+          <p>The Cisco IOS Software 12.4 train is considered the mainline train. The mainline train receives mostly software (bug) fixes with the goal of increasing software quality. The mainline train releases are also designated as Maintenance Deployment releases (MD). </p>
+          <p></p>
+          <p>A mainline train is always associated with a technology train (T train). A T train, such as 12.4T, receives the same software bug fixes as the mainline train. The T train also receives new software and hardware support features. Releases in the Cisco IOS Software 12.4T train are considered Early Deployment (ED) releases.</p>
+          <p></p>
+          <p>There may be other trains, depending on the software release family. For example, another train available is the service provider train (S train). An S train will contain specific features designed to meet service provider requirements.</p>
+          <p></p>
+          <p>All child trains of the mainline train (T, S, etc.) typically contain an uppercase letter designating the train type. </p>
+          <p></p>
+          <p>Mainline train = 12.4</p>
+          <p>T train = 12.4T (12.4 + new software and hardware support features)</p>
+          <p></p>
+          <p>Up to and including the Cisco IOS Software 12.4 release family, the mainline and T trains were separated. In other words, from the mainline train, a T train would branch out and become a separate code base that received new features and hardware support. Eventually, a new mainline train would evolve from an established T train and the cycle would start again. This use of multiple trains was changed with the software release, Cisco IOS 15.</p>
+          <p></p>
+          <p>The figure illustrates the relationships between the release of the Cisco IOS Software 12.4 mainline train and the 12.4T train. </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.1.2.3 EIGRP Update and Acknowledgment Packets</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.1.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Characteristics of EIGRP</h1>
+        <h2>Types of EIGRP Packets</h2>
+      </div>
+      <div id="content">
+          <p>
+            <b>EIGRP Update Packets</b>
+          </p>
+          <p>EIGRP sends Update packets to propagate routing information. Update packets are sent only when necessary. EIGRP updates contain only the routing information needed and are sent only to those routers that require it. </p>
+          <p></p>
+          <p>Unlike RIP, EIGRP (another distance vector routing protocol) does not send periodic updates and route entries do not age out. Instead, EIGRP sends incremental updates only when the state of a destination changes. This may include when a new network becomes available, an existing network becomes unavailable, or a change occurs in the routing metric for an existing network. </p>
+          <p></p>
+          <p>EIGRP uses the terms <i>partial</i> and <i>bounded</i> when referring to its updates. The term partial means that the update only includes information about the route changes. The term bounded refers to the propagation of partial updates that are sent only to those routers that the changes affect. </p>
+          <p></p>
+          <p>By sending only the routing information that is needed, only to those routers that need it, EIGRP minimizes the bandwidth that is required to send EIGRP updates.</p>
+          <p></p>
+          <p>EIGRP update packets use reliable delivery, which means the sending router requires an acknowledgment. Update packets are sent as a multicast when required by multiple routers, or as a unicast when required by only a single router. In the figure, because the links are point-to-point, the updates are sent as unicasts.</p>
+          <p></p>
+          <p>
+            <b>EIGRP Acknowledgment Packets</b>
+          </p>
+          <p></p>
+          <p>EIGRP sends Acknowledgment (ACK) packets when reliable delivery is used. An EIGRP acknowledgment is an EIGRP Hello packet without any data. RTP uses reliable delivery for EIGRP update, query, and reply packets. EIGRP acknowledgment packets are always sent as an unreliable unicast. Unreliable delivery makes sense; otherwise, there would be an endless loop of acknowledgments.</p>
+          <p></p>
+          <p>In the figure, R2 has lost connectivity to the LAN attached to its Gigabit Ethernet interface. R2 immediately sends an update to R1 and R3 noting the downed route. R1 and R3 respond with an acknowledgment to let R2 know that they have received the update.</p>
+          <p>
+            <b>Note</b>: Some documentation refers to the Hello and acknowledgment as a single type of EIGRP packet. </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

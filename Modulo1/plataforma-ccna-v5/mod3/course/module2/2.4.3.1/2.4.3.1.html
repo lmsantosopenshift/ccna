@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.4.3.1 HSRP Verification</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.4.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>First Hop Redundancy Protocols</h1>
+        <h2>FHRP Verification</h2>
+      </div>
+      <div id="content">
+          <p>An HSRP active router has the following characteristics:</p>
+          <p></p>
+          <p>
+            <ul>
+              <li>Responds to default gateway’s ARP requests with the virtual router’s MAC.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Assumes active forwarding of packets for the virtual router.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Sends Hello messages.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Knows the virtual router IP address.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>An HSRP standby router has the following characteristics:</p>
+          <p></p>
+          <p>
+            <ul>
+              <li>Listens for periodic Hello messages.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Assumes active forwarding of packets if it does not hear from the active router.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>Use the<span class="cmd"><b> show standby </b></span>command to verify the HSRP state. In the figure, the output shows that the router is in the active state.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.1.3 Cisco IOS 12.4 Mainline and T Numbering</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Managing IOS System Files</h1>
+        <h2>Naming Conventions</h2>
+      </div>
+      <div id="content">
+          <p>The IOS release numbering convention is used to identify the release of the IOS software, including any bug fixes and new software features. An example of the numbering scheme is shown in the figure for both the mainline and T trains:</p>
+          <p></p>
+          <p>
+            <ul>
+              <li>The software release numbering scheme for a mainline train is composed of a train number, a maintenance identifier, and a rebuild identifier. For example, the Cisco IOS Software Release 12.4(21a) is a mainline train. The release for a T train is composed of a train number, a maintenance identifier, a train identifier, and a rebuild identifier. For example, Cisco IOS Software Release 12.4(20)T1 belongs to the Cisco IOS Software 12.4T train. </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Each maintenance identifier of Cisco IOS Software 12.4 mainline, such as 12.4(7), includes additional software and maintenance fixes. This change is indicated with the number within the parentheses. Each maintenance release of Cisco IOS Software 12.4T, such as 12.4(20)T, includes these same software fixes, along with additional software features, and hardware support.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Cisco uses rebuilds of an individual release to integrate fixes for significant issues. This reduces the possible impact on customers who have already deployed and certified an individual release. A rebuild typically includes fixes to a limited number of software defects, which are known as caveats. It is indicated by a lowercase letter inside the parenthesis of mainline trains, or by a final number in other trains. For example, Cisco IOS Software Release 12.4(21) received a few caveat fixes and the resulting rebuild was named 12.4(21a). Similarly, 12.4(15)T8 is the eighth rebuild of 12.4(15)T. Each new rebuild increments the rebuild identifier and delivers additional software fixes on an accelerated schedule, prior to the next planned individual release. The criteria for making changes in a rebuild are strict.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>A single set of individual release numbers are used for all Cisco IOS Software 12.4 trains. Cisco IOS Software Maintenance Release 12.4 and Cisco IOS Software Release 12.4T use a pool of individual release numbers that are shared across the entire Cisco IOS Software 12.4 release family. Cisco IOS Software Release 12.4(6)T was followed by 12.4(7)T and 12.4(8)T. This permits the administrator to track changes introduced in the code. </p>
+          <p></p>
+          <p>
+            <b>Note</b>: Any caveat that is fixed in a T train release should be implemented in the next mainline release.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

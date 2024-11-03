@@ -1,0 +1,176 @@
+<textcomponents>
+<!--Slide 1-->
+
+<component id='ID_s1_inst'>
+	<text><![CDATA[<b>Activity - Match Wireless Features to Wireless Technologies</b><br><br>Match each wireless feature to its appropriate wireless technology. Indicate your answers by clicking the appropriate field in each row.]]></text>
+</component>
+
+<component id="ID_s1_header01">
+<text><![CDATA[<b>Wireless Features</b>]]></text>
+</component>
+
+<component id="ID_s1_header02">
+<text><![CDATA[<b>Wireless Technologies</b>]]></text>
+</component>
+
+<!--Number of rows in the table-->
+<component id="txt_numrows">
+	<text><![CDATA[12]]></text>
+</component>
+
+<!--Number of columns for the answers in the table. Do not count the question column-->
+<component id="txt_numcols">
+	<text><![CDATA[5]]></text>
+</component>
+
+<!--Answer column headers-->
+<component id='txt_col1'>
+	<text><![CDATA[<b>Bluetooth<br>Broadband</b>]]></text>
+</component>
+
+<component id='txt_col2'>
+	<text><![CDATA[<b>Wi-Fi</b>]]></text>
+</component>
+
+<component id='txt_col3'>
+	<text><![CDATA[<b>WiMAX</b>]]></text>
+</component>
+
+<component id='txt_col4'>
+	<text><![CDATA[<b>Cellular<br>Broadband</b>]]></text>
+</component>
+
+<component id='txt_col5'>
+	<text><![CDATA[<b>Satellite<br>Broadband</b>]]></text>
+</component>
+
+<!--Question text - blockindent code moves the text away from the left edge a bit-->
+<!--Question text - If questions are numbered, use blockindent for hanging indents-->
+
+<component id="txt_q1">
+	<text><![CDATA[Distance transmissions of up to 100 meters]]></text>
+</component>
+
+<component id="txt_q2">
+	<text><![CDATA[Provides broadband access to remote sites using a directional satellite dish]]></text>
+</component>
+
+<component id="txt_q3">
+	<text><![CDATA[IEEE 802.11]]></text>
+</component>
+
+<component id="txt_q4">
+	<text><![CDATA[Provides mobile broadband access using cellular networks]]></text>
+</component>
+
+<component id="txt_q5">
+	<text><![CDATA[IEEE 802.16]]></text>
+</component>
+
+<component id="txt_q6">
+	<text><![CDATA[Clear line of sight required]]></text>
+</component>
+
+<component id="txt_q7">
+	<text><![CDATA[Distance transmissions of up to 300 meters]]></text>
+</component>
+
+<component id="txt_q8">
+	<text><![CDATA[Uses 2G, 3G, and 4G variations]]></text>
+</component>
+
+<component id="txt_q9">
+	<text><![CDATA[Supports speeds up to 1 Gb/s]]></text>
+</component>
+
+<component id="txt_q10">
+	<text><![CDATA[Supports speeds up to 24 Mb/s]]></text>
+</component>
+
+<component id="txt_q11">
+	<text><![CDATA[IEEE 802.15]]></text>
+</component>
+
+<component id="txt_q12">
+	<text><![CDATA[Transmission distances of up to 30 miles (50 km)]]></text>
+</component>
+
+<!--Answers - Give the column number(s), column numbering start with 1 not 0-->
+<!--Answers - For MCMA separate the correct answers with commas [2, 4, 5] -->
+
+<component id="txt_a1">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a2">
+	<text><![CDATA[5]]></text>
+</component>
+
+<component id="txt_a3">
+	<text><![CDATA[2]]></text>
+</component>
+
+<component id="txt_a4">
+	<text><![CDATA[4]]></text>
+</component>
+
+<component id="txt_a5">
+	<text><![CDATA[3]]></text>
+</component>
+
+<component id="txt_a6">
+	<text><![CDATA[5]]></text>
+</component>
+
+<component id="txt_a7">
+	<text><![CDATA[2]]></text>
+</component>
+
+<component id="txt_a8">
+	<text><![CDATA[4]]></text>
+</component>
+
+<component id="txt_a9">
+	<text><![CDATA[3]]></text>
+</component>
+
+<component id="txt_a10">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a11">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a12">
+	<text><![CDATA[3]]></text>
+</component>
+
+<!--buttons-->
+<component id='ID_s1_check'>
+	<text><![CDATA[<b>Check</b>]]></text>
+</component>
+
+<component id='ID_s1_reset'>
+	<text><![CDATA[<b>Reset</b>]]></text>
+</component>
+
+
+<!--feedback-->
+<component id='ID_s1_titleCorrect'>
+	<text><![CDATA[<b>Correct</b>]]></text>
+</component>
+
+<component id='ID_s1_correctText'>
+	<text><![CDATA[You have successfully matched the WLAN 802.11 standards to their microwave radio frequencies.]]></text>
+</component>
+
+<component id='ID_s1_titleIncorrect'>
+	<text><![CDATA[<b>Incorrect</b>]]></text>
+</component>
+
+<component id='ID_s1_incorrectText'>
+	<text><![CDATA[You have not successfully matched the WLAN 802.11 standards to their microwave radio frequencies. Click Reset to try again.]]></text>
+</component>
+
+</textcomponents>

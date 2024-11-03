@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.2.1.5 Configuring the EIGRP Router ID </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.2.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuring EIGRP for IPv4</h1>
+        <h2>Configuring EIGRP with IPv4</h2>
+      </div>
+      <div id="content">
+          <p>
+            <span class="cmd">
+              <b>eigrp router-id </b>
+            </span>
+            <b>Command</b>
+          </p>
+          <p></p>
+          <p>The<span class="cmd"><b> eigrp router-id </b></span>command is used to configure the EIGRP router ID and takes precedence over any loopback or physical interface IPv4 addresses. The command syntax is:</p>
+          <p></p>
+          <p>
+            <span class="cmd">Router(config)# </span>
+            <span class="cmd">
+              <b>router eigrp </b>
+            </span>
+            <span class="cmd">
+              <i>autonomous-system</i>
+            </span>
+          </p>
+          <p>
+            <span class="cmd">Router(config-router)# </span>
+            <span class="cmd">
+              <b>eigrp router-id </b>
+            </span>
+            <span class="cmd">
+              <i>ipv4-address</i>
+            </span>
+          </p>
+          <p></p>
+          <p>
+            <b>Note</b>: The IPv4 address used to indicate the router ID is actually any 32-bit number displayed in dotted-decimal notation. </p>
+          <p></p>
+          <p>The router ID can be configured with any IPv4 address with two exceptions: 0.0.0.0 and 255.255.255.255. The router ID should be a unique 32-bit number in the EIGRP routing domain; otherwise, routing inconsistencies can occur.</p>
+          <p></p>
+          <p>Figure 1 shows the configuration of the EIGRP router ID for routers R1 and R2 using the<span class="cmd"><b> router eigrp </b></span><span class="cmd"><i>autonomous-system </i></span>command.</p>
+          <p></p>
+          <p>
+            <b>Loopback Address Used as the Router ID</b>
+          </p>
+          <p></p>
+          <p>Another option to specify the EIGRP router ID is to use an IPv4 loopback address. The advantage of using a loopback interface, instead of the IPv4 address of a physical interface, is that unlike physical interfaces, it cannot fail. There are no actual cables or adjacent devices on which the loopback interface depends for being in the up state. Therefore, using a loopback address for the router ID can provide a more consistent router ID than using an interface address.</p>
+          <p></p>
+          <p>If the<span class="cmd"><b> eigrp router-id </b></span>command is not used and loopback interfaces are configured, EIGRP chooses the highest IPv4 address of any of its loopback interfaces. The following commands are used to enable and configure a loopback interface:</p>
+          <p></p>
+          <p>
+            <span class="cmd">Router(config)#</span>
+            <span class="cmd">
+              <b> interface loopback </b>
+            </span>
+            <span class="cmd">
+              <i>number</i>
+            </span>
+          </p>
+          <p>
+            <span class="cmd">Router(config-if)#</span>
+            <span class="cmd">
+              <b> ip address </b>
+            </span>
+            <span class="cmd">
+              <i>ipv4-address</i>
+            </span>
+            <span class="cmd">
+              <b></b>
+            </span>
+            <span class="cmd">
+              <i>subnet-mask</i>
+            </span>
+          </p>
+          <p></p>
+          <p>
+            <b>Note</b>: The EIGRP router ID is not changed, unless the EIGRP process is removed with the<span class="cmd"><b> no router eigrp </b></span>command or if the router ID is manually configured with the<span class="cmd"><b> eigrp router-id </b></span>command.</p>
+          <p></p>
+          <p>
+            <b>Verifying the EIGRP Process</b>
+          </p>
+          <p></p>
+          <p>Figure 2 shows the<span class="cmd"><b> show ip protocols </b></span>output for R1, including its router ID. The<span class="cmd"><b> show ip protocols </b></span>command displays the parameters and current state of any active routing protocol processes, including both EIGRP and OSPF. The<span class="cmd"><b> show ip protocols </b></span>command displays different types of output specific to each routing protocol. </p>
+          <p></p>
+          <p>Use the Syntax Checker in Figure 3 to configure and verify the router ID for R3.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

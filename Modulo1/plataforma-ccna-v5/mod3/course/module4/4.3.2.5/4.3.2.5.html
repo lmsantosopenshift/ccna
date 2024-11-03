@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.3.2.5 Authentication in the Enterprise </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.3.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless LAN Security</h1>
+        <h2>Securing WLANs</h2>
+      </div>
+      <div id="content">
+          <p>In networks that have stricter security requirements, an additional authentication or login is required to grant wireless clients such access. The Enterprise security mode choices require an Authentication, Authorization, and Accounting (AAA) RADIUS server.</p>
+          <p></p>
+          <p>Refer to the example in the figure. Notice the new fields displayed when choosing an Enterprise version of WPA or WPA2. These fields are necessary to supply the AP with the required information to contact the AAA server: </p>
+          <p>
+            <ul>
+              <li>
+                <b>RADIUS Server IP address </b>- This is the reachable address of the RADIUS server.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>UDP port numbers </b>- Officially assigned UDP ports 1812 for RADIUS Authentication and 1813 for RADIUS Accounting, but could also operate using UDP ports 1645 and 1646.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Shared key </b>- Used to authenticate the AP with the RADIUS server.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>The shared key is not a parameter that must be configured on a STA. It is only required on the AP to authenticate with the RADIUS server. </p>
+          <p></p>
+          <p>
+            <b>Note</b>: There is no Password field listed, because the actual user authentication and authorization is handled by the 802.1X standard, which provides a centralized, server-based authentication of end users. </p>
+          <p></p>
+          <p>The 802.1X login process uses EAP to communicate with the AP and RADIUS server. EAP is a framework for authenticating network access. It can provide a secure authentication mechanism and negotiate a secure private key that can then be used for a wireless encryption session utilizing TKIP or AES encryption.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,113 @@
+﻿<textcomponents>
+
+<component id='ID_inst'>
+	<text><![CDATA[<b>Activity – Identify the 802.11 Frame Control Subfields</b><br><br>Drag the 802.11 Frame Control Subfield names to the appropriate descriptions in the table. Not all subfield names will be used.]]></text>
+</component>
+
+
+<component id='ID_header02'>
+	<text><![CDATA[<b>Subfield Names</b>]]></text>
+</component>
+
+<component id='ID_header01'>
+	<text><![CDATA[<b>802.11 Frame Control Subfield Descriptions</b>]]></text>
+</component>
+
+
+<component id='ID_txt01'>
+	<text><![CDATA[Active or power-save mode status of the sending device.]]></text>
+</component>
+
+<component id='ID_txt02'>
+	<text><![CDATA[Identifies the frame as either a management, control, or data frame.]]></text>
+</component>
+
+<component id='ID_txt03'>
+	<text><![CDATA[Indicates whether encryption and/or authentication is being used.]]></text>
+</component>
+
+<component id='ID_txt04'>
+	<text><![CDATA[Specifies which 802.11 protocol is being used.]]></text>
+</component>
+
+<component id='ID_txt05'>
+	<text><![CDATA[Indicates to an associated AP client that data is exiting a DS (distributed system).]]></text>
+</component>
+
+
+<!--Drag and Drop-->
+<component id='ID_drag01'>
+	<text><![CDATA[<font color="#393536">Protocol<br/>Version</font>]]></text>
+</component>
+
+<component id='ID_drag02'>
+	<text><![CDATA[<font color="#393536">Frame<br/>Subtype</font>]]></text>
+</component>
+
+<component id='ID_drag03'>
+	<text><![CDATA[<font color="#393536">Frame<br/>Type</font>]]></text>
+</component>
+
+<component id='ID_drag04'>
+	<text><![CDATA[<font color="#393536">ToDS</font>]]></text>
+</component>
+
+
+<component id='ID_drag05'>
+	<text><![CDATA[<font color="#393536">FromDS</font>]]></text>
+</component>
+
+
+<component id='ID_drag06'>
+	<text><![CDATA[<font color="#393536">More<br/>Fragments</font>]]></text>
+</component>
+
+
+<component id='ID_drag07'>
+	<text><![CDATA[<font color="#393536">Retry</font>]]></text>
+</component>
+
+<component id='ID_drag08'>
+	<text><![CDATA[<font color="#393536">Power Management</font>]]></text>
+</component>
+
+<component id='ID_drag09'>
+	<text><![CDATA[<font color="#393536">More Data</font>]]></text>
+</component>
+
+<component id='ID_drag10'>
+	<text><![CDATA[<font color="#393536">Security</font>]]></text>
+</component>
+
+<component id='ID_drag11'>
+	<text><![CDATA[<font color="#393536">Reserved</font>]]></text>
+</component>
+
+
+
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correct</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[You have successfully matched the 802.11 frame control subfield names to the appropriate descriptions.]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrect</b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[You have not successfully matched the 802.11 frame control subfield names to the appropriate descriptions. Please click Reset to try again.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Check</b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Reset</b>]]></text>
+</component>
+
+</textcomponents>

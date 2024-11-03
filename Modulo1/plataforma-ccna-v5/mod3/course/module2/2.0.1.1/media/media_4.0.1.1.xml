@@ -1,0 +1,12 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[]]></text>
+</component>
+   
+<component id="ID_txt01">
+<text><![CDATA[<br/><b>Upon completion of this chapter, you will be able to:</b><br/><br/><textformat blockindent='-14'><ul><li>Describe the issues with implementing a redundant network.</li><li>Describe IEEE 802.1D STP operation.</li><li>Describe the different spanning tree varieties.</li><li>Describe PVST+ operation in a switched LAN environment.</li><li>Describe Rapid PVST+ operation in a switched LAN environment.</li><li>Configure PVST+ in a switches LAN environment.</li><li>Configure Rapid PVST+ in a switched LAN environment.</li><li>Identify common STP configuration issues.</li><li>Describe the purpose and operation of First Hop Redundancy Protocols.</li><li>Describe the different varieties of First Hop Redundancy Protocols.</li><li>Use Cisco IOS commands to verify HSRP and GLBP implementations.</li></ul></textformat><br/>]]></text>
+</component>
+
+
+
+</textcomponents>

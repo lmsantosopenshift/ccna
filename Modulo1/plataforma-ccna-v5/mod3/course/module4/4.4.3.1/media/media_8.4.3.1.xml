@@ -1,0 +1,90 @@
+<textcomponents>
+
+<component id="ID_s1_title">
+<text><![CDATA[<b>Troubleshooting Method - Bottom Up</b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+  <text><![CDATA[Application]]></text> 
+  </component>
+<component id="ID_s1_txt02">
+  <text><![CDATA[Transport]]></text> 
+  </component>
+<component id="ID_s1_txt03">
+  <text><![CDATA[Network]]></text> 
+  </component>
+<component id="ID_s1_txt04">
+  <text><![CDATA[Data Link]]></text> 
+  </component>
+<component id="ID_s1_txt05">
+  <text><![CDATA[Physical]]></text> 
+  </component>
+<component id="ID_s1_txt06">
+  <text><![CDATA[Start Here]]></text> 
+  </component>
+  
+  
+  
+  
+  
+<component id="ID_s2_title">
+<text><![CDATA[<b>Top-Down Method</b>]]></text>
+</component>
+<component id="ID_s2_txt01">
+  <text><![CDATA[Application]]></text> 
+  </component>
+<component id="ID_s2_txt02">
+  <text><![CDATA[Transport]]></text> 
+  </component>
+<component id="ID_s2_txt03">
+  <text><![CDATA[Network]]></text> 
+  </component>
+<component id="ID_s2_txt04">
+  <text><![CDATA[Data Link]]></text> 
+  </component>
+<component id="ID_s2_txt05">
+  <text><![CDATA[Physical]]></text> 
+  </component>
+<component id="ID_s2_txt06">
+  <text><![CDATA[Start Here]]></text> 
+  </component>
+  
+  
+  
+  
+  
+  
+  
+<component id="ID_s3_title">
+<text><![CDATA[<b>Divide-and-Conquer Method</b>]]></text>
+</component>
+<component id="ID_s3_txt01">
+  <text><![CDATA[Application]]></text> 
+  </component>
+<component id="ID_s3_txt02">
+  <text><![CDATA[Transport]]></text> 
+  </component>
+<component id="ID_s3_txt03">
+  <text><![CDATA[Network]]></text> 
+  </component>
+<component id="ID_s3_txt04">
+  <text><![CDATA[Data Link]]></text> 
+  </component>
+<component id="ID_s3_txt05">
+  <text><![CDATA[Physical]]></text> 
+  </component>
+<component id="ID_s3_txt06">
+  <text><![CDATA[Start Here]]></text> 
+  </component>
+<component id="ID_s3_txt07">
+  <text><![CDATA[Start Here]]></text> 
+  </component>
+<component id="ID_s3_txt08">
+  <text><![CDATA[Start Here]]></text> 
+  </component>
+<component id="ID_s3_txt09">
+  <text><![CDATA[- or -]]></text> 
+  </component>
+<component id="ID_s3_txt10">
+  <text><![CDATA[- or -]]></text> 
+  </component>
+</textcomponents>

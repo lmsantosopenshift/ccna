@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.1.2.2 EIGRP Hello Packets</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.1.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Characteristics of EIGRP</h1>
+        <h2>Types of EIGRP Packets</h2>
+      </div>
+      <div id="content">
+          <p>EIGRP uses small Hello packets to discover other EIGRP-enabled routers on directly connected links. Hello packets are used by routers to form EIGRP neighbor adjacencies, also known as neighbor relationships.</p>
+          <p></p>
+          <p>EIGRP Hello packets are sent as IPv4 or IPv6 multicasts, and use RTP unreliable delivery. This means that the receiver does not reply with an acknowledgment packet. </p>
+          <p>
+            <ul>
+              <li>The reserved EIGRP multicast address for IPv4 is 224.0.0.10.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>The reserved EIGRP multicast address for IPv6 is FF02::A.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>EIGRP routers discover neighbors and establish adjacencies with neighbor routers using the Hello packet. On most networks, EIGRP Hello packets are sent as multicast packets every five seconds. However, on multipoint, nonbroadcast multiple access (NBMA) networks, such as X.25, Frame Relay, and Asynchronous Transfer Mode (ATM) interfaces with access links of T1 (1.544 Mb/s) or slower, Hello packets are sent as unicast packets every 60 seconds. </p>
+          <p></p>
+          <p>EIGRP also uses Hello packets to maintain established adjacencies. An EIGRP router assumes that as long as it receives Hello packets from a neighbor, the neighbor and its routes remain viable. </p>
+          <p></p>
+          <p>EIGRP uses a Hold timer to determine the maximum time the router should wait to receive the next Hello before declaring that neighbor as unreachable. By default, the hold time is three times the Hello interval, or 15 seconds on most networks and 180 seconds on low-speed NBMA networks. If the hold time expires, EIGRP declares the route as down and DUAL searches for a new path by sending out queries.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

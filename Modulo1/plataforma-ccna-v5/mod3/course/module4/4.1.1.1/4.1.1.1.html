@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.1.1 Supporting Mobility</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless Concepts</h1>
+        <h2>Introduction to Wireless</h2>
+      </div>
+      <div id="content">
+          <p>Business networks today are evolving to support people who are on the move. People are connected using multiple devices, including computers, laptops, tablets, and smart phones. This is the vision of mobility where people can take their connection to the network along with them on the road.</p>
+          <p></p>
+          <p>There are many different infrastructures (wired LAN, service provider networks) that make this type of mobility possible, but in a business environment, the most important is the wireless LAN (WLAN). </p>
+          <p></p>
+          <p>Productivity is no longer restricted to a fixed work location or a defined time period. People now expect to be connected at any time and place, from the office to the airport or the home. Traveling employees used to be restricted to pay phones for checking messages and returning a few phone calls between flights. Now employees can check email, voice mail, and the status of projects on smart phones.</p>
+          <p></p>
+          <p>Users now expect to be able to roam wirelessly. Roaming enables a wireless device to maintain Internet access without losing connection.</p>
+          <p></p>
+          <p>Play the video in the figure for an example of how wireless networks enable mobility.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

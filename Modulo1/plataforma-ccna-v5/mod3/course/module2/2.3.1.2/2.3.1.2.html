@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.3.1.2 Configuring and Verifying the Bridge ID</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.3.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Spanning Tree Configuration</h1>
+        <h2>PVST+ Configuration</h2>
+      </div>
+      <div id="content">
+          <p>When an administrator wants a specific switch to become a root bridge, the bridge priority value must be adjusted to ensure it is lower than the bridge priority values of all the other switches on the network. There are two different methods to configure the bridge priority value on a Cisco Catalyst switch.</p>
+          <p></p>
+          <p>
+            <b>Method 1</b>
+          </p>
+          <p>To ensure that the switch has the lowest bridge priority value, use the<span class="cmd"><b> spanning-tree vlan </b></span><span class="cmd"><i>vlan-id</i></span><span class="cmd"><b> root primary </b></span>command in global configuration mode. The priority for the switch is set to the predefined value of 24,576 or to the highest multiple of 4,096, less than the lowest bridge priority detected on the network.</p>
+          <p></p>
+          <p>If an alternate root bridge is desired, use the<span class="cmd"><b> spanning-tree vlan </b></span><span class="cmd"><i>vlan-id</i></span><span class="cmd"><b> root secondary </b></span>global configuration mode command. This command sets the priority for the switch to the predefined value of 28,672. This ensures that the alternate switch becomes the root bridge if the primary root bridge fails. This assumes that the rest of the switches in the network have the default 32,768 priority value defined.</p>
+          <p></p>
+          <p>In Figure 1, S1 has been assigned as the primary root bridge using the<span class="cmd"><b> spanning-tree vlan 1 root primary </b></span>command, and S2 has been configured as the secondary root bridge using the<span class="cmd"><b> spanning-tree vlan 1 root secondary </b></span>command.</p>
+          <p></p>
+          <p>
+            <b>Method 2</b>
+          </p>
+          <p>Another method for configuring the bridge priority value is using the<span class="cmd"><b> spanning-tree vlan </b></span><span class="cmd"><i>vlan-id</i></span><span class="cmd"><b> priority </b></span><span class="cmd"><i>value </i></span>global configuration mode command. This command gives more granular control over the bridge priority value. The priority value is configured in increments of 4,096 between 0 and 61,440. </p>
+          <p></p>
+          <p>In the example, S3 has been assigned a bridge priority value of 24,576 using the<span class="cmd"><b> spanning-tree vlan 1 priority 24576 </b></span>command.</p>
+          <p></p>
+          <p>To verify the bridge priority of a switch, use the<span class="cmd"><b> show spanning-tree </b></span>command. In Figure 2, the priority of the switch has been set to 24,576. Also notice that the switch is designated as the root bridge for the spanning tree instance.</p>
+          <p></p>
+          <p>Use the Syntax Checker in Figure 3 to configure switches S1, S2, and S3. Using Method 2 described above, configure S3 manually, setting the priority to 24,576 for VLAN 1. Using Method 1, configure S2 as the secondary root VLAN 1 and configure S1 as the primary root for VLAN 1. Verify the configuration with the<span class="cmd"><b> show spanning-tree </b></span>command on S1.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

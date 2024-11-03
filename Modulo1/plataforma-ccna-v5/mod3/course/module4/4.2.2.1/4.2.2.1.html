@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.2.1 Carrier Sense Multiple Access with Collision Avoidance </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless LAN Operations</h1>
+        <h2>Wireless Operation</h2>
+      </div>
+      <div id="content">
+          <p>Recall that the media contention method is the method in which devices determine how and when to access the media when traffic must be forwarded across the network. The IEEE 802.11 WLANs use the MAC protocol CSMA/CA. While the name is similar to the Ethernet CSMA/CD, the operating concept is completely different.</p>
+          <p></p>
+          <p>Wi-Fi systems are half-duplex, shared media configurations; therefore, wireless clients can transmit and receive on the same radio channel. This creates a problem because a wireless client cannot hear while it is sending; thus, making it impossible to detect a collision. To address this problem, the IEEE developed an additional collision avoidance mechanism called the Distributed Coordination Function (DCF). Using DCF, a wireless client transmits only if the channel is clear. All transmissions are acknowledged; therefore, if a wireless client does not receive an acknowledgment, it assumes a collision occurred and retries after a random waiting interval.</p>
+          <p></p>
+          <p>Wireless clients and APs use the RTS and CTS control frames to facilitate the actual data transfer. </p>
+          <p></p>
+          <p>As shown in Figure 1, when a wireless client sends data, it first senses the media to determine if other devices are transmitting. If not, it then sends an RTS frame to the AP. This frame is used to request dedicated access to the RF medium for a specified duration. The AP receives the frame and, if available, grants the wireless client access to the RF medium by sending a CTS frame of the same time duration. All other wireless devices observing the CTS frame relinquish the media to the transmitting node for transmission.</p>
+          <p></p>
+          <p>The CTS control frame includes the time duration that the transmitting node is allowed to transmit. Other wireless clients withhold transmissions for, at least, the specified duration.</p>
+          <p></p>
+          <p>Figure 2 displays a flowchart detailing the CSMA/CA process.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

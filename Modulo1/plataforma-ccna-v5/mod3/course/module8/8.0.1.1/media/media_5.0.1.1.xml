@@ -1,0 +1,12 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[]]></text>
+</component>
+   
+<component id="ID_txt01">
+<text><![CDATA[<br/><b>After completing this chapter, you will be able to:</b><br/><br/><textformat blockindent='-14'><ul><li>Configure EIGRP automatic summarization. </li><li>Configure EIGRP manual summarization. </li><li>Configure a router to propagate a default route in an EIGRP network. </li><li>Modify EIGRP interface settings to improve network performance.</li><li>Configure EIGRP authentication to ensure secure routing updates.</li><li>Explain the process and tools used to troubleshoot an EIGRP network.</li><li>Troubleshoot neighbor adjacency issues in an EIGRP network.</li><li>Troubleshoot missing route entries in an EIGRP routing table.</li></ul></textformat><br/>]]></text>
+</component>
+
+
+
+</textcomponents>

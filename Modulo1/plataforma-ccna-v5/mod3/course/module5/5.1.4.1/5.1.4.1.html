@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.4.1 OSPF Hello and Dead Intervals</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.4.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Advanced Single-Area OSPF Configurations </h1>
+        <h2>Fine-tuning OSPF Interfaces</h2>
+      </div>
+      <div id="content">
+          <p>The OSPF Hello and Dead intervals are configurable on a per-interface basis. The OSPF intervals must match or a neighbor adjacency does not occur.</p>
+          <p></p>
+          <p>To verify the currently configured interface intervals, use the<span class="cmd"><b> show ip ospf interface </b></span>command, as shown in Figure 1. The Serial 0/0/0 Hello and Dead intervals are set to the default 10 seconds and 40 seconds respectively. </p>
+          <p></p>
+          <p>Figure 2 provides an example of using a filtering technique to display the OSPF intervals for the OSPF enabled interface Serial 0/0/0 on R1. </p>
+          <p></p>
+          <p>In Figure 3, the<span class="cmd"><b> show ip ospf neighbor </b></span>command is used on R1 to verify that R1 is adjacent to R2 and R3. Notice in the output that the Dead Time is counting down from 40 seconds. By default, this value is refreshed every 10 seconds when R1 receives a Hello from the neighbor.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

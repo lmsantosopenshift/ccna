@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.3.3 Edge Ports</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Varieties of Spanning Tree Protocols</h1>
+        <h2>Rapid PVST+</h2>
+      </div>
+      <div id="content">
+          <p>An RSTP edge port is a switch port that is never intended to be connected to another switch device. It immediately transitions to the forwarding state when enabled. </p>
+          <p></p>
+          <p>The RSTP edge port concept corresponds to the PVST+ PortFast feature; an edge port is directly connected to an end station and assumes that no switch device is connected to it.  RSTP edge ports should immediately transition to the forwarding state, thereby skipping the time-consuming original 802.1D listening and learning port states. </p>
+          <p></p>
+          <p>The Cisco RSTP implementation, Rapid PVST+, maintains the PortFast keyword, using the<span class="cmd"><b> spanning-tree portfast </b></span>command for edge port configuration. This makes the transition from STP to RSTP seamless. </p>
+          <p></p>
+          <p>Figure 1 shows examples of ports that can be configured as edge ports. Figure 2 shows examples of ports that are non-edge ports.</p>
+          <p></p>
+          <p>
+            <b>Note</b>: Configuring an edge port to be attached to another switch is not recommended. This can have negative implications for RSTP because a temporary loop may result, possibly delaying the convergence of RSTP.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

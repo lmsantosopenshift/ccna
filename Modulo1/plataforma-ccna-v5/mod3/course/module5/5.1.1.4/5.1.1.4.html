@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.1.4 Open Shortest Path First</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Advanced Single-Area OSPF Configurations </h1>
+        <h2>Routing in the Distribution and Core Layers</h2>
+      </div>
+      <div id="content">
+          <p>OSPF is a commonly implemented link-state routing protocol. It was developed as a replacement for the distance vector routing protocol, RIP. However, OSPF has significant advantages over RIP in that it offers faster convergence and scales to much larger network implementations.</p>
+          <p></p>
+          <p>OSPF features, as shown in the figure, include:</p>
+          <p>
+            <ul>
+              <li>
+                <b>Classless</b> - It is classless by design; therefore, it supports VLSM and CIDR.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Efficient</b> - Routing changes trigger routing updates (no periodic updates). It uses the SPF algorithm to choose the best path.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Fast convergence</b> - It quickly propagates network changes.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Scalable</b> - It works well in small and large network sizes. Routers can be grouped into areas to support a hierarchical system. </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Secure</b> - It supports Message Digest 5 (MD5) authentication. When enabled, OSPF routers only accept encrypted routing updates from peers with the same pre-shared password.</li>
+            </ul>
+          </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

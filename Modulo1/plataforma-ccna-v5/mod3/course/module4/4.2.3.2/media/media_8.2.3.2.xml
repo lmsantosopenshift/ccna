@@ -1,0 +1,369 @@
+<textcomponents>
+<!--Slide 1-->
+<component id="ID_s1_title">
+      <text><![CDATA[<b>Radio Spectrum of the Electromagnetic Spectrum</b>]]></text>
+   </component>
+   
+<component id="ID_s1_txt01">
+   <text><![CDATA[Power & Telephony]]></text>
+</component>
+
+<component id="ID_s1_txt02">
+   <text><![CDATA[Radio<br/>Waves]]></text>
+</component>
+
+<component id="ID_s1_txt03">
+   <text><![CDATA[Infra-Red]]></text>
+</component>
+
+<component id="ID_s1_txt04">
+   <text><![CDATA[Visible<br/>Light]]></text>
+</component>
+
+<component id="ID_s1_txt05">
+   <text><![CDATA[Ultra-Violet ]]></text>
+</component>
+
+<component id="ID_s1_txt06">
+   <text><![CDATA[X-Rays]]></text>
+</component>
+
+<component id="ID_s1_txt07">
+   <text><![CDATA[Gamma<br/>Rays]]></text>
+</component>
+
+<component id="ID_s1_txt08">
+   <text><![CDATA[Cosmic<br/>Rays]]></text>
+</component>
+
+<component id="ID_s1_txt09">
+   <text><![CDATA[<b>Microwave Frequencies</b>]]></text>
+</component>
+
+<component id="ID_s1_txt10">
+   <text><![CDATA[<b>Ultra High Frequency (UHF)</b>]]></text>
+</component>
+
+<component id="ID_s1_txt11">
+   <text><![CDATA[<b>Super High Frequency (SHF)</b>]]></text>
+</component>
+
+<component id="ID_s1_txt12">
+   <text><![CDATA[<b>Extremely High Frequency (EHF)</b>]]></text>
+</component>
+
+<component id="ID_s1_txt13">
+   <text><![CDATA[2.4 GHz<br/>WLANs]]></text>
+</component>
+
+<component id="ID_s1_txt14">
+   <text><![CDATA[5 GHz<br/>WLANs]]></text>
+</component>
+
+<component id="ID_s1_txt15">
+   <text><![CDATA[60 GHz<br/>WLANs]]></text>
+</component>
+
+<component id="ID_s1_txt16">
+   <text><![CDATA[3]]></text>
+</component>
+
+
+<component id="ID_s1_txt17">
+   <text><![CDATA[30]]></text>
+</component>
+
+<component id="ID_s1_txt18">
+   <text><![CDATA[300]]></text>
+</component>
+
+<component id="ID_s1_txt19">
+   <text><![CDATA[3]]></text>
+</component>
+
+<component id="ID_s1_txt20">
+   <text><![CDATA[30]]></text>
+</component>
+
+<component id="ID_s1_txt21">
+   <text><![CDATA[300]]></text>
+</component>
+
+
+<component id="ID_s1_txt22">
+   <text><![CDATA[3]]></text>
+</component>
+
+<component id="ID_s1_txt23">
+   <text><![CDATA[30]]></text>
+</component>
+
+
+<component id="ID_s1_txt24">
+   <text><![CDATA[300]]></text>
+</component>
+
+<component id="ID_s1_txt25">
+   <text><![CDATA[KHz]]></text>
+</component>
+
+<component id="ID_s1_txt26">
+   <text><![CDATA[MHz]]></text>
+</component>
+
+<component id="ID_s1_txt27">
+   <text><![CDATA[GHz]]></text>
+</component>
+
+
+
+<!--Slide 2-->
+
+<component id="ID_s2_title">
+      <text><![CDATA[<b>802.11b Channels</b>]]></text>
+   </component>
+   
+<component id="ID_s2_txt01">
+   <text><![CDATA[22 MHz]]></text>
+</component>
+
+<component id="ID_s2_txt02">
+   <text><![CDATA[2.2 GHz]]></text>
+</component>
+
+<component id="ID_s2_txt03">
+   <text><![CDATA[2.5 GHz]]></text>
+</component>
+
+<component id="ID_s2_txt04">
+   <text><![CDATA[5 MHz]]></text>
+</component>
+
+<component id="ID_s2_txt05">
+   <text><![CDATA[Channels]]></text>
+</component>
+
+
+<!--Slide 3-->
+<component id="ID_s3_title">
+<text><![CDATA[<b>802.11b (DSSS) Channel Width 22 MHz</b>]]></text>
+</component>
+   
+<component id="ID_s3_txt01">
+   <text><![CDATA[2.4]]></text>
+</component>
+
+<component id="ID_s3_txt02">
+   <text><![CDATA[2.5]]></text>
+</component>
+
+<component id="ID_s3_txt03">
+   <text><![CDATA[Channel 1<br/>2.412]]></text>
+</component>
+
+<component id="ID_s3_txt04">
+   <text><![CDATA[Channel 6<br/>2.437]]></text>
+</component>
+
+<component id="ID_s3_txt05">
+   <text><![CDATA[Channel 11<br/>2.462]]></text>
+</component>
+
+<component id="ID_s3_txt06">
+   <text><![CDATA[2.41]]></text>
+</component>
+
+<component id="ID_s3_txt07">
+   <text><![CDATA[2.42]]></text>
+</component>
+
+<component id="ID_s3_txt08">
+   <text><![CDATA[2.43]]></text>
+</component>
+
+<component id="ID_s3_txt09">
+   <text><![CDATA[2.44]]></text>
+</component>
+
+<component id="ID_s3_txt10">
+   <text><![CDATA[2.45]]></text>
+</component>
+
+<component id="ID_s3_txt11">
+   <text><![CDATA[2.46]]></text>
+</component>
+
+<component id="ID_s3_txt12">
+   <text><![CDATA[2.47]]></text>
+</component>
+
+<component id="ID_s3_txt13">
+   <text><![CDATA[2.48]]></text>
+</component>
+
+<component id="ID_s3_txt14">
+   <text><![CDATA[2.49]]></text>
+</component>
+
+<component id="ID_s3_txt15">
+   <text><![CDATA[GHz]]></text>
+</component>
+
+
+<!--Slide 4-->
+<component id="ID_s4_title">
+<text><![CDATA[<b>802.11g/n (OFDM) Channel Width 20 MHz</b>]]></text>
+</component>
+   
+<component id="ID_s4_txt01">
+   <text><![CDATA[2.4]]></text>
+</component>
+
+<component id="ID_s4_txt02">
+   <text><![CDATA[2.5]]></text>
+</component>
+
+<component id="ID_s4_txt03">
+   <text><![CDATA[Channel 1<br/>2.412]]></text>
+</component>
+
+<component id="ID_s4_txt04">
+   <text><![CDATA[Channel 6<br/>2.432]]></text>
+</component>
+
+<component id="ID_s4_txt05">
+   <text><![CDATA[Channel 11<br/>2.452]]></text>
+</component>
+
+<component id="ID_s4_txt06">
+   <text><![CDATA[2.41]]></text>
+</component>
+
+<component id="ID_s4_txt07">
+   <text><![CDATA[2.42]]></text>
+</component>
+
+<component id="ID_s4_txt08">
+   <text><![CDATA[2.43]]></text>
+</component>
+
+<component id="ID_s4_txt09">
+   <text><![CDATA[2.44]]></text>
+</component>
+
+<component id="ID_s4_txt10">
+   <text><![CDATA[2.45]]></text>
+</component>
+
+<component id="ID_s4_txt11">
+   <text><![CDATA[2.46]]></text>
+</component>
+
+<component id="ID_s4_txt12">
+   <text><![CDATA[2.47]]></text>
+</component>
+
+<component id="ID_s4_txt13">
+   <text><![CDATA[2.48]]></text>
+</component>
+
+<component id="ID_s4_txt14">
+   <text><![CDATA[2.49]]></text>
+</component>
+
+<component id="ID_s4_txt15">
+   <text><![CDATA[GHz]]></text>
+</component>
+
+<component id="ID_s4_txt16">
+   <text><![CDATA[Channel 13<br/>2.472]]></text>
+</component>
+
+
+<component id="ID_s4_txt17">
+   <text><![CDATA[20 MHz]]></text>
+</component>
+
+
+
+
+<!--Slide 5-->
+
+
+
+<component id="ID_s5_title">
+   <text><![CDATA[<b>802.11n (OFDM) Channel Width 40 MHz</b>]]></text>
+</component>
+
+<component id="ID_s5_txt01">
+   <text><![CDATA[2.4]]></text>
+</component>
+
+<component id="ID_s5_txt02">
+   <text><![CDATA[2.5]]></text>
+</component>
+
+<component id="ID_s5_txt03">
+   <text><![CDATA[Channel 3<br/>2.422]]></text>
+</component>
+
+<component id="ID_s5_txt04">
+   <text><![CDATA[Channel 6<br/>2.432]]></text>
+</component>
+
+<component id="ID_s5_txt05">
+   <text><![CDATA[Channel 11<br/>2.472]]></text>
+</component>
+
+<component id="ID_s5_txt06">
+   <text><![CDATA[2.41]]></text>
+</component>
+
+<component id="ID_s5_txt07">
+   <text><![CDATA[2.42]]></text>
+</component>
+
+<component id="ID_s5_txt08">
+   <text><![CDATA[2.43]]></text>
+</component>
+
+<component id="ID_s5_txt09">
+   <text><![CDATA[2.44]]></text>
+</component>
+
+<component id="ID_s5_txt10">
+   <text><![CDATA[2.45]]></text>
+</component>
+
+<component id="ID_s5_txt11">
+   <text><![CDATA[2.46]]></text>
+</component>
+
+<component id="ID_s5_txt12">
+   <text><![CDATA[2.47]]></text>
+</component>
+
+<component id="ID_s5_txt13">
+   <text><![CDATA[2.48]]></text>
+</component>
+
+<component id="ID_s5_txt14">
+   <text><![CDATA[2.49]]></text>
+</component>
+
+<component id="ID_s5_txt15">
+   <text><![CDATA[GHz]]></text>
+</component>
+
+<component id="ID_s5_txt16">
+   <text><![CDATA[Channel 13<br/>2.472]]></text>
+</component>
+
+
+<component id="ID_s5_txt17">
+   <text><![CDATA[40 MHz]]></text>
+</component>
+
+
+
+</textcomponents>

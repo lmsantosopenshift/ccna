@@ -1,0 +1,12 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[]]></text>
+</component>
+   
+<component id="ID_txt01">
+<text><![CDATA[<br/><b>After completing this chapter, you will be able to:</b><br/><br/><textformat blockindent='-14'><ul><li>Explain why multiarea OSPF is used.</li><li>Explain how multiarea OSPF uses link-state advertisements in order to maintain routing tables.</li><li>Explain how OSPF establishes neighbor adjacencies in a multiarea OSPF implementation.</li><li>Configure multiarea OSPFv2 in a routed network.</li><li>Configure multiarea route summarization in a routed network.</li><li>Verify multiarea OSPFv2 operations.</li></ul></textformat><br/>]]></text>
+</component>
+
+
+
+</textcomponents>

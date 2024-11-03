@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.3.1 Frequency Channel Saturation</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless LAN Operations</h1>
+        <h2>Channel Management</h2>
+      </div>
+      <div id="content">
+          <p>As previously explained, wireless LAN devices have transmitters and receivers tuned to specific frequencies of radio waves to communicate. A common practice is for frequencies to be allocated as ranges. Such ranges are then split into smaller ranges called channels.</p>
+          <p></p>
+          <p>If the demand for a specific channel is too high, that channel is likely to become oversaturated. The saturation of the wireless medium degrades the quality of the communication. Over the years, a number of techniques have been created to improve wireless communication and alleviate saturation. The techniques listed below mitigate channel saturation by using the channels in a more efficient way:</p>
+          <p>
+            <ul>
+              <li>
+                <b>Direct-sequence spread spectrum (DSSS)</b> - DSSS is a spread-spectrum modulation technique. Spread-spectrum is designed to spread a signal over a larger frequency band making it more resistant to interference. With DSSS the signal is multiplied by a “crafted noise” known as a spreading code. Because the receiver knows about the spreading code and when it was added, it can mathematically remove it and re-construct the original signal. In effect, this creates redundancy in the transmitted signal in an effort to counter quality loss in the wireless medium. DSSS is used by 802.11b. Also used by cordless phones operating in the 900 MHz, 2.4 GHz, 5.8 GHz bands, CDMA cellular, and GPS networks. (Figure 1)</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Frequency-hopping spread spectrum (FHSS)</b> - FHSS also relies on spread-spectrum methods to communicate. It is similar to DSSS but transmits radio signals by rapidly switching a carrier signal among many frequency channels. With the FHSS, sender and receiver must be synchronized to “know” which channel to jump. This channel hopping process allows for a more efficient usage of the channels, decreasing channel congestion. Walkie-talkies and 900 MHz cordless phones also use FHSS, and Bluetooth uses a variation of FHSS. FHSS is also used by the original 802.11 standard. (Figure 2)</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Orthogonal frequency-division multiplexing (OFDM)</b> - OFDM is a subset of frequency division multiplexing in which a single channel utilizes multiple sub-channels on adjacent frequencies. Sub-channels in an OFDM system are precisely orthogonal to one another which allow the sub-channels to overlap without interfering. As a result, OFDM systems are able to maximize spectral efficiency without causing adjacent channel interference. In effect, this makes it easier for a receiving station to “hear” the signal. Because OFDM uses sub-channels, channel usage is very efficient. OFDM is used by a number of communication systems including 802.11a/g/n/ac. (Figure 3)</li>
+            </ul>
+          </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

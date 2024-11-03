@@ -1,0 +1,66 @@
+<textcomponents>
+	<component id="ID_s1_inst">
+		<text><![CDATA[<b>Activity - Identify WLAN Component Terminology</b><br/>Drag each wireless LAN technology term to its appropriate definition.]]></text>
+	</component>
+	
+	
+	<component id="ID_s1_txt01">
+		<text><![CDATA[Enables a client station to send and receive RF signals.]]></text>
+	</component>
+
+	<component id="ID_s1_txt02">
+		<text><![CDATA[Connects wireless clients to the wired LAN.]]></text>
+	</component>
+
+	<component id="ID_s1_txt03">
+		<text><![CDATA[This device incorporates the functions of a wireless access point, Ethernet switch, and router.]]></text>
+	</component>
+	
+	
+
+
+	<component id="ID_s1_txt16">
+		<text><![CDATA[Wireless Router]]></text>
+	</component>
+
+	<component id="ID_s1_txt17">
+		<text><![CDATA[802.3 NIC]]></text>
+	</component>
+
+	<component id="ID_s1_txt18">
+		<text><![CDATA[802.11 NIC]]></text>
+	</component>
+	
+	<component id="ID_s1_txt19">
+		<text><![CDATA[Access Point]]></text>
+	</component>
+
+
+
+	<component id='ID_s1_CORRECT_TITLE'>
+		<text><![CDATA[<b>Correct</b>]]></text>
+	</component>
+
+	<component id='ID_s1_CORRECT_BODY'>
+		<text><![CDATA[You have successfully matched each wireless technology term to its definition.]]></text>
+	</component>
+
+
+	<component id='ID_s1_INCORRECT_TITLE'>
+		<text><![CDATA[<b>Incorrect</b>]]></text>
+	</component>
+
+	<component id='ID_s1_INCORRECT_BODY'>
+		<text><![CDATA[You have not successfully matched each wireless technology term to its definition. Please click Reset to try again.]]></text>
+	</component>
+
+	<component id='ID_s1_CHECK'>
+		<text><![CDATA[<b>Check</b>]]></text>
+	</component>
+
+	<component id='ID_s1_RESET'>
+		<text><![CDATA[<b>Reset</b>]]></text>
+	</component>
+
+
+</textcomponents>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.5.1 Routing Protocol Authentication Overview</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.5.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Advanced EIGRP Configurations</h1>
+        <h2>Secure EIGRP</h2>
+      </div>
+      <div id="content">
+          <p>
+            <b>Routing Protocol Authentication</b>
+          </p>
+          <p></p>
+          <p>Network administrators must be aware that routers are at risk from attack just as much as end-user devices. Anyone with a packet sniffer, such as Wireshark, can read information propagating between routers. In general, routing systems can be attacked through the disruption of peer devices or the falsification of routing information.</p>
+          <p></p>
+          <p>Disruption of peers is the less critical of the two attacks because routing protocols heal themselves, making the disruption last only slightly longer than the attack itself.</p>
+          <p></p>
+          <p>The falsification of routing information is a more subtle class of attack that targets the information carried within the routing protocol. The consequences of falsifying routing information are as follows:</p>
+          <p></p>
+          <p>
+            <ul>
+              <li>Redirect traffic to create routing loops</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Redirect traffic to monitor on an insecure line</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Redirect traffic to discard it</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>A method to protect routing information on the network is to authenticate routing protocol packets using the Message Digest 5 (MD5) algorithm. MD5 allows the routers to compare signatures that should all be the same, confirming that it is from a credible source.</p>
+          <p></p>
+          <p>The three components of such a system include:</p>
+          <p></p>
+          <p>
+            <ul>
+              <li>Encryption algorithm, which is generally public knowledge</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Key used in the encryption algorithm, which is a secret shared by the routers authenticating their packets</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Contents of the packet itself</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>In the figure, click the Play button to view an animation of how each router authenticates the routing information. Generally, the originator of the routing information produces a signature using the key and routing data it is about to send as inputs to the encryption algorithm. The router receiving the routing data can then repeat the process using the same key and the same routing data it has received. If the signature the receiver computes is the same as the signature, the sender computes the update is authenticated and considered reliable.</p>
+          <p></p>
+          <p>Routing protocols such as RIPv2, EIGRP, OSPF, IS-IS, and BGP all support various forms of MD5 authentication.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

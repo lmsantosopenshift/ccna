@@ -1,0 +1,69 @@
+<textcomponents>
+
+<!--SLIDE 1-->
+<component id="ID_s1_title">
+	<text><![CDATA[<b>Operation of the MD5 Algorithm</b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+	<text><![CDATA[Routing Message]]></text>
+</component>
+<component id="ID_s1_txt02">
+  	<text><![CDATA[OSPF Update Packet<br/>- xxx.xxx.xxx.xxx/xx<br/>- - xxx.xxx.xxx.xxx/xx]]></text> 
+</component>
+<component id="ID_s1_txt03">
+  	<text><![CDATA[Secret Key]]></text> 
+</component>
+<component id="ID_s1_txt04">
+  	<text><![CDATA[Signature]]></text> 
+</component>
+<component id="ID_s1_txt05">
+  	<text><![CDATA[4ehIDx67NMop9]]></text> 
+</component>
+
+<!--SLIDE 2-->
+<component id="ID_s2_title">
+	<text><![CDATA[<b>R1 Sends MD5 Authenticated Routing Message</b>]]></text>
+</component>
+<component id="ID_s2_txt01">
+  	<text><![CDATA[OSPF Update Packet<br/>- xxx.xxx.xxx.xxx/xx<br/>- - xxx.xxx.xxx.xxx/xx]]></text> 
+</component>
+<component id="ID_s2_txt02">
+	<text><![CDATA[4ehIDx67NMop9]]></text>
+</component>
+
+<!--SLIDE 3-->
+<component id="ID_s3_title">
+	<text><![CDATA[<b>Operation of the MD5 Algorithm</b>]]></text>
+</component>
+<component id="ID_s3_txt01">
+	<text><![CDATA[Routing Message]]></text>
+</component>
+<component id="ID_s3_txt02">
+  	<text><![CDATA[OSPF Update Packet<br/>- xxx.xxx.xxx.xxx/xx<br/>- - xxx.xxx.xxx.xxx/xx]]></text> 
+</component>
+<component id="ID_s3_txt03">
+ 	<text><![CDATA[Secret Key]]></text> 
+</component>
+<component id="ID_s3_txt04">
+  	<text><![CDATA[Signature]]></text> 
+</component>
+<component id="ID_s3_txt05">
+  	<text><![CDATA[4ehIDx67NMop9]]></text> 
+</component>
+<component id="ID_s3_txt06">
+  	<text><![CDATA[Discard]]></text> 
+</component>
+<component id="ID_s3_txt07">
+  	<text><![CDATA[Signatures Match?]]></text> 
+</component>
+<component id="ID_s3_txt08">
+  	<text><![CDATA[Accept]]></text> 
+</component>
+<component id="ID_s3_txt09">
+  	<text><![CDATA[No]]></text> 
+</component>
+<component id="ID_s3_txt10">
+  	<text><![CDATA[Yes]]></text> 
+</component>
+  
+</textcomponents>

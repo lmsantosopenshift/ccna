@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.1.2 Frame Control Field </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless LAN Operations</h1>
+        <h2>802.11 Frame Structure</h2>
+      </div>
+      <div id="content">
+          <p>The Frame Control field contains multiple subfields as shown in Figure 1. </p>
+          <p></p>
+          <p>Specifically, the Frame Control field contains the following subfields:</p>
+          <p>
+            <ul>
+              <li>
+                <b>Protocol Version </b>- Provides the current version of the 802.11 protocol used. Receiving devices use this value to determine if the version of the protocol of the received frame is supported.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Frame Type </b>and<b> Frame Subtype </b>- Determines the function of the frame. A wireless frame can either be a control frame, data frame, or a management frame. There are multiple subtype fields for each frame type. Each subtype determines the specific function to perform for its associated frame type.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>ToDS </b>and<b> FromDS </b>- Indicates whether the frame is going to or exiting from the DS, and is only used in data frames of wireless clients associated with an AP.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>More Fragments </b>- Indicates whether more fragments of the frame, either data or management type, are to follow.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Retry </b>- Indicates whether or not the frame, for either data or management frame types, is being retransmitted.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Power Management </b>- Indicates whether the sending device is in active mode or power-save mode.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>More Data </b>- Indicates to a device in power-save mode that the AP has more frames to send. It is also used for APs to indicate that additional broadcast/multicast frames are to follow.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Security </b>- Indicates whether encryption and authentication are used in the frame. It can be set for all data frames and management frames, which have the subtype set to authentication.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Reserved </b>- Can indicate that all received data frames must be processed in order.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>Figure 2 displays a Wireshark capture of a WLAN beacon frame. Notice that the Frame Type field and the Frame Subtype fields identify if the frame is a management frame, a control frame, or a data frame. In the example, the Frame Type is ‘0x0’ identifying it as a management frame. The subtype value ‘8’ identifies this as a beacon frame. The frame is specifically identified as ‘0x08’.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

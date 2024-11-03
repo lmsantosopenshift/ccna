@@ -1,0 +1,15 @@
+<textcomponents>
+
+<component id="ID_title">
+<text><![CDATA[<b>Wireless USB Adapters</b>]]></text>
+</component>
+
+<component id="ID_txt01">
+<text><![CDATA[Linksys AE6000 Mini USB Wi-Fi Wireless-AC Dual-Band Adapter 2.4 or 5 GHz 802.11ac]]></text>
+</component>
+
+<component id="ID_txt02">
+<text><![CDATA[Linksys AE3000 High Performance Dual-Band N USB Adapter ]]></text>
+</component>
+
+</textcomponents>

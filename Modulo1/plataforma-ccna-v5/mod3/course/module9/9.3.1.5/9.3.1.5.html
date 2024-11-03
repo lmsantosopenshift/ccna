@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.3.1.5 Summary</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.3.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Summary</h1>
+        <h2>Summary</h2>
+      </div>
+      <div id="content">
+          <p>Examples of Cisco IOS software releases include 12.3, 12.4, 15.0, and 15.1. Along with each software release there are new versions of the software used to implement bug fixes and new features. </p>
+          <p></p>
+          <p>Cisco IOS software 12.4 incorporates new software features and hardware support that was introduced in the Cisco IOS Software 12.3T train and additional software fixes. Mainline releases (also called maintenance releases) contain no uppercase letter in their release designation and inherit new Cisco IOS Software functionality and hardware from lower numbered T releases. Prior to and including 12.4, the mainline “M” train received bug fixes only. The technology “T” train includes fixes as well as new feature and platforms. The 12.4T train provides Cisco IOS software functionality and hardware adoption that introduces new technology, functionality, and hardware advances that are not available in the Cisco IOS Software 12.4 mainline train.</p>
+          <p></p>
+          <p>In the Cisco IOS Software 15.0 release family a new strategy is in place. Cisco IOS 15.0 release family does not diverge into separate M and T trains but into M and T releases in the same train. For example, the first release in the Cisco IOS Software 15.0 release family is 15.0(1)M, where M indicates it is an extended maintenance release. An extended maintenance release is ideal for long-term maintenance. Not all releases in the Cisco IOS Software 15.0 release family will be extended maintenance releases; there will also be standard maintenance releases that receive the latest features and hardware support. The standard maintenance releases will have an uppercase T in their designation.</p>
+          <p></p>
+          <p>When selecting or upgrading a Cisco IOS router, it is important to choose the proper IOS image with the correct feature set and version. The Cisco IOS image file is based on a special naming convention. The name for the Cisco IOS image file contains multiple parts, each with a specific meaning. Example: c1900-universalk9-mz.SPA.152-4.M3.bin</p>
+          <p></p>
+          <p>Commands are available for upgrading and verification of flash. The<span class="cmd"><b> show flash </b></span>command  displays the files store in flash memory including the system image files. This command can also be used to verify free flash size. The<span class="cmd"><b> boot system </b></span>command is a global configuration command which allows the user to specify the source for the Cisco IOS.</p>
+          <p></p>
+          <p>Using a network TFTP server allows image and configuration uploads and downloads over the network. The network TFTP server can be another router, a workstation, or a host system.</p>
+          <p></p>
+          <p>Beginning with Cisco IOS Software release 15.0, Cisco modified the process to enable new technologies within the IOS feature sets. Each device ships with the same universal image. Technology packages such as IP Base, Data, UC, and SEC are enabled in the universal image via Cisco software activation licensing keys. Each licensing key is unique to a particular device and is obtained from Cisco by providing the product ID and serial number of the router and a Product Activation Key (PAK). </p>
+          <p></p>
+          <p>License activation is not necessary for factory ordered preconfigured licenses prior to use. IP Base comes shipped as a permanent license on all ISR-G2 devices. The other three technology packages: Data, Security, and Unified Communications come with an Evaluation license as the default, but a permanent license may be purchased.</p>
+          <p></p>
+          <p>A Permanent License is a license that never expires. For example, once a UC (Unified Communications), Security or Data license is installed on a router, the subsequent features for that license will be activated even if the router is upgraded to a new IOS release.</p>
+          <p></p>
+          <p>
+            <b>Installing a License</b>
+          </p>
+          <p>Prerequisites:</p>
+          <p>
+            <ul>
+              <li>Obtain the necessary PAK, which is an 11 digit ID that can be delivered by mail or electronically</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Need to have a valid Cisco username/password</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Retrieve serial number and PID with the<span class="cmd"><b> show license udi </b></span>command or from the router label tray</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>The<span class="cmd"><b> show version </b></span>command is used after the router is reloaded to verify that license has been installed.</p>
+          <p></p>
+          <p>The<span class="cmd"><b> show license </b></span>command is used to display additional information about Cisco IOS software licenses.</p>
+          <p></p>
+          <p>The<span class="cmd"><b> license accept end user agreement </b></span>global configuration command is used to configure a one-time acceptance of the EULA for all Cisco IOS software packages and features.</p>
+          <p>Use the cisco.com web site to research other benefits and information on IOS 15.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

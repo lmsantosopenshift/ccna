@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.4.1.2 Setting Up and Installed Initial Linksys EAS6500</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.4.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless LAN Configuration</h1>
+        <h2>Configure a Wireless Router</h2>
+      </div>
+      <div id="content">
+          <p>The Linksys EA6500 wireless router is packaged with a Setup CD. </p>
+          <p></p>
+          <p>To set up and install the Linksys EA6500 router software, perform the following steps:</p>
+          <p></p>
+          <p>
+            <b>Step 1.</b> Insert the CD into the CD or DVD drive and the Setup should start automatically. If the Setup CD is not available, download the Setup program from <a href="http://linksys.com/support" target="_blank">http://Linksys.com/support</a>.</p>
+          <p></p>
+          <p>Figure 1 displays the initial Connect your Linksys EA6500 window with instructions to connect the router power and the Internet connection. </p>
+          <p></p>
+          <p>
+            <b>Note</b>: In our example, the wireless router will not be connected to the Internet.</p>
+          <p></p>
+          <p>
+            <b>Step 2.</b> Click <b>Next</b> to begin the installation.</p>
+          <p></p>
+          <p>The Setup program begins the installation and displays a status window (Figure 2). During this time, the Setup program attempts to configure and enable the Internet connection. In the example, the Internet connection is unavailable, and after a few prompts to connect to the Internet, the option to skip this step displays.</p>
+          <p></p>
+          <p>The Linksys router settings window displays (Figure 3). This is where the SSID, wireless password, and administrative password is configured.  </p>
+          <p></p>
+          <p>
+            <b>Step 3.</b> Click <b>Next</b> to display the summary router settings screen (Figure 4). Record these settings if the initial table was not previously completed.</p>
+          <p></p>
+          <p>
+            <b>Step 4.</b> Click <b>Next</b> to display the option to configure the Linksys Smart Wi-Fi account window (Figure 5). </p>
+          <p></p>
+          <p>This window enables you to manage the router remotely over the Internet. In this example, the Linksys Smart Wi-Fi account is not setup because there is no Internet access.</p>
+          <p></p>
+          <p>
+            <b>Step 5.</b> Click <b>Continue</b> to display the Sign In window (Figure 6). Because the Internet connection has not been configured, the administrative router password is required. </p>
+          <p></p>
+          <p>
+            <b>Step 6.</b> When the password is entered, click <b>Log in</b> to display the Linksys Smart Wi-Fi home page (Figure 7).</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

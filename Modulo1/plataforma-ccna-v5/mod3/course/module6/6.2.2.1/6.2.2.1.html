@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.2.1 OSPF Route Summarization</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuring Multiarea OSPF</h1>
+        <h2>OSPF Route Summarization</h2>
+      </div>
+      <div id="content">
+          <p>Summarization helps keep routing tables small. It involves consolidating multiple routes into a single advertisement, which can then be propagated into the backbone area. </p>
+          <p></p>
+          <p>Normally, type 1 and type 2 LSAs are generated inside each area, translated into type 3 LSAs, and sent to other areas. If area 1 had 30 networks to advertise, then 30 type 3 LSAs would be forwarded into the backbone. With route summarization, the ABR consolidates the 30 networks into one of two advertisements. </p>
+          <p></p>
+          <p>In Figure 1, R1 consolidates all of the network advertisements into one summary LSA. Instead of forwarding individual LSAs for each route in area 1, R1 forwards a summary LSA to the core router C1. C1 in turn, forwards the summary LSA to R2 and R3. R2 and R3 then forward it to their respective internal routers.</p>
+          <p></p>
+          <p>Summarization also helps increase the network’s stability, because it reduces unnecessary LSA flooding. This directly affects the amount of bandwidth, CPU, and memory resources consumed by the OSPF routing process. Without route summarization, every specific-link LSA is propagated into the OSPF backbone and beyond, causing unnecessary network traffic and router overhead. </p>
+          <p></p>
+          <p>In Figure 2, a network link on R1a fails. R1a sends an LSA to R1. However, R1 does not propagate the update, because it has a summary route configured. Specific-link LSA flooding outside the area does not occur.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

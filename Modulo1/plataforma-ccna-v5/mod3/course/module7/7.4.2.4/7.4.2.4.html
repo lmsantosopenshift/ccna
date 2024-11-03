@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.4.2.4 ipv6 eigrp Interface Command</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.4.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuring EIGRP for IPv6</h1>
+        <h2>Configuring EIGRP for IPv6</h2>
+      </div>
+      <div id="content">
+          <p>EIGRP for IPv6 uses a different method to enable an interface for EIGRP. Instead of using the<span class="cmd"><b> network </b></span>router configuration mode command to specify matching interface addresses, EIGRP for IPv6 is configured directly on the interface.  </p>
+          <p></p>
+          <p>Use the following interface configuration mode command to enable EIGRP for IPv6 on an interface:</p>
+          <p></p>
+          <p>
+            <span class="cmd">Router(config-if)#</span>
+            <span class="cmd">
+              <b> ipv6 eigrp </b>
+            </span>
+            <span class="cmd">
+              <i>autonomous-system</i>
+            </span>
+          </p>
+          <p></p>
+          <p>The <span class="cmd"><i>autonomous-system</i></span> value must be the same as the autonomous system number used to enable the EIGRP routing process. Similar to the<span class="cmd"><b> network </b></span>command used in EIGRP for IPv4, the<span class="cmd"><b> ipv6 eigrp interface </b></span>command:</p>
+          <p>
+            <ul>
+              <li>Enables the interface to form adjacencies and send or receive EIGRP for IPv6 updates</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Includes the prefix (network) of this interface in EIGRP for IPv6 routing updates</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>Figure 1 shows the configuration to enable EIGRP for IPv6 on routers R1 and R2 interfaces. Notice the message following the serial 0/0/0 interface in R2: </p>
+          <p></p>
+          <p>
+            <span class="cmd">%DUAL-5-NBRCHANGE: EIGRP-IPv6 2: Neighbor FE80::1 (Serial0/0/0) is up: new adjacency</span>
+          </p>
+          <p></p>
+          <p>This message indicates that R2 has now formed an EIGRP-IPv6 adjacency with the neighbor at link-local address FE80::1. Because static link-local addresses were configured on all three routers, it is easy to determine that this adjacency is with router R1 (FE80::1).</p>
+          <p></p>
+          <p>Use the Syntax Checker in Figure 2 to enable EIGRP for IPv6 on R3’s interfaces.</p>
+          <p></p>
+          <p></p>
+          <p>
+            <b>Passive Interface with EIGRP for IPv6</b>
+          </p>
+          <p>The same<span class="cmd"><b> passive-interface </b></span>command used for IPv4 is used to configure an interface as passive with EIGRP for IPv6. As shown in Figure 3, the<span class="cmd"><b> show ipv6 protocols </b></span>command is used to verify the configuration.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

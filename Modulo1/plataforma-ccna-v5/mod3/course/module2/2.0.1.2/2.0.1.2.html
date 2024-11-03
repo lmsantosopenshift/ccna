@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.0.1.2 Class Activity - Stormy Traffic</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.0.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>LAN Redundancy</h1>
+        <h2>Introduction</h2>
+      </div>
+      <div id="content">
+          <p>
+            <b>Stormy Traffic</b>
+          </p>
+          <p></p>
+          <p>It is your first day on the job as a network administrator for a small- to medium-sized business. The previous network administrator left suddenly after a network upgrade took place for the business.  </p>
+          <p></p>
+          <p>During the upgrade, a new switch was added. Since the upgrade, many employees complain that they are having trouble accessing the Internet and servers on your network. In fact, most of them cannot access the network at all. Your corporate manager asks you to immediately research what could be causing these connectivity problems and delays.</p>
+          <p></p>
+          <p>So you take a look at the equipment operating on your network at your main distribution facility in the building. You notice that the network topology seems to be visually correct and that cables have been connected correctly, routers and switches are powered on and operational, and switches are connected together to provide backup or redundancy. </p>
+          <p></p>
+          <p>However, one thing you do notice is that all of your switches’ status lights are constantly blinking at a very fast pace to the point that they almost appear solid. You think you have found the problem with the connectivity issues your employees are experiencing.</p>
+          <p></p>
+          <p>Use the Internet to research STP. As you research, take notes and describe:</p>
+          <p>
+            <ul>
+              <li>Broadcast storm</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Switching loops</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>The purpose of STP</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Variations of STP</li>
+            </ul>
+          </p>
+          <p>Complete the reflection questions that accompany the PDF file for this activity. Save your work and be prepared to share your answers with the class.</p>
+          <p></p>
+          <p>
+            <a href="../../files/2.0.1.2%20Stormy%20Traffic%20Instructions.pdf" target="_blank">Class Activity - Stormy Traffic</a>
+          </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

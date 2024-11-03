@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.5.2 Configuring EIGRP with MD5 Authentication</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.5.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Advanced EIGRP Configurations</h1>
+        <h2>Secure EIGRP</h2>
+      </div>
+      <div id="content">
+          <p>EIGRP message authentication ensures that routers only accept routing messages from other routers that know the same pre-shared key. Without authentication configured, if an unauthorized person introduces another router with different or conflicting route information on the network, the routing tables on the legitimate routers can become corrupt and a DoS attack may ensue. Thus, when authentication is added to the EIGRP messages sent between routers, it prevents someone from purposely, or accidentally, adding another router to the network and causing a problem.</p>
+          <p></p>
+          <p>EIGRP supports routing protocol authentication using MD5. The configuration of EIGRP message authentication consists of two steps: the creation of a keychain and key, and the configuration of EIGRP authentication to use that keychain and key. </p>
+          <p></p>
+          <p>
+            <b>Step 1. Create a Keychain and Key</b>
+          </p>
+          <p></p>
+          <p>Routing authentication requires a key on a keychain to function. Before authentication can be enabled, create a keychain and at least one key.</p>
+          <p></p>
+          <p>a. In global configuration mode, create the keychain. Although multiple keys can be configured, this section focuses on the use of a single key.</p>
+          <p>
+            <span class="cmd">Router(config)# </span>
+            <span class="cmd">
+              <b>key chain</b>
+            </span>
+            <span class="cmd"></span>
+            <span class="cmd">
+              <i>name-of-chain</i>
+            </span>
+          </p>
+          <p></p>
+          <p>b. Specify the key ID. The key ID is the number used to identify an authentication key within a keychain. The range of keys is from 0 to 2,147,483,647. It is recommended that the key number be the same on all routers in the configuration.</p>
+          <p></p>
+          <p>
+            <span class="cmd">Router(config-keychain)# </span>
+            <span class="cmd">
+              <b>key</b>
+            </span>
+            <span class="cmd"></span>
+            <span class="cmd">
+              <i>key-id</i>
+            </span>
+          </p>
+          <p></p>
+          <p>c. Specify the key string for the key. The key string is similar to a password. Routers exchanging authentication keys must be configured using the same key string.</p>
+          <p></p>
+          <p>
+            <span class="cmd">Router(config-keychain-key</span>
+            <span class="cmd"></span>
+            <span class="cmd">)# </span>
+            <span class="cmd">
+              <b>key-string</b>
+            </span>
+            <span class="cmd"></span>
+            <span class="cmd">
+              <i>key-string-text</i>
+            </span>
+          </p>
+          <p></p>
+          <p></p>
+          <p>
+            <b>Step 2. Configure EIGRP Authentication Using Keychain and Key</b>
+          </p>
+          <p></p>
+          <p>Configure EIGRP to perform message authentication with the previously defined key. Complete this configuration on all interfaces enabled for EIGRP.</p>
+          <p></p>
+          <p>a. In global configuration mode, specify the interface on which to configure EIGRP message authentication.</p>
+          <p></p>
+          <p>
+            <span class="cmd">Router(config)# </span>
+            <span class="cmd">
+              <b>interface</b>
+            </span>
+            <span class="cmd"></span>
+            <span class="cmd">
+              <i>type number</i>
+            </span>
+          </p>
+          <p></p>
+          <p>b. Enable EIGRP message authentication. The<span class="cmd"><b> md5 </b></span>keyword indicates that the MD5 hash is to be used for authentication.</p>
+          <p></p>
+          <p>
+            <span class="cmd">Router(config-if)# </span>
+            <span class="cmd">
+              <b>ip authentication mode eigrp</b>
+            </span>
+            <span class="cmd"></span>
+            <span class="cmd">
+              <i>as-number</i>
+            </span>
+            <span class="cmd"></span>
+            <span class="cmd">
+              <b>md5</b>
+            </span>
+          </p>
+          <p></p>
+          <p>c. Specify the keychain that should be used for authentication. The<span class="cmd"><i> name-of-chain </i></span>argument specifies the keychain that was created in Step 1.</p>
+          <p></p>
+          <p>
+            <span class="cmd">Router(config-if)# </span>
+            <span class="cmd">
+              <b>ip authentication key-chain eigrp</b>
+            </span>
+            <span class="cmd"></span>
+            <span class="cmd">
+              <i>as-number name-of-chain</i>
+            </span>
+          </p>
+          <p></p>
+          <p>Each key has its own key ID, which is stored locally. The combination of the key ID and the interface associated with the message uniquely identifies the authentication algorithm and MD5 authentication key in use. The keychain and the routing update are processed using the MD5 algorithm to produce a unique signature. </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

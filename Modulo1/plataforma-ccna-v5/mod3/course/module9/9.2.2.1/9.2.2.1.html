@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.2.1 License Verification</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>IOS Licensing</h1>
+        <h2>License Verification and Management</h2>
+      </div>
+      <div id="content">
+          <p>After a new license has been installed the router must be rebooted using the<span class="cmd"><b> reload </b></span>command. As shown in Figure 1, the<span class="cmd"><b> show version </b></span>command is used after the router is reloaded to verify that license has been installed.</p>
+          <p></p>
+          <p>The<span class="cmd"><b> show license </b></span>command in Figure 2 is used to display additional information about Cisco IOS software licenses. This command displays license information used to help with troubleshooting issues related to Cisco IOS software licenses. This command displays all the licenses installed in the system. In this example, both the IP Base and Security licenses have been installed. This command also displays the features that are available, but not licensed to execute, such as the Data feature set. Output is grouped according to how the features are stored in license storage.</p>
+          <p></p>
+          <p>The following is a brief description of the output:</p>
+          <p>
+            <ul>
+              <li>
+                <b>Feature</b> - Name of the feature</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>License Type</b> - Type of license; such as Permanent or Evaluation</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>License State</b> - Status of the license; such as Active or In Use </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>License Count</b> - Number of licenses available and in use, if counted.  If non-counted is indicated, the license is unrestricted. </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>License Priority</b> - Priority of the license; such as high or low </li>
+            </ul>
+          </p>
+          <p></p>
+          <p>
+            <b>Note</b>: Refer to the Cisco IOS 15 command reference guide for complete details on the information displayed in the<span class="cmd"><b> show license </b></span>command.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

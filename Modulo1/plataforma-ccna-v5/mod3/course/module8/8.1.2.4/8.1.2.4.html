@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.2.4 EIGRP for IPv6: Manual Summary Routes</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Advanced EIGRP Configurations</h1>
+        <h2>Manual Summarization</h2>
+      </div>
+      <div id="content">
+          <p>While automatic summarization is not available for EIGRP IPv6 networks, it is possible to enable manual summarization for EIGRP IPv6.</p>
+          <p></p>
+          <p>Figure 1 shows an EIGRP IPv6 topology with four loopback addresses configured on R3. These virtual addresses are used to represent physical networks in R3’s IPv6 routing table. These networks can be manually summarized in EIGRP for IPv6.</p>
+          <p></p>
+          <p>Figure 2 shows the configuration of the IPv6 loopback addresses on R3. Only four loopback addresses are shown in the topology and configured on R3; however, for this example it is assumed that all 2001:DB8:ACAD::/48 subnets can be reachable via R3.</p>
+          <p></p>
+          <p>To configure EIGRP for IPv6 manual summarization on a specific EIGRP interface, use the following interface configuration mode command:</p>
+          <p></p>
+          <p>
+            <span class="cmd">Router(config-if)# </span>
+            <span class="cmd">
+              <b>ipv6 summary-address eigrp</b>
+            </span>
+            <span class="cmd"></span>
+            <span class="cmd">
+              <i>as-number prefix/prefix-length</i>
+            </span>
+          </p>
+          <p></p>
+          <p>Figure 3 shows the configuration to propagate an EIGRP for IPv6 manual summary route to R1 and R2 for the 2001:DB8:ACAD::/48 prefix. Similar to EIGRP for IPv4, R3 includes a summary route to null0 as a loop prevention mechanism.</p>
+          <p></p>
+          <p>The reception of the manual summary route can be verified by examining the routing table of the other routers in the routing domain. Figure 4 shows the 2001:DB8:ACAD::/48 route in the IPv6 routing table of R1.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

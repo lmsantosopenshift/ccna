@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.4.3.3 Troubleshooting When the Network Is Slow</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.4.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless LAN Configuration</h1>
+        <h2>Troubleshoot WLAN Issues</h2>
+      </div>
+      <div id="content">
+          <p>To optimize and increase the bandwidth of 802.11n/ac dual-band routers, either:</p>
+          <p>
+            <ul>
+              <li>
+                <b>Upgrade your wireless clients </b>- Older 802.11b and even 802.11g devices can slow the entire WLAN. For the best performance, all wireless devices should support the same highest acceptable standard. </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Split the traffic </b>- The easiest way to improve wireless performance is to split the wireless traffic between the 802.11n 2.4 GHz band and the 5 GHz band. Therefore, 802.11n (or better) can use the two bands as two separate wireless networks to help manage the traffic. For example, use the 2.4 GHz network for basic Internet tasks, such as web browsing, email, and downloads, and use the 5 GHz band for streaming multimedia, as shown in Figure 1. </li>
+            </ul>
+          </p>
+          <p></p>
+          <p>There are several reasons for using a split-the-traffic approach:</p>
+          <p>
+            <ul>
+              <li>The 2.4 GHz band may be suitable for basic Internet traffic that is not time-sensitive.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>The bandwidth may still be shared with other nearby WLANs.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>The 5 GHz band is much less crowded than the 2.4 GHz band; ideal for streaming multimedia.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>The 5 GHz band has more channels; therefore, the channel chosen is likely interference-free. </li>
+            </ul>
+          </p>
+          <p></p>
+          <p>By default, dual-band routers use the same network name on both the 2.4 GHz band and the 5 GHz band. The simplest way to segment traffic is to rename one of the wireless networks, as shown in Figure 2. With a separate, descriptive name, it is easier to connect to the right network.</p>
+          <p></p>
+          <p>To improve the range of a wireless network, ensure the physical wireless router location is free of obstructions, such as furniture, fixtures, and tall appliances. These block the signal, which shortens the range of the WLAN. If this still does not solve the problem, then a Wi-Fi Range Extender or deploying the Powerline wireless technology may be used.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

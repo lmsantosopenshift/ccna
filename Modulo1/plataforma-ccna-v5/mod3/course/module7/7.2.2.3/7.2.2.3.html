@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.2.2.3 Verifying EIGRP: Examine the IPv4 routing table</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.2.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuring EIGRP for IPv4</h1>
+        <h2>Verifying EIGRP with IPv4</h2>
+      </div>
+      <div id="content">
+          <p>Another way to verify that EIGRP and other functions of the router are configured properly is to examine the IPv4 routing tables with the<span class="cmd"><b> show ip route </b></span>command. As with any dynamic routing protocol, the network administrator must verify the information in the routing table to ensure that it is populated as expected, based on configurations entered. For this reason, it is important to have a good understanding of the routing protocol configuration commands, as well as the routing protocol operations and the processes used by the routing protocol to build the IP routing table.</p>
+          <p></p>
+          <p>Notice that the outputs used throughout this course are from Cisco IOS 15. Prior to IOS 15, EIGRP automatic summarization was enabled by default. The state of automatic summarization can make a difference in the information displayed in the IPv4 routing table. If a previous version of the IOS is used, automatic summarization can be disabled using the<span class="cmd"><b> no auto-summary </b></span>router configuration mode command: </p>
+          <p></p>
+          <p>
+            <span class="cmd">Router(config-router)# </span>
+            <span class="cmd">
+              <b>no auto-summary</b>
+            </span>
+          </p>
+          <p></p>
+          <p>Figure 1 shows the topology for R1, R2, and R3.</p>
+          <p></p>
+          <p>In Figure 2, the IPv4 routing table is examined using the<span class="cmd"><b> show ip route </b></span>command. EIGRP routes are denoted in the routing table with a<span class="cmd"><b> D</b></span>. The letter D was used to represent EIGRP because the protocol is based upon the DUAL algorithm. </p>
+          <p></p>
+          <p>The<span class="cmd"><b> show ip route </b></span>command verifies that routes received by EIGRP neighbors are installed in the IPv4 routing table. The<span class="cmd"><b> show ip route </b></span>command displays the entire routing table, including remote networks learned dynamically, directly connected and static routes. For this reason, it is normally the first command used to check for convergence. After routing is correctly configured on all routers, the<span class="cmd"><b> show ip route </b></span>command reflects that each router has a full routing table, with a route to each network in the topology.</p>
+          <p></p>
+          <p>Notice that R1 has installed routes to three IPv4 remote networks in its IPv4 routing table:</p>
+          <p>
+            <ul>
+              <li>172.16.2.0/24 network, received from router R2 on the Serial0/0/0 interface</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>192.168.1.0/24 network, received from router R2 on the Serial0/0/1 interface</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>192.168.10.8/30 network, received from both R2 on the Serial0/0/0 interface, and from R3 on the Serial0/0/1 interface</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>R1 has two paths to the 192.168.10.8/30 network, because its cost or metric to reach that network is the same or equal using both routers. These are known as equal cost routes. R1 uses both paths to reach this network, which is known as load balancing. The EIGRP metric is discussed later in this chapter.</p>
+          <p></p>
+          <p>Figure 3 displays the routing table for R2. Notice similar results are displayed including an equal cost route for the 192.168.10.4/30 network.</p>
+          <p></p>
+          <p>Figure 4 displays the routing table for R3. Similar to the results for R1 and R2, remote networks are learned using EIGRP, including an equal cost route for the 172.16.3.0/30 network.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

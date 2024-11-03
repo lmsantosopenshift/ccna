@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.2.2.2 Troubleshooting EtherChannel</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Link Aggregation Configuration</h1>
+        <h2>Verifying and Troubleshooting EtherChannel</h2>
+      </div>
+      <div id="content">
+          <p>All interfaces within an EtherChannel must have the same configuration of speed and duplex mode, native and allowed VLANs on trunks, and access VLAN on access ports:</p>
+          <p></p>
+          <p>
+            <ul>
+              <li>Assign all ports in the EtherChannel to the same VLAN, or configure them as trunks. Ports with different native VLANs cannot form an EtherChannel.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>When configuring an EtherChannel from trunk ports, verify that the trunking mode is the same on all the trunks. Inconsistent trunk modes on EtherChannel ports can cause EtherChannel not to function and ports to be shut down (errdisable state).</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>An EtherChannel supports the same allowed range of VLANs on all the ports. If the allowed range of VLANs is not the same, the ports do not form an EtherChannel even when PAgP is set to the<span class="cmd"><b> auto </b></span>or<span class="cmd"><b> desirable </b></span>mode.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>The dynamic negotiation options for PAgP and LACP must be compatibly configured on both ends of the EtherChannel.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>
+            <b>Note</b>: It is easy to confuse PAgP or LACP with DTP, because they both are protocols used to automate behavior on trunk links. PAgP and LACP are used for link aggregation (EtherChannel). DTP is used for automating the creation of trunk links. When an EtherChannel trunk is configured, typically EtherChannel (PAgP or LACP) is configured first and then DTP.</p>
+          <p></p>
+          <p>In Figure 1, interfaces F0/1 and F0/2 on switches S1 and S2 are connected with an EtherChannel. The output indicates that the EtherChannel is down. </p>
+          <p></p>
+          <p>In Figure 2, more detailed output indicates that there are incompatible PAgP modes configured on S1 and S2.</p>
+          <p></p>
+          <p>In Figure 3, the PAgP mode on the EtherChannel is changed to desirable and the EtherChannel becomes active.</p>
+          <p></p>
+          <p>
+            <b>Note</b>: EtherChannel and spanning tree must interoperate. For this reason, the order in which EtherChannel-related commands are entered is important, which is why (in Figure 3) you see interface Port-Channel 1 removed and then re-added with the<span class="cmd"><b> channel-group </b></span>command, as opposed to directly changed. If one tries to change the configuration directly, spanning tree errors cause the associated ports to go into blocking or errdisabled state.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

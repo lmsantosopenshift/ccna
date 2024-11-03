@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.2.1 Router Requirements</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Selecting Network Devices</h1>
+        <h2>Router Hardware</h2>
+      </div>
+      <div id="content">
+          <p>In the distribution layer of an enterprise network, routing is required. Without the routing process, packets cannot leave the local network.</p>
+          <p></p>
+          <p>Routers play a critical role in networking by interconnecting multiple sites within an enterprise network, providing redundant paths, and connecting ISPs on the Internet. Routers can also act as a translator between different media types and protocols. For example, a router can accept packets from an Ethernet network and re-encapsulate them for transport over a Serial network.</p>
+          <p></p>
+          <p>Routers use the network portion of the destination IP address to route packets to the proper destination. They select an alternate path if a link goes down or traffic is congested. All hosts on a local network specify the IP address of the local router interface in their IP configuration. This router interface is the default gateway. </p>
+          <p></p>
+          <p>Routers also serve other beneficial functions:</p>
+          <p></p>
+          <p>
+            <ul>
+              <li>Provide broadcast containment </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Connect remote locations</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Group users logically by application or department</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Provide enhanced security </li>
+            </ul>
+          </p>
+          <p></p>
+          <p>Click each highlighted area in the figure for more information on the functions of routers.</p>
+          <p></p>
+          <p>With the enterprise and the ISP, the ability to route efficiently and recover from network link failures is critical to delivering packets to their destination.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

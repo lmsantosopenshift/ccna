@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.1.2 Configuring Multiarea OSPF</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuring Multiarea OSPF</h1>
+        <h2>Configuring Multiarea OSPF</h2>
+      </div>
+      <div id="content">
+          <p>Figure 1 displays the reference multiarea OSPF topology. In this example:</p>
+          <p>
+            <ul>
+              <li>R1 is an ABR because it has interfaces in area 1 and an interface in area 0.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>R2 is an internal backbone router because all of its interfaces are in area 0.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>R3 is an ABR because it has interfaces in area 2 and an interface in area 0.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>There are no special commands required to implement this multiarea OSPF network. A router simply becomes an ABR when it has two<span class="cmd"><b> network </b></span>statements in different areas.</p>
+          <p></p>
+          <p>As shown in Figure 2, R1 is assigned the router ID 1.1.1.1. This example enables OSPF on the two LAN interfaces in area 1. The serial interface is configured as part of OSPF area 0. Because R2 has interfaces connected to two different areas, it is an ABR.</p>
+          <p></p>
+          <p>Use the Syntax Checker in Figure 3 to configure multiarea OSPF on R2 and R3. In this Syntax Checker, on R2, use the wildcard mask of the interface network address. On R3, use the 0.0.0.0 wildcard mask for all networks.</p>
+          <p></p>
+          <p>Upon completion of the R2 and R3 configuration, notice the informational messages informing of the adjacencies with R1 (1.1.1.1).</p>
+          <p></p>
+          <p>Upon completion of the R3 configuration, notice the informational messages informing of an adjacency with R1 (1.1.1.1) and R2 (2.2.2.2). Also notice how the IP addressing scheme used for the router ID makes it easy to identify the neighbor. </p>
+          <p></p>
+          <p>
+            <b>Note</b>: The inverse wildcard masks used to configure R2 and R3 purposely differ to demonstrate the two alternatives to entering<span class="cmd"><b> network </b></span>statements. The method used for R3 is simpler because the wildcard mask is always<span class="cmd"><b> 0.0.0.0 </b></span>and does not need to be calculated.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

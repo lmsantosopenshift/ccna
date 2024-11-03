@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.3.2.1 Spanning Tree Mode</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.3.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Spanning Tree Configuration</h1>
+        <h2>Rapid PVST+ Configuration</h2>
+      </div>
+      <div id="content">
+          <p>Rapid PVST+ is the Cisco implementation of RSTP. It supports RSTP on a per-VLAN basis. The topology in Figure 1 has two VLANs: 10 and 20. </p>
+          <p></p>
+          <p>
+            <b>Note</b>: The default spanning tree configuration on a Catalyst 2960 Series switch is PVST+. A Catalyst 2960 switch supports PVST+, Rapid PVST+, and MST, but only one version can be active for all VLANs at any time. </p>
+          <p></p>
+          <p>Rapid PVST+ commands control the configuration of VLAN spanning tree instances. A spanning tree instance is created when an interface is assigned to a VLAN and is removed when the last interface is moved to another VLAN. As well, you can configure STP switch and port parameters before a spanning tree instance is created. These parameters are applied when a spanning tree instance is created.  </p>
+          <p></p>
+          <p>Figure 2 displays the Cisco IOS command syntax needed to configure Rapid PVST+ on a Cisco switch. The<span class="cmd"><b> spanning-tree mode rapid-pvst </b></span>global configuration mode command is the one required command for the Rapid PVST+ configuration. When specifying an interface to configure, valid interfaces include physical ports, VLANs, and port channels. The VLAN ID range is 1 to 4094 when the enhanced software image (EI) is installed and 1 to 1005 when the standard software image (SI) is installed. The port-channel range is 1 to 6.</p>
+          <p></p>
+          <p>Figure 3 shows Rapid PVST+ commands configured on S1.</p>
+          <p></p>
+          <p>In Figure 4, the<span class="cmd"><b> show spanning-tree vlan 10 </b></span>command shows the spanning tree configuration for VLAN 10 on switch S1. Notice that the BID priority is set to 4,096. In the output, the statement “Spanning tree enabled protocol rstp” indicates that S1 is running Rapid PVST+. Because S1 is the root bridge for VLAN 10, all of its interfaces are designated ports.</p>
+          <p></p>
+          <p>In Figure 5, the<span class="cmd"><b> show running-config </b></span>command is used to verify the Rapid PVST+ configuration on S1.</p>
+          <p></p>
+          <p>
+            <b>Note</b>: Generally, it is unnecessary to configure the point-to-point <i>link-type</i> parameter for Rapid PVST+, because it is unusual to have a shared <i>link-type</i>. In most cases, the only difference between configuring PVST+ and Rapid PVST+ is the<span class="cmd"><b> spanning-tree mode rapid-pvst </b></span>command.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

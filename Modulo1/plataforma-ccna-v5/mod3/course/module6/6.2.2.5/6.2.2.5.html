@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.2.5 Configuring Interarea Route Summarization</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuring Multiarea OSPF</h1>
+        <h2>OSPF Route Summarization</h2>
+      </div>
+      <div id="content">
+          <p>In Figure 1, to demonstrate the effect of route summarization, R1 is configured to summarize the internal area 1 routes.</p>
+          <p></p>
+          <p>To manually configure interarea route summarization on an ABR, use the<span class="cmd"><b> area </b></span><span class="cmd"><i>area-id</i></span><span class="cmd"><b> range </b></span><span class="cmd"><i>address mask </i></span>router configuration mode command. This instructs the ABR to summarize routes for a specific area before injecting them into a different area, via the backbone as type 3 summary LSAs.</p>
+          <p></p>
+          <p>
+            <b>Note</b>: In OSPFv3, the command is identical except for the IPv6 network address. The command syntax for OSPFv3 is <span class="cmd"><b>area </b></span><span class="cmd"><i>area-id</i></span><span class="cmd"><b> range </b></span><span class="cmd"><i>prefix/prefix-length</i></span>.<span class="cmd"><i></i></span></p>
+          <p></p>
+          <p>Figure 2 summarizes the two internal area 1 routes into one OSPF interarea summary route on R1. The summarized route 10.1.0.0/22 actually summarizes four network addresses, 10.1.0.0/24 to 10.1.3.0/24.</p>
+          <p></p>
+          <p>Figure 3 displays the IPv4 routing table of R1. Notice how a new entry has appeared with a <span class="cmd">Null0</span> exit interface. The Cisco IOS automatically creates a bogus summary route to the <span class="cmd">Null0</span> interface when manual summarization is configured to prevent routing loops. A packet sent to a null interface is dropped. </p>
+          <p></p>
+          <p>For example, assume R1 received a packet destined for 10.1.0.10. Although it would match the R1 summary route, R1 does not have a valid route in area 1. Therefore, R1 would refer to the routing table for the next longest match, which would be the <span class="cmd">Null0</span> entry. The packet would get forwarded to the <span class="cmd">Null0</span> interface and dropped. This prevents the router from forwarding the packet to a default route and possibly creating a routing loop.</p>
+          <p></p>
+          <p>Figure 4 displays the updated R3 routing table. Notice how there is now only one interarea entry going to the summary route 10.1.0.0/22. Although this example only reduced the routing table by one entry, summarization could be implemented to summarize many networks. This would reduce the size of routing tables.</p>
+          <p></p>
+          <p>Use the Syntax Checker in Figure 5 to summarize the area 2 routes on R3.</p>
+          <p></p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

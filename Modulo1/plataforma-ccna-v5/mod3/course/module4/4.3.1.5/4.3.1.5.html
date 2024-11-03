@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.3.1.5 Man-in-the-Middle Attack </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.3.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless LAN Security</h1>
+        <h2>WLAN Threats</h2>
+      </div>
+      <div id="content">
+          <p>One of the more sophisticated attacks a malicious user can use is called a man-in-the-middle (MITM) attack. There are many ways in which to create a MITM attack. </p>
+          <p></p>
+          <p>A popular wireless MITM attack is called the “evil twin AP” attack, where an attacker introduces a rogue AP and configures it with the same SSID as a legitimate AP. Locations offering free Wi-Fi, such as airports, cafes, and restaurants, are hotbeds for this type of attack due to the open authentication. </p>
+          <p></p>
+          <p>Connecting wireless clients would see two APs offering wireless access. Those near the rogue AP find the stronger signal and most likely associate with the evil twin AP. User traffic is now sent to the rogue AP, which in turn captures the data and forwards it to the legitimate AP. Return traffic from the legitimate AP is sent to the rogue AP, captured, and then forwarded to the unsuspecting STA. The attacker can steal the user password, personal information, gain network access, and compromise the user system.</p>
+          <p></p>
+          <p>For example, in Figure 1, a malicious user is in “Bob’s Latte” coffee shop and wants to capture traffic from unsuspecting wireless clients. The attacker launches software, which enables their laptop to become an evil twin AP matching the same SSID and channel as the legitimate wireless router. </p>
+          <p></p>
+          <p>In Figure 2, a user sees two wireless connections available, but chooses and associates with the evil twin AP. The attacker captures the user data and forwards to the legitimate AP, which in turn directs the return traffic back to the evil twin AP. The evil twin AP captures the return traffic and forwards the information to the unsuspecting user.</p>
+          <p></p>
+          <p>Defeating an attack like an MITM attack depends on the sophistication of the WLAN infrastructure and the vigilance in monitoring activity on the network. The process begins with identifying legitimate devices on the WLAN. To do this, users must be authenticated. After all of the legitimate devices are known, the network can be monitored for abnormal devices or traffic. </p>
+          <p></p>
+          <p>Enterprise WLANs that use state-of-the-art WLAN devices provide administrators with tools that work together as a wireless intrusion prevention system (IPS). These tools include scanners that identify rogue APs and ad hoc networks, and radio resource management (RRM), which monitors the RF band for activity and AP load. An AP that is busier than normal alerts the administrator of possible unauthorized traffic. </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

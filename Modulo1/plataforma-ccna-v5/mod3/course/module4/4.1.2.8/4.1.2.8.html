@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.2.8 Wireless Antennas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.2.8_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless Concepts</h1>
+        <h2>Components of WLANs</h2>
+      </div>
+      <div id="content">
+          <p>Most business class APs require the use of external antennas to make them fully-functioning units. Cisco has developed antennas specifically designed for use with 802.11 APs while accommodating specific deployment conditions, including physical layout, distance, and aesthetics. </p>
+          <p></p>
+          <p>Cisco Aironet APs can use:</p>
+          <p>
+            <ul>
+              <li>
+                <b>Omnidirectional Wi-Fi Antennas </b>- Factory Wi-Fi gear often uses basic dipole antennas, also referred to as “rubber duck” design, similar to those used on walkie-talkie radios. Omnidirectional antennas provide 360-degree coverage and are ideal in open office areas, hallways, conference rooms, and outside areas.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Directional Wi-Fi Antennas </b>- Directional antennas focus the radio signal in a given direction. This enhances the signal to and from the AP in the direction the antenna is pointing, providing stronger signal strength in one direction and less signal strength in all other directions.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Yagi antennas </b>- Type of directional radio antenna that can be used for long-distance Wi-Fi networking. These antennas are typically used to extend the range of outdoor hotspots in a specific direction, or to reach an outbuilding. </li>
+            </ul>
+          </p>
+          <p></p>
+          <p>The figure displays various Cisco indoor and outdoor antennas. </p>
+          <p></p>
+          <p>IEEE 802.11n/ac/ad use MIMO technology to increase available bandwidth. Specifically, MIMO uses multiple antennas to exchange more data than it would be possible to do using a single antenna. Up to four antennas can be used to increase throughput. </p>
+          <p></p>
+          <p>
+            <b>Note</b>: Not all wireless routers are the same. For instance, entry level 802.11n routers support 150 Mb/s bandwidth using one Wi-Fi radio, and one antenna attached to the unit. To support the higher data rates, an 802.11n router requires more radios and antennas to manage more channels of data in parallel. For example, two radios and two antennas on an 802.11n router support up to 300 Mb/s, while 450 and 600 Mb/s require three and four radios and antennas, respectively.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

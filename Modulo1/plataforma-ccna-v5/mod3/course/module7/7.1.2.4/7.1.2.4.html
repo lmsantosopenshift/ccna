@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.1.2.4 EIGRP Query and Reply Packets</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.1.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Characteristics of EIGRP</h1>
+        <h2>Types of EIGRP Packets</h2>
+      </div>
+      <div id="content">
+          <p>
+            <b>EIGRP Query Packets</b>
+          </p>
+          <p></p>
+          <p>DUAL uses query and reply packets when searching for networks and other tasks. Queries and replies use reliable delivery. Queries can use multicast or unicast, whereas replies are always sent as unicast. </p>
+          <p></p>
+          <p>In the figure, R2 has lost connectivity to the LAN and it sends out queries to all EIGRP neighbors searching for any possible routes to the LAN. Because queries use reliable delivery, the receiving router must return an EIGRP acknowledgment. The acknowledgment informs the sender of the query that it has received the query message. To keep this example simple, acknowledgments were omitted in the graphic.</p>
+          <p></p>
+          <p>
+            <b>EIGRP Reply Packets</b>
+          </p>
+          <p></p>
+          <p>All neighbors must send a reply, regardless of whether or not they have a route to the downed network. Because replies also use reliable delivery, routers such as R2, must send an acknowledgment.</p>
+          <p></p>
+          <p>It may not be obvious why R2 would send out a query for a network it knows is down. Actually, only R2’s interface that is attached to the network is down. Another router could be attached to the same LAN and have an alternate path to this same network. Therefore, R2 queries for such a router before completely removing the network from its topology table.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

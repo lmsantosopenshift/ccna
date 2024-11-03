@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.4.2.2 Configuring IPv6 Link-local Addresses</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.4.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuring EIGRP for IPv6</h1>
+        <h2>Configuring EIGRP for IPv6</h2>
+      </div>
+      <div id="content">
+          <p>Link-local addresses are automatically created when an IPv6 global unicast address is assigned to the interface. Global unicast addresses are not required on an interface; however, IPv6 link-local addresses are.</p>
+          <p></p>
+          <p>Unless configured manually, Cisco routers create the link-local address using FE80::/10 prefix and the EUI-64 process, as shown in Figure 1. EUI-64 involves using the 48-bit Ethernet MAC address, inserting FFFE in the middle and flipping the seventh bit. For serial interfaces, Cisco uses the MAC address of an Ethernet interface. A router with several serial interfaces can assign the same link-local address to each IPv6 interface, because link-local addresses only need to be local on the link.</p>
+          <p></p>
+          <p>Link-local addresses created using the EUI-64 format, or in some cases random interface IDs, make it difficult to recognize and remember those addresses. Because IPv6 routing protocols use IPv6 link-local addresses for unicast addressing and next hop address information in the routing table, it is common practice to make it an easily recognizable address. Configuring the link-local address manually provides the ability to create an address that is recognizable and easier to remember.</p>
+          <p></p>
+          <p>Link-local addresses can be configured manually using the same interface configuration mode command used to create IPv6 global unicast addresses, but with different parameters:</p>
+          <p></p>
+          <p>
+            <span class="cmd">Router(config-if)# </span>
+            <span class="cmd">
+              <b>ipv6 address</b>
+            </span>
+            <span class="cmd"></span>
+            <span class="cmd">
+              <i>link-local-address</i>
+            </span>
+            <span class="cmd"></span>
+            <span class="cmd">
+              <b>link-local</b>
+            </span>
+          </p>
+          <p></p>
+          <p>A link-local address has a prefix within the range FE80 to FEBF. When an address begins with this hextet (16-bit segment), the<span class="cmd"><b> link-local </b></span>keyword must follow the address. </p>
+          <p></p>
+          <p>Figure 2 shows the configuration of a link-local address using the<span class="cmd"><b> ipv6 address </b></span>interface configuration mode command. The link-local address FE80::1 is used to make it easily recognizable as belonging to router R1. The same IPv6 link-local address is configured on all of R1’s interfaces. FE80::1 can be configured on each link because it only has to be unique on that link.</p>
+          <p></p>
+          <p>Similar to R1, in Figure 3, router R2 is configured with FE80::2 as the IPv6 link-local address on all of its interfaces.</p>
+          <p></p>
+          <p>Use the Syntax Checker in Figure 4 to configure FE80::3 as the link-local address on all of R3’s interfaces.</p>
+          <p></p>
+          <p>As shown in Figure 5, the<span class="cmd"><b> show ipv6 interface brief </b></span>command is used to verify the IPv6 link-local and global unicast addresses on all interfaces. </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.2.3 EIGRP Interfaces</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Troubleshoot EIGRP</h1>
+        <h2>Troubleshoot EIGRP Neighbor Issues</h2>
+      </div>
+      <div id="content">
+          <p>In addition to verifying the autonomous system number, it is necessary to verify that all interfaces are participating in the EIGRP network. The<span class="cmd"><b> network </b></span>command that is configured under the EIGRP routing process indicates which router interfaces participates in EIGRP. This command is applied to the classful network address of the interface or to a subnet when the wildcard mask is included. </p>
+          <p></p>
+          <p>In Figure 1, the<span class="cmd"><b> show ip eigrp interfaces </b></span>command displays which interfaces are enabled for EIGRP on R1. If connected interfaces are not enabled for EIGRP, then neighbors do not form an adjacency.</p>
+          <p></p>
+          <p>In Figure 2, the "<span class="cmd">Routing for Networks</span>" section of the<span class="cmd"><b> show ip protocols </b></span>command indicates which networks have been configured; any interfaces in those networks participate in EIGRP.</p>
+          <p></p>
+          <p>If the network is not present in this section, use<span class="cmd"><b> show running-config </b></span>to ensure that the proper<span class="cmd"><b> network </b></span>command was configured.</p>
+          <p></p>
+          <p>In Figure 3, the output from the<span class="cmd"><b> show running-config </b></span>command confirms that any interfaces with these addresses, or a subnet of these addresses, are enabled for EIGRP.</p>
+          <p></p>
+          <p>
+            <b>EIGRP for IPv6</b>
+          </p>
+          <p></p>
+          <p>Similar commands and troubleshooting criteria also apply to EIGRP for IPv6.</p>
+          <p></p>
+          <p>The following are the equivalent commands used with EIGRP for IPv6:</p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">Router# </span>
+                <span class="cmd">
+                  <b>show ipv6 protocols </b>
+                </span>
+              </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <span class="cmd">Router# </span>
+                <span class="cmd">
+                  <b>show ipv6 eigrp interfaces</b>
+                </span>
+              </li>
+            </ul>
+          </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

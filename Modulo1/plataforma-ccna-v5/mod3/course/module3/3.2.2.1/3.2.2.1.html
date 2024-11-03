@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.2.2.1 Verifying EtherChannel</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.2.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Link Aggregation Configuration</h1>
+        <h2>Verifying and Troubleshooting EtherChannel</h2>
+      </div>
+      <div id="content">
+          <p>There are a number of commands to verify an EtherChannel configuration. First, the<span class="cmd"><b> show interface port-channel </b></span>command displays the general status of the port channel interface. In Figure 1, the Port Channel 1 interface is up.</p>
+          <p></p>
+          <p>When several port channel interfaces are configured on the same device, use the<span class="cmd"><b> show etherchannel summary </b></span>command to simply display one line of information per port channel. In Figure 2, the switch has one EtherChannel configured; group 1 uses LACP. </p>
+          <p></p>
+          <p>The interface bundle consists of the FastEthernet0/1 and FastEthernet0/2 interfaces. The group is a Layer 2 EtherChannel and that it is in use, as indicated by the letters SU next to the port channel number.</p>
+          <p></p>
+          <p>Use the<span class="cmd"><b> show etherchannel port-channel </b></span>command to display information about a specific port channel interface, as shown in Figure 3. In the example, the Port Channel 1 interface consists of two physical interfaces, FastEthernet0/1 and FastEthernet0/2. It uses LACP in active mode. It is properly connected to another switch with a compatible configuration, which is why the port channel is said to be in use.</p>
+          <p></p>
+          <p>On any physical interface member of an EtherChannel bundle, the<span class="cmd"><b> show interfaces etherchannel </b></span>command can provide information about the role of the interface in the EtherChannel, as shown in Figure 4. The interface FastEthernet 0/1 is part of the EtherChannel bundle 1. The protocol for this EtherChannel is LACP.</p>
+          <p></p>
+          <p>Use the Syntax Checker in Figure 5 to verify EtherChannel on switch S1. </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

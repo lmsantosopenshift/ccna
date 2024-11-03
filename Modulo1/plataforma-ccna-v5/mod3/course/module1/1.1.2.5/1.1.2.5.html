@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.1.2.5 Fine-tuning Routing Protocols</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.1.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Implementing a Network Design</h1>
+        <h2>Expanding the Network</h2>
+      </div>
+      <div id="content">
+          <p>
+            <b>Managing the Routed Network</b>
+          </p>
+          <p>Enterprise networks and ISPs often use more advanced protocols, such as link-state protocols, because of their hierarchical design and ability to scale for large networks. </p>
+          <p></p>
+          <p>Link-state routing protocols such as Open Shortest Path First (OSPF), as shown in Figure 1, works well for larger hierarchical networks where fast convergence is important. OSPF routers establish and maintain neighbor adjacency or adjacencies, with other connected OSPF routers. When routers initiate an adjacency with neighbors, an exchange of link-state updates begins. Routers reach a FULL state of adjacency when they have synchronized views on their link-state database. With OSPF, link state updates are sent when network changes occur.</p>
+          <p></p>
+          <p>OSPF is a popular link-state routing protocol that can be fine-tuned in many ways. The chapter titled “Adjust and Troubleshoot Single-Area OSPF” will cover some of the more advanced features of OSPF configuration and troubleshooting.</p>
+          <p></p>
+          <p>Additionally, OSPF supports a two-layer hierarchical design, or multiarea OSPF, as shown in Figure 2. All OSPF networks begin with Area 0, also called the backbone area. As the network is expanded, other, non-backbone areas can be created. All non-backbone areas must directly connect to area 0. The chapter titled “Multiarea OSPF” introduces the benefits, operation, and configuration of Multiarea OSPF.</p>
+          <p></p>
+          <p>Another popular routing protocol for larger networks is Enhanced Interior Gateway Routing Protocol (EIGRP).  Cisco developed EIGRP as a proprietary distance vector routing protocol with enhanced capabilities. Although configuring EIGRP is relatively simple, the underlying features and options of EIGRP are extensive and robust. For example, EIGRP uses multiple tables to manage the routing process, as shown in Figure 3. EIGRP contains many features that are not found in any other routing protocols. It is an excellent choice for large, multi-protocol networks that employ primarily Cisco devices.</p>
+          <p></p>
+          <p>The chapter titled “EIGRP” introduces the operation and configuration of the EIGRP routing protocol, while the chapter titled “EIGRP Advanced Configurations and Troubleshooting” covers some of the more advanced configuration options of EIGRP.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

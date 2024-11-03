@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.4.3.2 Wireless Client Not Connecting </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.4.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless LAN Configuration</h1>
+        <h2>Troubleshoot WLAN Issues</h2>
+      </div>
+      <div id="content">
+          <p>When troubleshooting a WLAN, a process of elimination is recommended. </p>
+          <p></p>
+          <p>In the figure, a wireless client is not connecting to the WLAN. If there is no connectivity, check the following:</p>
+          <p>
+            <ul>
+              <li>Confirm the network configuration on the PC using the<span class="cmd"><b> ipconfig </b></span>command. Verify that the PC has received an IP address via DHCP or is configured with a static IP address.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Confirm that the device can connect to the wired network. Connect the device to the wired LAN and<span class="cmd"><b> ping </b></span>a known IP address.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>If necessary, reload drivers as appropriate for the client. It may be necessary to try a different wireless NIC. </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>If the wireless NIC of the client is working, check the security mode and encryption settings on the client. If the security settings do not match, the client cannot gain access to the WLAN.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>If the PC is operational but the wireless connection is performing poorly, check the following:</p>
+          <p>
+            <ul>
+              <li>How far is the PC from an AP? Is the PC out of the planned coverage area (BSA)?</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Check the channel settings on the wireless client. The client software should detect the appropriate channel as long as the SSID is correct.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Check for the presence of other devices in the area that may be interfering with the 2.4 GHz band. Examples of other devices are cordless phones, baby monitors, microwave ovens, wireless security systems, and potentially rogue APs. Data from these devices can cause interference in the WLAN and intermittent connection problems between a wireless client and AP.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>Next, ensure that all the devices are actually in place. Consider a possible physical security issue. Is there power to all devices and are they powered on?</p>
+          <p></p>
+          <p>Finally, inspect links between cabled devices looking for bad connectors or damaged or missing cables. If the physical plant is in place, verify the wired LAN by pinging devices, including the AP. If connectivity still fails at this point, perhaps something is wrong with the AP or its configuration.</p>
+          <p></p>
+          <p>When the user PC is eliminated as the source of the problem, and the physical status of devices is confirmed, begin investigating the performance of the AP. Check the power status of the AP.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

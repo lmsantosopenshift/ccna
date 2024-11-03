@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.4.2 Hello and Hold Timers</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.4.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Advanced EIGRP Configurations</h1>
+        <h2>Fine-tuning EIGRP Interfaces</h2>
+      </div>
+      <div id="content">
+          <p>
+            <b>Hello Intervals and Hold Times with EIGRP for IPv4</b>
+          </p>
+          <p></p>
+          <p>EIGRP uses a lightweight Hello protocol to establish and monitor the connection status of its neighbor. The Hold time tells the router the maximum time that the router should wait to receive the next Hello before declaring that neighbor as unreachable. </p>
+          <p></p>
+          <p>Hello intervals and Hold times are configurable on a per-interface basis and do not have to match with other EIGRP routers to establish or maintain adjacencies. The command to configure a different Hello interval is:</p>
+          <p></p>
+          <p>
+            <span class="cmd">Router(config-if)# </span>
+            <span class="cmd">
+              <b>ip hello-interval eigrp</b>
+            </span>
+            <span class="cmd"></span>
+            <span class="cmd">
+              <i>as-number seconds</i>
+            </span>
+          </p>
+          <p></p>
+          <p>If the Hello interval is changed, ensure that the Hold time value is equal to, or greater than, the Hello interval. Otherwise, neighbor adjacency goes down after the Hold time expires and before the next Hello interval. Use the following command to configure a different Hold time:</p>
+          <p></p>
+          <p>
+            <span class="cmd">Router(config-if)# </span>
+            <span class="cmd">
+              <b>ip hold-time eigrp</b>
+            </span>
+            <span class="cmd"></span>
+            <span class="cmd">
+              <i>as-number seconds</i>
+            </span>
+          </p>
+          <p></p>
+          <p>The<span class="cmd"><i> seconds</i></span> value for both Hello and Hold time intervals can range from 1 to 65,535. </p>
+          <p></p>
+          <p>Figure 1 shows the configuration of R1 to use a 50-second Hello interval and 150-second Hold time. The<span class="cmd"><b> no </b></span>form can be used on both of these commands to restore the default values.</p>
+          <p></p>
+          <p>The Hello interval time and Hold time do not need to match for two routers to form an EIGRP adjacency.</p>
+          <p></p>
+          <p>Use the Syntax Checker in Figure 2 to configure the adjacent interface on R2 with the same values as R1. </p>
+          <p></p>
+          <p></p>
+          <p>
+            <b>Hello Intervals and Hold Times with EIGRP for IPv6</b>
+          </p>
+          <p></p>
+          <p>EIGRP for IPv6 uses the same Hello interval and Hold times as EIGRP for IPv4. The interface configuration mode commands are similar to those for IPv4:</p>
+          <p></p>
+          <p>
+            <span class="cmd">Router(config-if)# </span>
+            <span class="cmd">
+              <b>ipv6 hello-interval eigrp</b>
+            </span>
+            <span class="cmd"></span>
+            <span class="cmd">
+              <i>as-number seconds</i>
+            </span>
+          </p>
+          <p></p>
+          <p>
+            <span class="cmd">Router(config-if)# </span>
+            <span class="cmd">
+              <b>ipv6 hold-time eigrp</b>
+            </span>
+            <span class="cmd"></span>
+            <span class="cmd">
+              <i>as-number seconds</i>
+            </span>
+          </p>
+          <p></p>
+          <p>Figure 3 shows the Hello interval and Hold times configurations for R1 and R2 with EIGRP for IPv6.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

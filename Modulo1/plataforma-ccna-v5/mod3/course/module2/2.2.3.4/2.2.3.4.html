@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.3.4 Link Types</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.3.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Varieties of Spanning Tree Protocols</h1>
+        <h2>Rapid PVST+</h2>
+      </div>
+      <div id="content">
+          <p>The link type provides a categorization for each port participating in RSTP by using the duplex mode on the port. Depending on what is attached to each port, two different link types can be identified:</p>
+          <p></p>
+          <p>
+            <ul>
+              <li>
+                <b>Point-to-Point</b> - A port operating in full-duplex mode typically connects a switch to a switch and is a candidate for rapid transition to forwarding state.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Shared </b>- A port operating in half-duplex mode connects a switch to a hub that attaches multiple devices.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>In the figure, click each link to learn about the link types.</p>
+          <p></p>
+          <p>The link type can determine whether the port can immediately transition to forwarding state, assuming certain conditions are met. These conditions are different for edge ports and non-edge ports. Non-edge ports are categorized into two link types, point-to-point and shared. The link type is automatically determined, but can be overridden with an explicit port configuration using the<span class="cmd"><b> spanning-tree link-type </b></span><span class="cmd"><i>parameter </i></span>command.</p>
+          <p></p>
+          <p>Edge port connections and point-to-point connections are candidates for rapid transition to forwarding state. However, before the link-type parameter is considered, RSTP must determine the port role. Characteristics of port roles with regard to link types include the following:</p>
+          <p></p>
+          <p>
+            <ul>
+              <li>Root ports do not use the link-type parameter. Root ports are able to make a rapid transition to the forwarding state as soon as the port is in sync.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Alternate and backup ports do not use the link-type parameter in most cases. </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>Designated ports make the most use of the link-type parameter. Rapid transition to the forwarding state for the designated port occurs only if the link-type parameter is set to<span class="cmd"><i> point-to-point</i></span>.</li>
+            </ul>
+          </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

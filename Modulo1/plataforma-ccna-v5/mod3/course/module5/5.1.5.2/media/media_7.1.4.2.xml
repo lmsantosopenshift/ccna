@@ -1,0 +1,76 @@
+<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Authenticating Using MD5</b>]]></text>
+</component>
+
+<!--POPUP 1-->
+<component id="ID_txt01a">
+<text><![CDATA[<textformat blockindent="-20"><ul><li>Compute signature</li><li>Send update</li></ul></textformat>]]></text>
+</component>
+<component id="ID_txt01b">
+<text><![CDATA[Key]]></text>
+</component>
+<component id="ID_txt01c">
+<text><![CDATA[Data]]></text>
+</component>
+<component id="ID_txt01d">
+<text><![CDATA[MD5]]></text>
+</component>
+<component id="ID_txt01e">
+<text><![CDATA[Signature]]></text>
+</component>
+
+<!--POPUP 2-->
+<component id="ID_txt02a">
+<text><![CDATA[<textformat blockindent="-20"><ul><li>Receive update</li><li>Compute signature</li></ul></textformat>]]></text>
+</component>
+<component id="ID_txt02b">
+<text><![CDATA[Key]]></text>
+</component>
+<component id="ID_txt02c">
+<text><![CDATA[Data]]></text>
+</component>
+<component id="ID_txt02d">
+<text><![CDATA[MD5]]></text>
+</component>
+<component id="ID_txt02e">
+<text><![CDATA[Signature]]></text>
+</component>
+
+<component id="ID_txt03">
+<text><![CDATA[Compare Signatures]]></text>
+</component>
+<component id="ID_txt03a">
+<text><![CDATA[Signatures Match!]]></text>
+</component>
+<component id="ID_txt04">
+<text><![CDATA[Routing Updates Authenticated]]></text>
+</component>
+
+
+<!--controller-->
+<component id="end">
+<text><![CDATA[End]]></text>
+</component>
+
+<component id="fforward">
+<text><![CDATA[Fast Forward]]></text>
+</component>
+
+<component id="pause">
+<text><![CDATA[Pause]]></text>
+</component>
+
+<component id="play">
+<text><![CDATA[Play]]></text>
+</component>
+
+<component id="rewind">
+<text><![CDATA[Rewind]]></text>
+</component>
+
+<component id="start">
+<text><![CDATA[Start]]></text>
+</component>
+
+</textcomponents>

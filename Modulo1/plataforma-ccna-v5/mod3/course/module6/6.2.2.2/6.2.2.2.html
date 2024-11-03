@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.2.2 Interarea and External Route Summarization</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuring Multiarea OSPF</h1>
+        <h2>OSPF Route Summarization</h2>
+      </div>
+      <div id="content">
+          <p>In OSPF, summarization can only be configured on ABRs or ASBRs. Instead of advertising many specific networks, the ABR routers and ASBR routers advertise a summary route. ABR routers summarize type 3 LSAs and ASBR routers summarize type 5 LSAs. </p>
+          <p></p>
+          <p>By default, summary LSAs (type 3 LSAs) and external LSAs (type 5 LSAs) do not contain summarized (aggregated) routes; that is, by default, summary LSAs are not summarized.</p>
+          <p></p>
+          <p>As illustrated in Figures 1 and 2, route summarization can be configured as follows:</p>
+          <p>
+            <ul>
+              <li>
+                <b>Interarea route summarization </b>- Interarea route summarization occurs on ABRs and applies to routes from within each area. It does not apply to external routes injected into OSPF via redistribution. To perform effective interarea route summarization, network addresses within areas should be assigned contiguously so that these addresses can be summarized into a minimal number of summary addresses.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>External route summarization </b>- External route summarization is specific to external routes that are injected into OSPF via route redistribution. Again, it is important to ensure the contiguity of the external address ranges that are being summarized. Generally, only ASBRs summarize external routes. As shown in Figure 2, EIGRP external routes are summarized by ASBR R2 in a single LSA and sent to R1 and R3. </li>
+            </ul>
+          </p>
+          <p></p>
+          <p>
+            <b>Note</b>: External route summarization is configured on ASBRs using the<span class="cmd"><b> summary-address </b></span><span class="cmd"><i>address mask </i></span>router configuration mode command. </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

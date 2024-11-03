@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.4.4 Load Balancing IPv6</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.4.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Advanced EIGRP Configurations</h1>
+        <h2>Fine-tuning EIGRP Interfaces</h2>
+      </div>
+      <div id="content">
+          <p>Figure 1 shows the EIGRP for IPv6 network topology.  The serial links in the topology have  the same bandwidth that is used in the EIGRP for IPv4 topology.</p>
+          <p></p>
+          <p>Similar to the previous scenario for IPv4, R3 has two EIGRP equal-cost routes for the network between R1 and R2, 2001:DB8:CAFE:A001::/64. One route is via R1 at FE80::1 and the other route is via R2 at FE80::2. </p>
+          <p></p>
+          <p>Figure 2 shows that the EIGRP metrics are the same in the IPv6 routing table and in the IPv4 routing table for the 2001:DB8:CAFE:A001::/64 and 172.16.3.0/30 networks. This is because the EIGRP composite metric is the same for both EIGRP for IPv6 and for IPv4. </p>
+          <p></p>
+          <p>
+            <b>Unequal-Cost Load Balancing</b>
+          </p>
+          <p></p>
+          <p>EIGRP for IPv4 and IPv6 can also balance traffic across multiple routes that have different metrics. This type of balancing is called unequal-cost load balancing. Setting a value using the<span class="cmd"><b> variance </b></span>command in router configuration mode enables EIGRP to install multiple loop-free routes with unequal cost in a local routing table. </p>
+          <p></p>
+          <p>A route learned through EIGRP must meet two criteria to be installed in the local routing table:</p>
+          <p>
+            <ul>
+              <li>The route must be loop-free, being either a feasible successor or having a reported distance that is less than the total distance.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>The metric of the route must be lower than the metric of the best route (the successor) multiplied by the variance configured on the router.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>For example, if the variance is set to 1, only routes with the same metric as the successor are installed in the local routing table. If the variance is set to 2, any EIGRP-learned route with a metric less than 2 times the successor metric will be installed in the local routing table.</p>
+          <p></p>
+          <p>To control how trafﬁc is distributed among routes when there are multiple routes for the same destination network that have different costs, use the<span class="cmd"><b> trafﬁc-share balanced </b></span>command. Trafﬁc is then distributed proportionately to the ratio of the costs. </p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

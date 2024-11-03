@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.3.4 Feasible Successors, Feasibility Condition, and Reported Distance</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.3.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1> Operation of EIGRP</h1>
+        <h2>DUAL and the Topology Table</h2>
+      </div>
+      <div id="content">
+          <p>DUAL can converge quickly after a change in the topology because it can use backup paths to other networks without recomputing DUAL. These backup paths are known as Feasible Successors (FSs).</p>
+          <p></p>
+          <p>An FS is a neighbor that has a loop-free backup path to the same network as the successor, and it satisfies the Feasibility Condition (FC). R2’s successor for the 192.168.1.0/24 network is R3, providing the best path or lowest metric to the destination network. Notice in Figure 1, that R1 provides an alternative path, but is it an FS? Before R1 can be an FS for R2, R1 must first meet the FC.</p>
+          <p></p>
+          <p>The FC is met when a neighbor’s Reported Distance (RD) to a network is less than the local router’s feasible distance to the same destination network. If the reported distance is less, it represents a loop-free path. The reported distance is simply an EIGRP neighbor’s feasible distance to the same destination network. The reported distance is the metric that a router reports to a neighbor about its own cost to that network. </p>
+          <p></p>
+          <p>In Figure 2, R1’s feasible distance to 192.168.1.0/24 is 2,170,112. </p>
+          <p>
+            <ul>
+              <li>R1 reports to R2 that its FD to 192.168.1.0/24 is 2,170,112. </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>From R2’s perspective, 2,170,112 is R1’s RD. </li>
+            </ul>
+          </p>
+          <p>R2 uses this information to determine if R1 meets the FC and, therefore, can be an FS. </p>
+          <p></p>
+          <p>As shown in Figure 3, because the RD of R1 (2,170,112) is less than R2’s own FD (3,012,096), R1 meets the FC. </p>
+          <p></p>
+          <p>R1 is now an FS for R2 to the 192.168.1.0/24 network.</p>
+          <p></p>
+          <p>If there is a failure in R2’s path to 192.168.1.0/24 via R3 (successor), then R2 immediately installs the path via R1 (FS) in its routing table. R1 becomes the new successor for R2’s path to this network, as shown in Figure 4.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

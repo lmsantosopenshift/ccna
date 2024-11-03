@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.5.2 Secure Routing Updates</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.5.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Advanced Single-Area OSPF Configurations </h1>
+        <h2>Secure OSPF</h2>
+      </div>
+      <div id="content">
+          <p>When neighbor authentication has been configured on a router, the router authenticates the source of each routing update packet that it receives. This is accomplished by the exchange of an authenticating key (sometimes referred to as a password) that is known to both the sending and the receiving router. </p>
+          <p></p>
+          <p>To exchange routing update information in a secure manner, enable OSPF authentication. OSPF authentication can either be none (or null), simple, or Message Digest 5 (MD5). </p>
+          <p></p>
+          <p>OSPF supports 3 types of authentication:</p>
+          <p>
+            <ul>
+              <li>
+                <b>Null </b>- This is the default method and means that no authentication is used for OSPF.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Simple password authentication </b>- This is also referred to as plaintext authentication because the password in the update is sent in plaintext over the network. This is considered to be a legacy method of OSPF authentication.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>MD5 authentication </b>- This is the most secure and recommended method of authentication. MD5 authentication provides higher security because the password is never exchanged between peers. Instead it is calculated using the MD5 algorithm. Matching results authenticate the sender. </li>
+            </ul>
+          </p>
+          <p></p>
+          <p>Click the Play button in the animation to see how MD5 authentication is used to authenticate neighboring peer messages. </p>
+          <p></p>
+          <p>
+            <b>Note</b>: RIPv2, EIGRP, OSPF, IS-IS, and BGP all support various forms of MD5 authentication.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.2.6 Large Wireless Deployment Solutions</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.2.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless Concepts</h1>
+        <h2>Components of WLANs</h2>
+      </div>
+      <div id="content">
+          <p>Organizations requiring the clustering of multiple APs require a more robust and scalable solution. For larger organizations with many APs, Cisco provides controller-based managed solutions, including the Cisco Meraki Cloud Managed Architecture and the Cisco Unified Wireless Network Architecture.</p>
+          <p></p>
+          <p>
+            <b>Note</b>: There are other controller-based solutions, such as the controllers using Flex mode. Visit <a href="http://www.cisco.com/" target="_blank">http://www.cisco.com</a> for more information.</p>
+          <p></p>
+          <p>
+            <b>Cisco Meraki Cloud Managed Architecture</b>
+          </p>
+          <p>The Cisco Meraki cloud architecture is a management solution used to simplify the wireless deployment. Using this architecture, APs are managed centrally from a controller in the cloud, as shown in Figure 1. Cloud networking and management provides centralized management, visibility, and control without the cost and complexity of controller appliances or overlay management software. </p>
+          <p></p>
+          <p>This process reduces costs and complexity. The controller pushes management settings, such as firmware updates, security settings, wireless network, and SSIDs settings to the Meraki APs. </p>
+          <p></p>
+          <p>
+            <b>Note</b>: Only management data flows through the Meraki cloud infrastructure. No user traffic passes through Meraki’s datacenters. Therefore, if the Cisco Meraki cannot access the cloud, the network continues to function normally. This means users can still authenticate, firewall rules remain in place, and traffic flows at full line rate. Only management functions, such as reports and configuration tools are interrupted.</p>
+          <p></p>
+          <p>The Cisco Meraki cloud managed architecture requires the following:</p>
+          <p>
+            <ul>
+              <li>
+                <b>Cisco MR Cloud Managed Wireless APs </b>- Various models exist to address a broad range of wireless deployment. </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Meraki Cloud Controller (MCC) </b>- The MCC provides centralized management, optimization, and monitoring of a Meraki WLAN system. The MCC is not an appliance that must be purchased and installed to manage wireless APs. Rather, the MCC is a cloud-based service that constantly monitors, optimizes, and reports the behavior of the network. </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Web-based Dashboard</b> - Meraki’s web-based Dashboard performs configuration and diagnostics remotely.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>Click each component in Figure 2 to read more information about the Cisco Meraki architecture.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.1.2 Characteristics of the Spanning Tree Protocols</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Varieties of Spanning Tree Protocols</h1>
+        <h2>Overview</h2>
+      </div>
+      <div id="content">
+          <p>These are characteristics of the various spanning tree protocols. The italicized words indicate whether the particular spanning tree protocol is Cisco-proprietary or an IEEE standard implementation:</p>
+          <p></p>
+          <p>
+            <ul>
+              <li>
+                <b>STP </b>- Assumes one <i>IEEE 802.1D</i> spanning tree instance for the entire bridged network, regardless of the number of VLANs. Because there is only one instance, the CPU and memory requirements for this version are lower than for the other protocols. However, because there is only one instance, there is only one root bridge and one tree. Traffic for all VLANs flows over the same path, which can lead to suboptimal traffic flows. Because of the limitations of 802.1D, this version is slow to converge.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>PVST+ </b>- A Cisco enhancement of STP that provides a separate instance of the Cisco implementation of 802.1D for each VLAN that is configured in the network. The separate instance supports PortFast, UplinkFast, BackboneFast, BPDU guard, BPDU filter, root guard, and loop guard. Creating an instance for each VLAN increases the CPU and memory requirements, but allows for per-VLAN root bridges. This design allows the spanning tree to be optimized for the traffic of each VLAN. Convergence of this version is similar to the convergence of 802.1D. However, convergence is per-VLAN.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>RSTP </b>(or <i>IEEE 802.1w</i>) - An evolution of spanning tree that provides faster convergence than the original 802.1D implementation. This version addresses many convergence issues, but because it still provides a single instance of STP, it does not address the suboptimal traffic flow issues. To support that faster convergence, the CPU usage and memory requirements of this version are slightly higher than those of CST, but less than those of RSTP+.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Rapid PVST+ </b>- A Cisco enhancement of RSTP that uses PVST+. It provides a separate instance of 802.1w per VLAN. The separate instance supports PortFast, BPDU guard, BPDU filter, root guard, and loop guard. This version addresses both the convergence issues and the suboptimal traffic flow issues. However, this version has the largest CPU and memory requirements. </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>MSTP </b>- The <i>IEEE 802.1s</i> standard, inspired by the earlier Cisco proprietary MISTP implementation. To reduce the number of required STP instances, MSTP maps multiple VLANs that have the same traffic flow requirements into the same spanning tree instance. </li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>MST </b>- The Cisco implementation of MSTP, which provides up to 16 instances of RSTP (802.1w) and combines many VLANs with the same physical and logical topology into a common RSTP instance. Each instance supports PortFast, BPDU guard, BPDU filter, root guard, and loop guard. The CPU and memory requirements of this version are less than those of Rapid PVST+, but more than those of RSTP.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>The default spanning tree mode for Cisco Catalyst switches is PVST+, which is enabled on all ports. PVST+ has much slower convergence after a topology change than Rapid PVST+.</p>
+          <p></p>
+          <p>
+            <b>Note</b>: It is important to distinguish between the legacy IEEE 802.1D-1998 (and earlier) standard and the IEEE 802.1D-2004 standard. IEEE 802.1D-2004 incorporates RSTP functionality, while IEEE 802.1D-1998 refers to the original implementation of the spanning tree algorithm. Newer Cisco switches running newer versions of the IOS, such as Catalyst 2960 switches with IOS 15.0, run PVST+ by default, but incorporate many of the specifications of IEEE 802.1D-1998 in this mode (such as alternate ports in place of the former non-designated ports); but to run rapid spanning tree on such a switch it still must be explicitly configured for rapid spanning tree mode.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

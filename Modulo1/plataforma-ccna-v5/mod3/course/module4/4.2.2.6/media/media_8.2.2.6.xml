@@ -1,0 +1,85 @@
+<textcomponents>
+
+<component id='ID_inst'>
+	<text><![CDATA[<b>Activity – Order the Steps in the Client and AP Association Process</b><br/>Drag the WLAN Client to AP association steps in the correct order on the diagram provided.]]></text>
+</component>
+
+<!--Drag and Drop-->
+<component id='ID_drag01'>
+	<text><![CDATA[Receive AP’s association identifier (AID)]]></text>
+</component>
+
+<component id='ID_drag02'>
+	<text><![CDATA[Initiate Shared Key authentication process]]></text>
+</component>
+
+<component id='ID_drag03'>
+	<text><![CDATA[<span style="margin-left:5px;">Listen for beacon frames to find WLAN SSIDs (passive mode)</span>]]></text>
+</component>
+
+<component id='ID_drag04'>
+	<text><![CDATA[<span style="margin-left:5px;">Send a probe request to the AP<br>with or without a known SSID<br>(active mode)</span>]]></text>
+</component>
+
+<component id='ID_drag05'>
+	<text><![CDATA[<span style="margin-left:5px;">Receive AP’s MAC address (BSSID)</span>]]></text>
+</component>
+
+<component id='ID_drag06'>
+	<text><![CDATA[Agree with AP to share Open authentication]]></text>
+</component>
+
+<component id='ID_drag07'>
+	<text><![CDATA[Send Client’s MAC address to AP]]></text>
+</component>
+
+
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correct</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[You have successfully ordered the steps in the WLAN Client to AP association process.]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrect</b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[You have not successfully ordered the steps in the WLAN Client to AP association process. Please click Reset to try again.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Check</b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Reset</b>]]></text>
+</component>
+
+
+
+<component id="ID_txt01">
+	<text><![CDATA[<b>Step 1 (Discovery):</b>]]></text>
+</component>
+
+<component id="ID_txt02">
+  <text><![CDATA[<b>Step 2 (Authentication):</b>]]></text> 
+</component>
+
+<component id="ID_txt03">
+  <text><![CDATA[<b>Step 3 (Association):</b>]]></text> 
+</component>
+   
+<component id="ID_txt04">
+  <text><![CDATA[<b>or</b>]]></text> 
+</component>
+
+<component id="ID_txt05">
+  <text><![CDATA[<b>or</b>]]></text> 
+</component>
+
+</textcomponents>

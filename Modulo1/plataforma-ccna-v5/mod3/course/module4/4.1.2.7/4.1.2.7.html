@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.2.7 Large Wireless Deployment Solutions, Cont.</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.2.7_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Resize',
+          sliderTip: 'Slide Open',
+          togglerTip_open: 'Close',
+          togglerTip_closed: 'Open',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Wireless Concepts</h1>
+        <h2>Components of WLANs</h2>
+      </div>
+      <div id="content">
+          <p>
+            <b>Cisco Unified Wireless Network Architecture</b>
+          </p>
+          <p>The Cisco Unified wireless network architecture solution, using a split MAC design, controls APs using a WLAN controller (WLC) and can be optionally managed using Cisco Wireless Control Systems (WCS). The lightweight APs communicate with the WLAN controller using the Lightweight Access Control Point Protocol (LWAPP). The controller has all of the intelligence for communication and the AP is a “dumb terminal” that simply processes packets. </p>
+          <p></p>
+          <p>The Cisco Unified wireless network architecture requires the following devices:</p>
+          <p>
+            <ul>
+              <li>
+                <b>Lightweight APs </b>- Cisco Aironet 1600, 2600, or 3600 wireless APs models provide robust, dependable wireless network access for hosts.</li>
+            </ul>
+          </p>
+          <p>
+            <ul>
+              <li>
+                <b>Controllers for small and medium-sized businesses</b> - Cisco 2500 Series Wireless Controllers, Cisco Virtual Wireless Controller, or the Cisco Wireless Controller Module for Cisco ISR G2 provide small branch or single-site enterprise WLAN deployments with entry-level wireless for data.</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>Other WLAN controllers of greater capacity are also available. For example, the Cisco 5760 Wireless Controller and the Cisco 8500 Series Controller are designed to cost-effectively manage, secure, and optimize the performance of sizeable wireless networks, such as service provider and large campus deployments.</p>
+          <p></p>
+          <p>Figure 1 summarizes the lightweight APs.</p>
+          <p></p>
+          <p>Click each component in Figure 2 to display more information about the controllers for small and medium-sized businesses.</p>
+        </div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>
